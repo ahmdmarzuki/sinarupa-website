@@ -1,11 +1,15 @@
-import ImageUpload from "./pages/ImageUpload";
+import PreEventHomepage from "./pages/PreEventHomepage";
+import { Route, Routes } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
-    <>
-      <ImageUpload />
-    </>
+    <main>
+      <Routes>
+        <Route path="/" element={<PreEventHomepage />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </main>
   );
 }
 

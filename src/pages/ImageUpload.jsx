@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-// import { imageDb } from "../firebase/storage";
+import React, { useEffect, useRef, useState } from "react";
 import {
   getDownloadURL,
   getStorage,
@@ -19,20 +18,12 @@ const ImageUpload = () => {
   const [desc, setDesc] = useState("");
 
   const [arts, setArts] = useState([]);
-  //   const [url, setUrl] = useState("");
-  //   const [imgUrl, setImgUrl] = useState([]);
 
-  //   const fetchImages = async () => {
-  //     const imgs = await listAll(ref(imageDb, "artToVote"));
-  //     const urls = await Promise.all(
-  //       imgs.items.map((item) => getDownloadURL(item))
-  //     );
-  //     setImgUrl(urls);
-  //   };
+  const imgRef = useRef();
 
-  //   useEffect(() => {
-  //     fetchImages();
-  //   }, []);
+  const clearFileInput = () => {
+    imgRef.current.value = null;
+  };
 
   useEffect(() => {
     const fetchArts = async () => {
@@ -40,7 +31,7 @@ const ImageUpload = () => {
       setArts(result);
     };
     fetchArts();
-  }, []);
+  }, [arts]);
 
   const uploadImage = async () => {
     if (!img) return alert("Pilih gambar terlebih dahulu!");
@@ -51,6 +42,7 @@ const ImageUpload = () => {
         setName("");
         setDesc("");
         setImg("");
+        clearFileInput();
         alert("berhasilll");
       });
 
@@ -64,9 +56,9 @@ const ImageUpload = () => {
 
   return (
     <div className="flex flex-col w-screen justify-center p-20 gap-4">
-      <div className="flex flex-col gap-2 w-80">
+      <div className="flex flex-col gap-2 sm:w-[80vw] md:w-80">
         <input
-          //   value={img}
+          ref={imgRef}
           type="file"
           className="bg-gray-200 px-6 py-2 rounded-2xl"
           onChange={(e) => setImg(e.target.files[0])}
@@ -92,15 +84,15 @@ const ImageUpload = () => {
           Upload
         </button>
       </div>
-      <div className="grid grid-cols-5 mt-10 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 mt-10 gap-4 ">
         {arts.map((art) => (
           <div key={art.id} className="p-2 border rounded-xl">
             <img
               src={art.url}
               alt={art.name}
-              className="h-52 w-full object-cover rounded"
+              className="h-20 lg:h-52 w-full object-cover rounded"
             />
-            <div className="flex flex-row justify-between items-center">
+            <div className="flex flex-row justify-between items-end">
               <div>
                 <h3 className="mt-2 font-bold">{art.name}</h3>
                 <p className="text-sm text-gray-600">{art.desc}</p>
@@ -109,10 +101,10 @@ const ImageUpload = () => {
                 </p>
               </div>
               <div
-                onClick={vote}
-                className="p-4 w-12 h-12 border rounded-full items-center flex justify-center font-medium text-2xl cursor-pointer"
+                onClick={() => vote(art.id, art.voteCount)}
+                className="px-1 py-0 border  rounded-full items-center flex justify-center font-medium cursor-pointer hover:bg-blue-100 active:bg-blue-200"
               >
-                +
+                Vote
               </div>
             </div>
           </div>

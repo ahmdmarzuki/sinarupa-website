@@ -39,4 +39,4 @@ const logout = () => {
   signOut(auth);
 };
 
-export { signup, login, logout };
+export { auth, signup, login, logout };

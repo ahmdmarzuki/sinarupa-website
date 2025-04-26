@@ -101,7 +101,7 @@ const ImageUpload = () => {
                 </p>
               </div>
               <div
-                onClick={() => vote(art.id, art.voteCount)}
+                onClick={() => vote(art.id)}
                 className="px-1 py-0 border  rounded-full items-center flex justify-center font-medium cursor-pointer hover:bg-blue-100 active:bg-blue-200"
               >
                 Vote

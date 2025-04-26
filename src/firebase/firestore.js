@@ -11,6 +11,7 @@ import {
 
 const db = getFirestore(app);
 const usersCollectionRef = collection(db, "users");
+const artToVoteRef = collection(db, "artToVote");
 
 const createUser = async (name, age) => {
   await addDoc(usersCollectionRef, { name: name, age: Number(age) });
@@ -27,4 +28,39 @@ const deleteUser = async (id) => {
   await deleteDoc(userDoc);
 };
 
-export { db, usersCollectionRef, createUser, updateUser, deleteUser };
+const createArtToVote = async (name, desc, url) => {
+  await addDoc(artToVoteRef, {
+    name: name,
+    desc: desc,
+    url: url,
+    voteCount: 0,
+  });
+};
+
+const getAllArtToVote = async () => {
+  const data = [];
+  const snapshot = await getDocs(collection(db, "artToVote"));
+
+  snapshot.forEach((doc) => {
+    data.push({ id: doc.id, ...doc.data() });
+  });
+
+  return data;
+};
+
+const vote = async () => {
+  const art = doc(db, "artToVote", id);
+  newField = { voteCount: voteCount + 1 };
+  await updateDoc(art, newField);
+};
+
+export {
+  db,
+  usersCollectionRef,
+  createUser,
+  updateUser,
+  deleteUser,
+  createArtToVote,
+  getAllArtToVote,
+  vote,
+};

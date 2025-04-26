@@ -48,10 +48,12 @@ const getAllArtToVote = async () => {
   return data;
 };
 
-const vote = async () => {
+const vote = async (id, voteCount) => {
   const art = doc(db, "artToVote", id);
-  newField = { voteCount: voteCount + 1 };
-  await updateDoc(art, newField);
+  const newField = { voteCount: voteCount + 1 };
+  await updateDoc(art, newField).then(() => {
+    alert("Vote berhasil");
+  });
 };
 
 export {

@@ -8,7 +8,6 @@ import {
   deleteDoc,
   doc,
 } from "firebase/firestore";
-import fpPromise from "./fingerPrint";
 import { auth } from "./auth";
 
 const db = getFirestore(app);

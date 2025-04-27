@@ -2,12 +2,16 @@ import React from "react";
 import { BlueButton } from "./Button";
 import logo from "/images/logo.png";
 import langkahSapa from "/images/langkah-sapa.png";
+import { motion } from "motion/react";
 
 const Navbar = () => {
   const navList = [
-    { title: "tess", href: "#" },
-    { title: "tess2", href: "#" },
-    { title: "tess3", href: "#" },
+    { title: "Latar Belakang", href: "#" },
+    { title: "Hadiah", href: "#" },
+    { title: "Timeline", href: "#" },
+    { title: "Panduan", href: "#" },
+    { title: "FAQ", href: "#" },
+    { title: "Hubungi Kami", href: "#" },
   ];
   return (
     <div className="fixed flex flex-col w-screen">
@@ -22,9 +26,23 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="bg-[url('/images/bar2.png')] bg-cover bg-top bg-no-repeat min-h-[7vh] px-[80px] flex gap-4 justify-end items-center">
+      <div className="bg-[url('/images/bar2.png')] bg-cover bg-top bg-no-repeat min-h-[7vh] px-[80px] flex justify-end items-center">
         {navList.map((nav) => {
-          return <h1>{nav.title}</h1>;
+          return (
+            <motion.div
+              className="px-[16px] py-[10px] transform skew-x-[-15deg] text-[#FBD185]"
+              whileHover={{
+                backgroundColor: "#48368A80",
+              }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              <div className="transform skew-x-[15deg]">
+                <a className="cursor-pointer font-medium transform skew-x-[30deg]">
+                  {nav.title}
+                </a>
+              </div>
+            </motion.div>
+          );
         })}
       </div>
     </div>

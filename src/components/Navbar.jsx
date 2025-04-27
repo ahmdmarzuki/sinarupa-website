@@ -21,7 +21,7 @@ const Navbar = () => {
           <span>Langkah Sapa</span>
         </div>
         <div className="flex flex-row gap-4">
-          <BlueButton label="Vote Sekarang" />
+          <BlueButton label="Vote Sekarang" navigateTo="/vote" />
           <BlueButton label="Pendaftaran" />
         </div>
       </div>

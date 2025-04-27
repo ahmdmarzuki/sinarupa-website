@@ -2,11 +2,7 @@ import React from "react";
 
 const PreEventHomepage = () => {
   return (
-    <div>
-      <section>Navbar</section>
-      <section>Home</section>
-      <section>Latar belakan</section>
-    </div>
+    <div className="bg-[url('/pre-event/images/bg-full.png')] bg-cover bg-top bg-no-repeat min-h-screen"></div>
   );
 };
 

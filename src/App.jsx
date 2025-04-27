@@ -10,7 +10,6 @@ function App() {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (!user) {
-        // Belum login, maka login anonymously
         signInAnonymously(auth)
           .then(() => {
             console.log("Signed in anonymously!");

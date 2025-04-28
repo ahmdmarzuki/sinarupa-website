@@ -5,6 +5,7 @@ import ImageUpload from "./pages/ImageUpload";
 import { useEffect } from "react";
 import { onAuthStateChanged, signInAnonymously } from "firebase/auth";
 import { auth } from "./firebase/auth";
+import VotingPage from "./pages/VotingPage";
 
 function App() {
   useEffect(() => {

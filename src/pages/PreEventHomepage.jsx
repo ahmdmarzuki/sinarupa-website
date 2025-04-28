@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 
 const PreEventHomepage = () => {
   return (
-    <div className="bg-[url('/images/bg-full.png')] bg-cover bg-top bg-no-repeat min-h-screen">
+    <div className="bg-[url('/images/bg-full.png')] bg-cover bg-top bg-no-repeat min-h-screen ">
       <Navbar />
       <section className="h-screen flex justify-center items-center text-6xl font-bold">
         MAAFFF BELOM DIBIKINNN

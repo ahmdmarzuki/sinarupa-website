@@ -9,6 +9,7 @@ import {
   doc,
 } from "firebase/firestore";
 import { auth } from "./auth";
+import { useId } from "react";
 
 const db = getFirestore(app);
 const usersCollectionRef = collection(db, "users");
@@ -49,12 +50,9 @@ const getAllArtToVote = async () => {
   return data;
 };
 
-const vote = async (id) => {
+const vote = async (artId, visitorId) => {
   try {
-    const user = auth.currentUser;
-    const userId = user.uid;
-
-    const voteDoc = await getDoc(doc(db, "votes", userId));
+    const voteDoc = await getDoc(doc(db, "votes", visitorId));
 
     if (voteDoc.exists()) {
       alert("UDAHHH VOTING WOEEE");
@@ -62,13 +60,13 @@ const vote = async (id) => {
     }
 
     // Update vote count langsung pakai Firestore increment
-    const artRef = doc(db, "artToVote", id);
+    const artRef = doc(db, "artToVote", artId);
     await updateDoc(artRef, {
       voteCount: increment(1),
     });
 
-    await setDoc(doc(db, "votes", userId), {
-      id: id,
+    await setDoc(doc(db, "votes", visitorId), {
+      id: artId,
       votedAt: new Date(),
     });
 
@@ -76,6 +74,17 @@ const vote = async (id) => {
   } catch (error) {
     alert("Error saat voting: ", error);
     // alert("Terjadi kesalahan saat voting. Coba lagi!");
+  }
+};
+
+const resetVote = async (visitorId) => {
+  try {
+    const voteDoc = doc(db, "votes", visitorId);
+
+    await deleteDoc(voteDoc);
+    alert(`berhasilll reset, ayok voting ulang`);
+  } catch (error) {
+    alert(`gagal reset: ${error}`);
   }
 };
 
@@ -88,4 +97,5 @@ export {
   createArtToVote,
   getAllArtToVote,
   vote,
+  resetVote,
 };

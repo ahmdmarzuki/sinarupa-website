@@ -6,6 +6,10 @@ import { useEffect } from "react";
 import { onAuthStateChanged, signInAnonymously } from "firebase/auth";
 import { auth } from "./firebase/auth";
 import VotingPage from "./pages/VotingPage";
+import Panduan from "./pages/Panduan";
+import DetailRules from "./pages/DetailRules";
+import Navbar from "./components/Navbar";
+import Timeline from "./pages/Timeline";
 
 function App() {
   useEffect(() => {
@@ -28,10 +32,15 @@ function App() {
 
   return (
     <main>
+       <Navbar /> {/* Navbar tetap muncul di semua halaman */}
       <Routes>
         <Route path="/" element={<PreEventHomepage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/vote" element={<ImageUpload />} />
+        <Route path="/voting" element={<VotingPage />} />
+        <Route path="/panduan" element={<Panduan />} /> 
+        <Route path="/rules" element={<DetailRules />} /> 
+        <Route path="/timeline" element={<Timeline />} />
       </Routes>
     </main>
   );

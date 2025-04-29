@@ -10,10 +10,16 @@ const BlueButton = ({ label, navigateTo }) => {
   return (
     <button
       onClick={handleClick}
-      className="relative px-8 py-3 h-min text-md font-semibold text-purple-800 bg-blue-200 hover:bg-blue-300 active:bg-blue-400"
+      className="relative px-8 py-3 h-min text-md font-semibold text-purple-800 bg-[url('/images/button.png')] bg-center bg-cover"
     >
       <span className="relative z-10">{label}</span>
     </button>
+    // <button
+    //   onClick={handleClick}
+    //   className="relative px-8 py-3 h-min text-md font-semibold text-purple-800 bg-blue-200 hover:bg-blue-300 active:bg-blue-400"
+    // >
+    //   <span className="relative z-10">{label}</span>
+    // </button>
   );
 };
 

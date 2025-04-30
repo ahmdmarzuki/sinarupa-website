@@ -7,12 +7,12 @@ import { motion } from "framer-motion";
 
 const Navbar = () => {
   const navList = [
-    { title: "Latar Belakang", href: "/latar-belakang" },
-    { title: "Hadiah", href: "/hadiah" },
+    { title: "Latar Belakang", href: "#" },
+    { title: "Hadiah", href: "#" },
     { title: "Timeline", href: "/timeline" },
     { title: "Panduan", href: "/panduan" },
-    { title: "FAQ", href: "/faq" },
-    { title: "Hubungi Kami", href: "/hubungi-kami" },
+    { title: "FAQ", href: "#" },
+    { title: "Hubungi Kami", href: "#" },
   ];
 
   return (

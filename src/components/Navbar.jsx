@@ -16,12 +16,13 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50">
-      {/* Top Bar */}
-      <div className="bg-[url('/images/bar1.png')] bg-cover bg-top bg-no-repeat flex justify-between items-center px-20 py-4">
-        <div className="flex items-center gap-4">
-          <img src={logo} alt="Logo" className="h-10 w-10 object-contain" />
-          <img src={langkahSapa} alt="Langkah Sapa" className="h-10 object-contain" />
+
+    <div className="fixed flex flex-col w-screen z-50">
+      <div className="bg-[url('/images/bar1.png')] bg-cover bg-top bg-no-repeat flex justify-between min-h-[10vh] px-[80px] items-center">
+        <div className="flex flex-row items-center relative h-[20%] gap-4">
+          <img src={logo} className="h-10 aspect-square" />
+          <img src={langkahSapa} className="h-10 aspect-auto" />
+
         </div>
         <div className="flex gap-4">
           <BlueButton label="Vote Sekarang" navigateTo="/vote" />

@@ -24,7 +24,7 @@ const Banner = ({ text }) => {
         ></div>
         <div
           ref={divRef}
-          className="absolute px-[20px] py-[20px] bg-[url('/images/bgCard.png')] bg-cover -left-4 -bottom-4"
+          className="absolute px-[40px] py-[20px] bg-[url('/images/bgCard.png')] bg-cover -left-4 -bottom-4"
         >
           {text}
         </div>

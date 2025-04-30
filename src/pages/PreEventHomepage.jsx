@@ -11,22 +11,26 @@ import PanduanTeknisLomba1 from "../sections/preEvent/PanduanTeknisLomba1";
 import PanduanPendaftaran1 from "../sections/preEvent/PanduanPendaftaran1";
 import Faq1 from "../sections/preEvent/Faq1";
 import Footer1 from "../sections/preEvent/Footer1";
+import Banner from "../components/Banner";
+import ReactLenis from "lenis/react";
 
 const PreEventHomepage = () => {
   return (
     <div className="bg-[url('/images/bg-full.png')] bg-cover bg-top bg-no-repeat min-h-screen ">
-      <Navbar />
-      <Home1 />
-      <LatarBelakang1 />
-      <Hadiah1 />
-      <Timeline1 />
-      <Rundown1 />
-      <RincianLomba1 />
-      <KriteriaPenilaian1 />
-      <PanduanTeknisLomba1 />
-      <PanduanPendaftaran1 />
-      <Faq1 />
-      <Footer1 />
+      <ReactLenis root options={{ lerp: 0.05 }}>
+        <Navbar />
+        <Home1 />
+        <LatarBelakang1 />
+        <Hadiah1 />
+        <Timeline1 />
+        <Rundown1 />
+        <RincianLomba1 />
+        <KriteriaPenilaian1 />
+        <PanduanTeknisLomba1 />
+        <PanduanPendaftaran1 />
+        <Faq1 />
+        <Footer1 />
+      <ReactLenis />
     </div>
   );
 };

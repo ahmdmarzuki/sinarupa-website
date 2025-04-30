@@ -6,6 +6,8 @@ import { useEffect } from "react";
 import { onAuthStateChanged, signInAnonymously } from "firebase/auth";
 import { auth } from "./firebase/auth";
 import VotingPage from "./pages/VotingPage";
+import PanduanTeknisLomba1 from "./sections/preEvent/PanduanTeknisLomba1";
+import RincianLomba1 from "./sections/preEvent/RincianLomba1";
 
 function App() {
   useEffect(() => {

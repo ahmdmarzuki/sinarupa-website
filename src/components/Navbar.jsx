@@ -16,13 +16,11 @@ const Navbar = () => {
   ];
 
   return (
-
     <div className="fixed flex flex-col w-screen z-50">
       <div className="bg-[url('/images/bar1.png')] bg-cover bg-top bg-no-repeat flex justify-between min-h-[10vh] px-[80px] items-center">
         <div className="flex flex-row items-center relative h-[20%] gap-4">
           <img src={logo} className="h-10 aspect-square" />
           <img src={langkahSapa} className="h-10 aspect-auto" />
-
         </div>
         <div className="flex gap-4">
           <BlueButton label="Vote Sekarang" navigateTo="/vote" />

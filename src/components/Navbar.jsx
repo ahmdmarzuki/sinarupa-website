@@ -30,25 +30,27 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Navigation Bar */}
-      <div className="bg-[url('/images/bar2.png')] bg-cover bg-top bg-no-repeat flex justify-end items-center px-20 h-[7vh]">
-        {navList.map((nav) => (
-          <motion.div
-            key={nav.title}
-            className="px-4 py-2 transform skew-x-[-15deg] text-[#FBD185]"
-            whileHover={{ backgroundColor: "#48368A80" }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-          >
-            <div className="transform skew-x-[15deg]">
-              <Link
-                to={nav.href}
-                className="cursor-pointer font-medium text-sm sm:text-base"
-              >
-                {nav.title}
-              </Link>
-            </div>
-          </motion.div>
-        ))}
+
+      <div className="bg-[url('/images/bar2.png')] bg-cover bg-top bg-no-repeat min-h-[7vh] px-[80px] flex justify-end items-center">
+        {navList.map((nav, index) => {
+          return (
+            <motion.div
+              key={index}
+              className="px-[16px] py-[10px] transform skew-x-[-15deg] text-[#FBD185]"
+              whileHover={{
+                backgroundColor: "#48368A80",
+              }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              <div className="transform skew-x-[15deg]">
+                <a className="cursor-pointer font-medium transform skew-x-[30deg]">
+                  {nav.title}
+                </a>
+              </div>
+            </motion.div>
+          );
+        })}
+
       </div>
     </div>
   );

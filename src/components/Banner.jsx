@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 
-const Banner = ({ text }) => {
+const Banner = ({ children, className }) => {
   const divRef = useRef(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
 
@@ -26,7 +26,7 @@ const Banner = ({ text }) => {
           ref={divRef}
           className="absolute px-[40px] py-[20px] bg-[url('/images/bgCard.png')] bg-cover -left-4 -bottom-4"
         >
-          {text}
+          <div className={className}>{children}</div>
         </div>
       </div>
     </div>

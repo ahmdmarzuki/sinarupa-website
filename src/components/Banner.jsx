@@ -9,7 +9,7 @@ const Banner = ({ children, className }) => {
       const { width, height } = divRef.current.getBoundingClientRect();
       setSize({ width, height });
     }
-  }, []);
+  }, [size]);
 
   return (
     <div className="">

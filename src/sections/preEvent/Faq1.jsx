@@ -59,7 +59,8 @@ const qnaList = [
 
 const Faq1 = () => {
   return (
-    <div className="h-screen w-screen flex flex-col items-center py-4">
+
+    <div id="faq" className="h-screen w-screen flex flex-col items-center py-4">
 
       <div className="relative w-full flex justify-center mb-13">
         <BannerOrange className="w-[40vw] flex justify-center items-center">
@@ -93,4 +94,5 @@ const Faq1 = () => {
 }
 
 export default Faq1
+
 

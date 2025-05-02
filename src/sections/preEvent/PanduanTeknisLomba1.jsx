@@ -1,7 +1,11 @@
 import React from "react";
 
 const PanduanTeknisLomba1 = () => {
-  return <div className="h-screen w-screen">PanduanTeknisLomba1</div>;
+  return (
+    <section id="panduan" className="h-screen w-screen">
+      PanduanTeknisLomba1
+    </section>
+  );
 };
 
 export default PanduanTeknisLomba1;

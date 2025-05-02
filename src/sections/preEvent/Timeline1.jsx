@@ -1,7 +1,11 @@
 import React from "react";
 
 const Timeline1 = () => {
-  return <div className="h-screen w-screen">Timeline1</div>;
+  return (
+    <section id="timeline" className="h-screen w-screen">
+      Timeline1
+    </section>
+  );
 };
 
 export default Timeline1;

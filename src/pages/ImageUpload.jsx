@@ -32,17 +32,6 @@ const ImageUpload = () => {
 
   const [visitorId, setVisitorId] = useState(null);
 
-  // const [udahVote, setUdahVote] = useState(false);
-
-  // const udahVote = async () => {
-  //   const voteDoc = await getDoc(doc(db, "votes", visitorId));
-
-  //   if (voteDoc.exists()) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // };
   useEffect(() => {
     const loadFingerprint = async () => {
       const fp = await FingerprintJS.load();

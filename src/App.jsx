@@ -10,6 +10,7 @@ import VotingPage from "./pages/VotingPage";
 import DetailRules from "./pages/DetailRules";
 import Navbar from "./components/Navbar";
 import Timeline from "./pages/Timeline";
+import VoteCarousel from "./pages/VoteCarousel";
 
 function App() {
   useEffect(() => {
@@ -32,12 +33,10 @@ function App() {
 
   return (
     <main>
-      <Navbar /> {/* Navbar tetap muncul di semua halaman */}
       <Routes>
         <Route path="/" element={<PreEventHomepage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/vote" element={<ImageUpload />} />
-        <Route path="/voting" element={<VotingPage />} />
+        <Route path="/vote" element={<VoteCarousel />} />
         <Route path="/rules" element={<DetailRules />} />
         <Route path="/timeline" element={<Timeline />} />
       </Routes>

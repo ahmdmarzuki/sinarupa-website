@@ -1,7 +1,11 @@
 import React from "react";
 
 const Faq1 = () => {
-  return <div className="h-screen w-screen">Faq1</div>;
+  return (
+    <section id="faq" className="h-screen w-screen">
+      Faq1
+    </section>
+  );
 };
 
 export default Faq1;

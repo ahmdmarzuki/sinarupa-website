@@ -13,7 +13,7 @@ const LatarBelakang1 = () => {
         <Banner className="w-[80vw] grid grid-cols-4">
           {/* Row 1 */}
           <div className="col-span-3">
-            <p className="flex text-justify font-host">
+            <p className="flex text-justify font-host text-[#4A3D8F]">
             Langkah Sapa hadir sebagai titik awal dari setiap perubahan. Audiens diajak untuk keluar dari zona nyaman dan menyelami dunia baru yang penuh ketidakpastian dan potensi. Dengan menghadirkan lomba mixed media art, kami mengajak peserta untuk menuangkan kreativitas dan mendalami proses perpisahan dengan menciptakan suatu karya yang menggambarkan perjalanan penuh perubahan.
             <br />
             <br />
@@ -29,7 +29,7 @@ const LatarBelakang1 = () => {
             <img src={logo} className="w-[15vw] h-[15vw] object-center" />
           </div>
           <div className="col-span-3">
-            <p className="flex text-justify font-host">
+            <p className="flex text-justify font-host text-[#4A3D8F]">
             Tema “Fragments of Change” merujuk pada kondisi transisi atau peralihan yang terjadi pada seseorang ataupun sesuatu. Dalam setiap perubahan, kondisi lama akan mengalami pemisahan untuk memberi ruang bagi sesuatu yang baru dan lebih berkembang. 
             <br />
             <br />

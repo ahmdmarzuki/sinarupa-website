@@ -1,6 +1,7 @@
 import React from 'react'
 import BannerOrange from "../../components/BannerOrange";
 import bgCard from "/images/bgCard.png";
+import Accordion from "../../components/Accordion";
 import cardOrange from "/images/cardOrange.png";
 import Banner from "../../components/Banner";
 
@@ -69,22 +70,21 @@ const Faq1 = () => {
 
       <div
         className="relative bg-cover bg-center w-[90vw] h-[400vw] overflow-y-scroll p-6"
-        style={{ backgroundImage: `url(${bgCard})`,boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
+        style={{ backgroundImage: `url(${bgCard})`,
+        boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" 
+      }}
       >
-       {qnaList.map((item, index) => (
-          <div
+       <div
+       className="grid grid-cols-1 gap-4">
+        {qnaList.map((item, index) => (
+          <Accordion
             key={index}
-            className="bg-no-repeat bg-cover w-full h-auto mb-6 p-4 text-left text-[#4A3D8F] font-host font-semibold"
-            style={{
-              backgroundImage: `url(${cardOrange})`,
-              boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-              minHeight: "90px",
-            }}
-          >
-            <p className="mb-2">{item.question}</p>
-            <p className="text-sm font-normal">{item.answer}</p>
-          </div>
+            question={item.question}
+            answer={item.answer}
+            cardBackground={cardOrange}
+          />
         ))}
+       </div>
 
       </div>
    

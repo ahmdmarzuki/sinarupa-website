@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 
-const Banner = ({ children, className }) => {
+const BannerOrange = ({ children, className }) => {
   const divRef = useRef(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
 
@@ -33,4 +33,4 @@ const Banner = ({ children, className }) => {
   );
 };
 
-export default Banner;
+export default BannerOrange;

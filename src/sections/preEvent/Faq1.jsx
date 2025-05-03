@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useRef, useEffect } from "react";
 import BannerOrange from "../../components/BannerOrange";
 import bgCard from "/images/bgCard.png";
 import Accordion from "../../components/Accordion";
 import cardOrange from "/images/cardOrange.png";
-import Banner from "../../components/Banner";
+import ReactLenis from "lenis/react";
+import useSmoothScroll from "../../components/useSmoothScroll";
 
+const Faq1 = () => {
+  const qnaRef = useRef(null);
+  useSmoothScroll(qnaRef);
 
 const qnaList = [
   {
@@ -25,8 +29,8 @@ const qnaList = [
     answer: "Lomba akan dilaksanakan secara luring (offline) pada Sabtu, 31 Mei 2025, bertempat di Gedung Serba Guna (GSG), ITB Jatinangor, Jawa Barat."
   },
   {
-    question: "Q: Apa saja media dan alat yang diperbolehkan digunakan?",
-    answer: "A: Peserta hanya boleh menggunakan cat akrilik, cat poster, oil pastel, dan pilox. Panitia menyediakan kanvas 30 x 30 cm, tetapi peserta wajib membawa alat dan bahan pribadi."
+    question: "Apa saja media dan alat yang diperbolehkan digunakan?",
+    answer: "Peserta hanya boleh menggunakan cat akrilik, cat poster, oil pastel, dan pilox. Panitia menyediakan kanvas 30 x 30 cm, tetapi peserta wajib membawa alat dan bahan pribadi."
   },
   {
     question: "Berapa biaya pendaftaran lomba?",
@@ -58,10 +62,8 @@ const qnaList = [
   },
 ];
 
-const Faq1 = () => {
   return (
-    <div className="h-screen w-screen flex flex-col items-center py-4">
-
+    <div id="faq" className="h-screen w-screen flex flex-col items-center py-4">
       <div className="relative w-full flex justify-center mb-13">
         <BannerOrange className="w-[40vw] flex justify-center items-center">
           <h1 className="font-oddval text-[#4A3D8F] text-5xl">FAQ</h1>
@@ -71,10 +73,11 @@ const Faq1 = () => {
       <div
         className="relative bg-cover bg-center w-[90vw] h-[400vw] overflow-y-scroll p-6"
         style={{ backgroundImage: `url(${bgCard})`,
-        boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" 
+        boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+        overflowY: "scroll", 
       }}
       >
-       <div
+        <div
        className="grid grid-cols-1 gap-4">
         {qnaList.map((item, index) => (
           <Accordion
@@ -85,12 +88,9 @@ const Faq1 = () => {
           />
         ))}
        </div>
-
       </div>
-   
     </div>
-  )
-}
+  );
+};
 
-export default Faq1
-
+export default Faq1;

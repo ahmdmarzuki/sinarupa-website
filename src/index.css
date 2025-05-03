@@ -5,6 +5,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: Host Grotesk;
   src: url("/fonts/HostGrotesk-Regular.ttf") format("truetype");

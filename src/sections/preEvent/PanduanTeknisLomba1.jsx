@@ -5,6 +5,7 @@ import PageWrapper from "../../components/PageWrapper";
 
 const PanduanTeknisLomba1 = () => {
   return (
+
     <PageWrapper>
       <motion.div id="panduan">
         <div className="flex flex-col items-center gap-7 relative">
@@ -67,6 +68,7 @@ const PanduanTeknisLomba1 = () => {
         </div>
       </motion.div>
     </PageWrapper>
+
   );
 };
 

@@ -15,16 +15,16 @@ const Banner = ({ children, className }) => {
     <div className="">
       <div className="relative">
         <div
-          className=" bg-[url('/images/bgCard.png')] bg-cover"
+          className=" bg-[url('/images/cardOrange.png')] bg-cover"
           style={{ opacity: 0.6, width: size.width, height: size.height }}
         ></div>
         <div
-          className="absolute  bg-[url('/images/bgCard.png')] bg-cover -left-2 -bottom-2"
+          className="absolute  bg-[url('/images/cardOrange.png')] bg-cover -left-2 -bottom-2"
           style={{ opacity: 0.8, width: size.width, height: size.height }}
         ></div>
         <div
           ref={divRef}
-          className="absolute px-[40px] py-[20px] bg-[url('/images/bgCard.png')] bg-cover -left-4 -bottom-4"
+          className="absolute px-[40px] py-[20px] bg-[url('/images/cardOrange.png')] bg-cover -left-4 -bottom-4"
         >
           <div className={className}>{children}</div>
         </div>

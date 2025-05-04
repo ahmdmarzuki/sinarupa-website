@@ -57,7 +57,7 @@ const qnaList = [
   },
   {
     question: "Apa hadiah yang disediakan untuk para pemenang?",
-    answer: "Juara I: Rp 1.000.000, Juara II: Rp 600.000, Juara III: Rp 400.000, Juara Favorit: Voucher Artemedia Rp 200.000"
+    answer: "Juara I: Rp 1.000.000, Juara II: Rp 600.000, Juara III: Rp 400.000, Juara Favorit: Rp 200.000"
   },
 ];
 
@@ -70,14 +70,14 @@ const qnaList = [
       </div>
 
       <div
-        className="relative bg-cover bg-center w-[90vw] h-[400vw] overflow-y-scroll p-6"
+        className=" relative bg-cover bg-center w-[90vw] h-[400vw] overflow-y-scroll p-6"
         style={{ backgroundImage: `url(${bgCard})`,
         boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
         overflowY: "scroll", 
       }}
       >
         <div
-       className="grid grid-cols-1 gap-4">
+       className="grid grid-cols-2 gap-4">
         {qnaList.map((item, index) => (
           <Accordion
             key={index}

@@ -37,6 +37,8 @@ function App() {
         <Route path="/voting" element={<VotingPage />} />
         <Route path="/rules" element={<DetailRules />} />
         <Route path="/panduan" element={<PanduanTeknisLomba1 />} />
+      
+
       </Routes>
     </main>
   );

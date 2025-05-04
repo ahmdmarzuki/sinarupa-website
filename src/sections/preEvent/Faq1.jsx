@@ -74,7 +74,7 @@ const Faq1 = () => {
   ];
 
   return (
-    <div id="faq" className="h-screen w-screen flex flex-col items-center py-4">
+    <div id="faq" className="w-screen flex flex-col items-center py-4">
       <div className="relative w-full flex justify-center mb-13">
         <BannerOrange className="w-[40vw] flex justify-center items-center">
           <h1 className="font-oddval text-[#4A3D8F] text-5xl">FAQ</h1>
@@ -82,14 +82,16 @@ const Faq1 = () => {
       </div>
 
       <div
-        className="relative bg-cover bg-center w-[90vw] h-[400vw] overflow-y-scroll p-6"
+        className="
+        relative bg-cover bg-center w-[90vw]  
+        md:max-h-[70vh] md:overflow-y-auto p-8"
         style={{
           backgroundImage: `url(${bgCard})`,
           boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
           overflowY: "scroll",
         }}
       >
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-col md:flex-row gap-4">
           <div>
             {qnaList1.map((item, index) => (
               <Accordion

@@ -1,77 +1,64 @@
+// src/pages/PanduanTeknisLomba1.jsx
+
 import React from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import Banner from "../../components/Banner";
 import PageWrapper from "../../components/PageWrapper";
+import BannerOrange from "../../components/BannerOrange";
 
 const PanduanTeknisLomba1 = () => {
-
   return (
-
     <PageWrapper>
-      <motion.div id="panduan">
-        <div className="flex flex-col items-center gap-7 relative">
-          <h1 className="text-6xl font-oddval mb-[80px] text-center text-purple-900">
-            PANDUAN TEKNIS LOMBA
-          </h1>
-
-          <div className="relative w-[850px]">
-            <div className="relative w-full">
-              <img
-                src="/images/Box Biru 2.png"
-                alt="Panduan Teknis"
-                className="w-full h-full object-cover absolute inset-0 z-0"
-                style={{ borderRadius: 0 }}
-              />
-              <div
-                className="relative z-10 px-12 py-10"
-                style={{ fontFamily: "Host Grotesk" }}
-              >
-                <p className="text-lg font-bold text-purple-900 mb-2">
-                  I. KETENTUAN PESERTA
-                </p>
-                <p className="text-black text-base mb-4">
-                  Terbuka untuk tingkat SMA, SMK, dan setara se-Indonesia
-                </p>
-
-                <p className="text-lg font-bold text-purple-900 mb-2">
-                  II. PERATURAN LOMBA
-                </p>
-                <ul className="list-disc text-black text-base pl-6 space-y-1">
-                  <li>Peserta wajib hadir tepat waktu dan melakukan registrasi sebelum lomba dimulai.</li>
-                  <li>Karya akhir tidak boleh melebihi ukuran kanvas 30 × 40 cm.</li>
-                  <li>Peserta wajib menggunakan palet warna yang disediakan panitia dalam hasil akhir karya (link pdf copal).</li>
-                  <li>Peserta hanya diperkenankan melihat referensi berupa print out atau sketsa dalam satu lembar kertas A4 saat lomba berlangsung.</li>
-                  <li>Peserta bertanggung jawab atas alat dan bahan pribadi, panitia hanya menyediakan kanvas A3.</li>
-                  <li>Peserta harus menyimpan perangkat digital di dalam tas masing-masing selama lomba.</li>
-                  <li>Tidak ada perpanjangan waktu bagi peserta yang terlambat.</li>
-                  <li>Karya akhir harus bersifat orisinal dan tidak mengandung unsur pornografi atau SARA.</li>
-                  <li>Panitia berhak mendiskualifikasi peserta jika terjadi pelanggaran atau kecurangan.</li>
-                  <li>Jika peserta mengundurkan diri, dana tidak akan dikembalikan.</li>
-                  <li>Keputusan panitia bersifat final dan tidak dapat diganggu gugat.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <Link to="/rules">
-  <div className="relative w-fit">
-    <img
-      src="/images/blue-button.png"
-      alt="Tombol Panduan"
-      className="w-[300px]"
-    />
-    <p className="absolute inset-0 flex items-center justify-center text-lg font-semibold text-purple-900">
-      Panduan Lebih Rinci
-    </p>
-  </div>
-</Link>
-
+      <section id="latar-belakang" className="min-h-screen w-screen">
+        {/* Judul Utama */}
+        <div className="flex justify-center py-8">
+          <BannerOrange className="text-5xl sm:text-5xl font-oddval px-8 py-4 text-justify font-host text-[#4A3D8F] pointer-events-none">
+            Panduan Teknis Lomba
+          </BannerOrange>
         </div>
-      </motion.div>
+
+        {/* Konten Ringkasan */}
+        <div className="flex justify-center mb-3">
+          <Banner className="w-[80vw]">
+            <div className="col-span-3">
+              <p className="text-justify text-[#4A3D8F] text-lg font-semibold">
+                I. KETENTUAN PESERTA
+              </p>
+              <p className="text-justify font-host text-[#4A3D8F]">
+                Terbuka untuk tingkat SMA, SMK, dan setara se-Indonesia.
+              </p>
+
+              <p className="text-justify text-[#4A3D8F] text-lg font-semibold mt-4">
+                II. PERATURAN LOMBA
+              </p>
+              <ul className="list-inside space-y-2 text-base text-[#4A3D8F] pl-6">
+                <li className="flex items-start"><span className="mr-3">•</span> Peserta wajib hadir tepat waktu dan melakukan registrasi sebelum lomba dimulai.</li>
+                <li className="flex items-start"><span className="mr-3">•</span> Karya akhir tidak boleh melebihi ukuran kanvas 30 × 40 cm.</li>
+                <li className="flex items-start"><span className="mr-3">•</span> Peserta wajib menggunakan palet warna yang disediakan panitia dalam hasil akhir karya.</li>
+                <li className="flex items-start"><span className="mr-3">•</span> Hanya boleh membawa referensi berupa satu lembar print/sketsa ukuran A4.</li>
+                <li className="flex items-start"><span className="mr-3">•</span> Bertanggung jawab atas alat & bahan pribadi. Panitia hanya menyediakan kanvas A3.</li>
+                <li className="flex items-start"><span className="mr-3">•</span> Perangkat digital harus disimpan selama lomba berlangsung.</li>
+                <li className="flex items-start"><span className="mr-3">•</span> Tidak ada tambahan waktu bagi peserta yang terlambat.</li>
+                <li className="flex items-start"><span className="mr-3">•</span> Karya harus orisinal dan tidak mengandung unsur pornografi atau SARA.</li>
+                <li className="flex items-start"><span className="mr-3">•</span> Panitia berhak mendiskualifikasi peserta jika melanggar aturan.</li>
+                <li className="flex items-start"><span className="mr-3">•</span> Pengunduran diri tidak mendapat pengembalian dana.</li>
+                <li className="flex items-start"><span className="mr-3">•</span> Keputusan panitia bersifat final dan tidak dapat diganggu gugat.</li>
+              </ul>
+            </div>
+          </Banner>
+        </div>
+
+        {/* Tombol Menuju Detail */}
+        <div className="flex justify-center py-6">
+          <Link to="/rules">
+            <button className="bg-[#4A3D8F] hover:bg-[#372f6f] text-white font-semibold px-6 py-2 rounded-md transition">
+              Lihat Panduan Lengkap
+            </button>
+          </Link>
+        </div>
+      </section>
     </PageWrapper>
-
   );
-
 };
 
 export default PanduanTeknisLomba1;

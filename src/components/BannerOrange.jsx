@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 
-const Banner = ({ children, className }) => {
+const BannerOrange = ({ children, className }) => {
   const divRef = useRef(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
 
@@ -15,6 +15,7 @@ const Banner = ({ children, className }) => {
     <div className="">
       <div className="relative">
         <div
+
           className=" bg-[url('/images/cardOrange.png')] bg-cover"
           style={{ opacity: 0.6, width: size.width, height: size.height }}
         ></div>
@@ -25,6 +26,7 @@ const Banner = ({ children, className }) => {
         <div
           ref={divRef}
           className="absolute px-[40px] py-[20px] bg-[url('/images/cardOrange.png')] bg-cover -left-4 -bottom-4"
+
         >
           <div className={className}>{children}</div>
         </div>
@@ -33,4 +35,4 @@ const Banner = ({ children, className }) => {
   );
 };
 
-export default Banner;
+export default BannerOrange;

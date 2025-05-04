@@ -4,9 +4,41 @@ import bgCard from "/images/bgCard.png";
 import Accordion from "../../components/Accordion";
 import cardOrange from "/images/cardOrange.png";
 
-
 const Faq1 = () => {
   const qnaRef = useRef(null);
+
+  const qnaList1 = [
+    {
+      question: "Apa itu Langkah Sapa?",
+      answer:
+        "Langkah Sapa adalah pre-event dari pameran Sintesa Rupa 2025 yang menghadirkan lomba mixed media art. Acara ini mengajak peserta menyelami makna perpisahan sebagai gestur awal menuju perubahan.",
+    },
+    {
+      question: "Siapa saja yang boleh mengikuti lomba Mixed Media Art?",
+      answer:
+        "Lomba ini terbuka untuk pelajar tingkat SMA, SMK, dan sederajat dari seluruh Indonesia.",
+    },
+    {
+      question: "Apa tema lomba tahun ini?",
+      answer:
+        "Tema lomba adalah “Perubahan”, yang mencakup berbagai bentuk transisi dalam kehidupan seperti pertumbuhan manusia, perubahan musim, regulasi emosi, hingga metamorfosis makhluk hidup.",
+    },
+    {
+      question: "Kapan dan di mana lomba akan dilaksanakan?",
+      answer:
+        "Lomba akan dilaksanakan secara luring (offline) pada Sabtu, 31 Mei 2025, bertempat di Gedung Serba Guna (GSG), ITB Jatinangor, Jawa Barat.",
+    },
+    {
+      question: "Apa saja media dan alat yang diperbolehkan digunakan?",
+      answer:
+        "Peserta hanya boleh menggunakan cat akrilik, cat poster, oil pastel, dan pilox. Panitia menyediakan kanvas 30 x 30 cm, tetapi peserta wajib membawa alat dan bahan pribadi.",
+    },
+    {
+      question: "Berapa biaya pendaftaran lomba?",
+      answer:
+        "Biaya pendaftaran adalah Rp 50.000, dengan fasilitas berupa kanvas 30 x 30 cm dan e-sertifikat.",
+    },
+  ];
 
 
 const qnaList = [
@@ -61,8 +93,9 @@ const qnaList = [
   },
 ];
 
+
   return (
-    <div id="faq" className="h-screen w-screen flex flex-col items-center py-4">
+    <div id="faq" className="w-screen flex flex-col items-center py-4">
       <div className="relative w-full flex justify-center mb-13">
         <BannerOrange className="w-[40vw] flex justify-center items-center">
           <h1 className="font-oddval text-[#4A3D8F] text-5xl">FAQ</h1>
@@ -70,6 +103,7 @@ const qnaList = [
       </div>
 
       <div
+
         className=" relative bg-cover bg-center w-[90vw] h-[400vw] overflow-y-scroll p-6"
         style={{ backgroundImage: `url(${bgCard})`,
         boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
@@ -87,6 +121,7 @@ const qnaList = [
           />
         ))}
        </div>
+
       </div>
     </div>
   );

@@ -6,7 +6,9 @@ import { BlueButton } from "../../components/Button";
 import BannerOrange from "../../components/BannerOrange";
 
 const PanduanTeknisLomba1 = () => {
+
   const navigate = useNavigate();
+
 
   const handleClick = () => {
     navigate("/rules");
@@ -93,6 +95,7 @@ const PanduanTeknisLomba1 = () => {
       </div>
     </section>
   );
+
 };
 
 export default PanduanTeknisLomba1;

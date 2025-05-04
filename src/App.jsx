@@ -33,7 +33,7 @@ function App() {
 
   return (
     <main>
-      <Navbar />
+
       <Routes>
         <Route path="/" element={<PreEventHomepage />} />
         <Route path="/login" element={<LoginPage />} />

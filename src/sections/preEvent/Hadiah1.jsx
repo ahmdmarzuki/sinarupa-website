@@ -1,11 +1,7 @@
 import React from "react";
 
 const Hadiah1 = () => {
-  return (
-    <section id="hadiah" className="h-screen w-screen">
-      Hadiah1
-    </section>
-  );
+  return <div className="h-screen w-screen">Hadiah1</div>;
 };
 
 export default Hadiah1;

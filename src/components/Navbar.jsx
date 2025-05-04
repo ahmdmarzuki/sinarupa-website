@@ -1,9 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { BlueButton } from "./Button";
 import logo from "/images/logo.png";
 import langkahSapa from "/images/langkah-sapa.png";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const navList = [
@@ -24,7 +23,7 @@ const Navbar = () => {
         </div>
         <div className="flex gap-4">
           <BlueButton label="Vote Sekarang" navigateTo="/vote" />
-          <BlueButton label="Pendaftaran" navigateTo="" />
+          <BlueButton label="Pendaftaran" navigateTo="/pendaftaran" />
         </div>
       </div>
 
@@ -38,6 +37,10 @@ const Navbar = () => {
                 backgroundColor: "#48368A80",
               }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
+              onClick={() => {
+                const target = document.getElementById(nav.href);
+                target?.scrollIntoView({ behavior: "smooth" });
+              }}
             >
               <div className="transform skew-x-[15deg]">
                 <a className="cursor-pointer font-medium transform skew-x-[30deg]">

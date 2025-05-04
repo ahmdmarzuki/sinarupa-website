@@ -2,6 +2,7 @@ import React from "react";
 
 const Home1 = () => {
   return (
+
     <div className="w-full min-h-screen px-6 pt-20 pb-10 flex flex-col items-center justify-center">
       {/* TITLE: LANGKAH SAPA */}
       <img
@@ -31,6 +32,7 @@ const Home1 = () => {
           Daftar Sekarang
         </div>
       </a>
+
     </div>
   );
 };

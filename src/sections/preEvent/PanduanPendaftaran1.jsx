@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const PanduanPendaftaran = ({ className }) => {
   return (
     <div className="w-full flex flex-col justify-center items-center pt-10 pb-6 min-h-[120px] px-4 sm:px-6 md:px-8">
@@ -122,3 +123,4 @@ const PanduanPendaftaran = ({ className }) => {
 };
 
 export default PanduanPendaftaran;
+

@@ -15,34 +15,18 @@ const BannerOrange = ({ children, className }) => {
     <div className="">
       <div className="relative">
         <div
-          style={{ 
-            backgroundImage: "url('/images/Box Orange.png')",
-            opacity: 0.6,
-            backgroundSize: "cover",
-            width: "100%",
-            height: "100%",
-            position: "absolute",
-            top: 0,
-            left: 0
-          }}
-        />
+
+          className=" bg-[url('/images/cardOrange.png')] bg-cover"
+          style={{ opacity: 0.6, width: size.width, height: size.height }}
+        ></div>
         <div
-          className="absolute -left-2 -bottom-2"
-          style={{ 
-            backgroundImage: "url('/images/Box Orange.png')",
-            backgroundSize: "cover",
-            opacity: 0.8, 
-            width: size.width, 
-            height: size.height 
-          }}
-        />
+          className="absolute  bg-[url('/images/cardOrange.png')] bg-cover -left-2 -bottom-2"
+          style={{ opacity: 0.8, width: size.width, height: size.height }}
+        ></div>
         <div
           ref={divRef}
-          className="absolute px-[40px] py-[20px] -left-4 -bottom-4"
-          style={{
-            backgroundImage: "url('/images/Box Orange.png')",
-            backgroundSize: "cover"
-          }}
+          className="absolute px-[40px] py-[20px] bg-[url('/images/cardOrange.png')] bg-cover -left-4 -bottom-4"
+
         >
           <div className={className}>{children}</div>
         </div>

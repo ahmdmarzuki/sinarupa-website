@@ -19,23 +19,23 @@ function DetailRules() {
           <div className="flex justify-center mb-3">
             <Banner className="w-[80vw] grid grid-cols-4">
           
-              <div className="bg-[#ff7e00] text-yellow-100 text-center py-4 rounded-t-md col-span-4">
+              <div className="bg-[#ff7e00] text-[#4A3D8F] text-center py-4 rounded-t-md col-span-4">
                 <h1 className="text-4xl font-oddval tracking-wide">
                   PANDUAN TEKNIS LOMBA
                 </h1>
               </div>
 
         
-              <div className="px-8 py-6 text-white text-sm leading-relaxed space-y-6 col-span-4 text-justify">
+              <div className="px-8 py-6 text-[#4A3D8F] text-sm leading-relaxed space-y-6 col-span-4 text-justify">
                
                 <div>
-                  <h2 className="font-bold text-white">I. KETENTUAN PESERTA</h2>
+                  <h2 className="font-bold text-[#4A3D8F]">I. KETENTUAN PESERTA</h2>
                   <p>Terbuka untuk tingkat SMA, SMK, dan setara se-Indonesia</p>
                 </div>
 
          
                 <div className="mt-4">
-                  <h2 className="font-bold text-white">II. PERATURAN LOMBA</h2>
+                  <h2 className="font-bold text-[#4A3D8F]">II. PERATURAN LOMBA</h2>
                   <ul className="list-disc list-inside space-y-1">
                     <li>Peserta wajib hadir tepat waktu dan melakukan registrasi sebelum lomba dimulai.</li>
                     <li>Karya akhir tidak boleh melebihi ukuran kanvas 30 × 40 cm.</li>
@@ -53,7 +53,7 @@ function DetailRules() {
 
             
                 <div className="mt-4">
-                  <h2 className="font-bold text-white">III. KRITERIA PENILAIAN</h2>
+                  <h2 className="font-bold text-[#4A3D8F]">III. KRITERIA PENILAIAN</h2>
                   <ul className="list-disc list-inside space-y-1">
                     <li>Kreativitas dan Orisinalitas Ide: 30%</li>
                     <li>Pengembangan Konsep: 20%</li>
@@ -64,7 +64,7 @@ function DetailRules() {
                 </div>
 
                 <div className="mt-4">
-                  <h2 className="font-bold text-white">IV. HADIAH PEMENANG</h2>
+                  <h2 className="font-bold text-[#4A3D8F]">IV. HADIAH PEMENANG</h2>
                   <ul className="space-y-1">
                     <li><strong>Juara I:</strong> 1.000.000 + (device)</li>
                     <li><strong>Juara II:</strong> 600.000 + bundle art merk ternama (Winsor, Polychromos, Prisma, Van Gogh)</li>
@@ -75,7 +75,7 @@ function DetailRules() {
 
                
                 <div className="mt-4">
-                  <h2 className="font-bold text-white">V. RINCIAN LOMBA</h2>
+                  <h2 className="font-bold text-[#4A3D8F]">V. RINCIAN LOMBA</h2>
                   <ul className="list-disc list-inside space-y-1">
                     <li>Lomba bersifat individu dan akan berjalan secara luring (offline) pada Sabtu, 31 Mei 2025 di GSG ITB Jatinangor.</li>
                     <li>Durasi pengerjaan: 240 menit.</li>
@@ -90,7 +90,7 @@ function DetailRules() {
 
                
                 <div className="mt-4">
-                  <h2 className="font-bold text-white">VI. PELAKSANAAN LOMBA</h2>
+                  <h2 className="font-bold text-[#4A3D8F]">VI. PELAKSANAAN LOMBA</h2>
 
                   <p className="font-semibold">• Tahap Pendaftaran Ulang</p>
                   <p>Peserta hadir di GSG, ITB Jatinangor dan wajib melakukan pendaftaran ulang sebelum pemaparan materi dimulai.</p>

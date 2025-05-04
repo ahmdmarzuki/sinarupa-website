@@ -4,7 +4,7 @@ const Accordion = ({ question, answer, cardBackground }) => {
   const [accordionOpen, setAccordionOpen] = useState(false);
 
   return (
-    <div className="py-2 m-2 px-2 bg-[url('/images/cardOrange.png')] bg-cover bg-no-repeat">
+    <div className="py-2 m-2 px-2 bg-[url('/images/cardOrange.png')] bg-cover bg-no-repeat shadow-lg">
       <button
         onClick={() => setAccordionOpen(!accordionOpen)}
         className="flex justify-between w-full"

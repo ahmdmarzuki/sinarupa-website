@@ -99,6 +99,7 @@ const Faq1 = () => {
                 question={item.question}
                 answer={item.answer}
                 cardBackground={`url(${bgCard})`}
+                
               />
             ))}
           </div>

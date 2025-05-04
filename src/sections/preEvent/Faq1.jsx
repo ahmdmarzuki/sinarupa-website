@@ -3,12 +3,11 @@ import BannerOrange from "../../components/BannerOrange";
 import bgCard from "/images/bgCard.png";
 import Accordion from "../../components/Accordion";
 import cardOrange from "/images/cardOrange.png";
-import ReactLenis from "lenis/react";
-import useSmoothScroll from "../../components/useSmoothScroll";
+
 
 const Faq1 = () => {
   const qnaRef = useRef(null);
-  useSmoothScroll(qnaRef);
+
 
 const qnaList = [
   {

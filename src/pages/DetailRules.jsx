@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageWrapper from "../components/PageWrapper";
 import Banner from "../components/Banner";
@@ -134,12 +134,13 @@ function DetailRules() {
           </div>
 
           <div className="flex justify-center pb-8 mt-6">
-            <Link to="/panduan">
-              <button className="bg-[#fc6423] text-white font-semibold px-8 py-2 rounded-md hover:bg-[#e2561a] transition">
-                KEMBALI
-              </button>
-            </Link>
-          </div>
+  <Link to="/panduan">
+    <button className="bg-[#fc6423] text-white font-semibold px-8 py-2 rounded-md hover:bg-[#e2561a] transition">
+      KEMBALI
+    </button>
+  </Link>
+</div>
+
         </section>
       </motion.div>
     </PageWrapper>

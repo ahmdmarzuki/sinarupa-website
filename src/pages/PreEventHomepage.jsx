@@ -14,12 +14,15 @@ import Footer1 from "../sections/preEvent/Footer1";
 import ReactLenis from "lenis/react";
 import { useMediaQuery } from "../useMediaQuery";
 import MobileNavbar from "../components/MobileNavbar";
+import SplashCursor from "../components/SplashCursor";
 
 const PreEventHomepage = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
     <div className="bg-[url('/images/bg-full.png')] bg-cover bg-top bg-no-repeat min-h-screen ">
+      <SplashCursor />
+
       <ReactLenis root options={{ lerp: 0.05 }}>
         {isMobile ? <MobileNavbar /> : <Navbar />}
         <Home1 />

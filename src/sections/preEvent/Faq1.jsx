@@ -84,7 +84,7 @@ const Faq1 = () => {
       <div
         className="
         relative bg-cover bg-center w-[90vw]  
-        md:max-h-[70vh] md:overflow-y-auto"
+        md:max-h-[70vh] md:overflow-y-auto p-8"
         style={{
           backgroundImage: `url(${bgCard})`,
           boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",

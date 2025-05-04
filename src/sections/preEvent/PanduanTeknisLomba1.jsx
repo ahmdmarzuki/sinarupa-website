@@ -16,9 +16,9 @@ const PanduanTeknisLomba1 = () => {
 
   return (
     <section id="latar-belakang" className="h-screen w-screen">
-    {/* Judul pakai ButtonOrange */}
+    
     <div className="flex justify-center py-8">
-      <BannerOrange className="text-4xl sm:text-5xl font-oddval px-8 py-4 pointer-events-none">
+      <BannerOrange className="text-5xl sm:text-5xl font-oddval px-8 py-4 text-justify font-host text-[#4A3D8F] pointer-events-none">
         Panduan Teknis Lomba
       </BannerOrange>
     </div>
@@ -31,7 +31,7 @@ const PanduanTeknisLomba1 = () => {
               I. KETENTUAN PESERTA
             </p>
 
-            <p className="col-span-2 list-inside space-y-2 text-base text-[#4A3D8F] pl-6">
+            <p className="text-justify font-host text-[#4A3D8F]">
               Terbuka untuk tingkat SMA, SMK, dan setara se-Indonesia
             </p>
 

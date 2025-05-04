@@ -14,7 +14,7 @@ const Rundown1 = () => {
       </div>
 
     <div className="flex justify-center items-center h-screen">
-      <img src={Rundown2} className="lg:w-[80vw] sm:w-[90vw] flex"></img>
+      <img src={Rundown2} className="lg:w-[75vw] sm:w-[90vw] flex"></img>
     </div>
 
     </div>

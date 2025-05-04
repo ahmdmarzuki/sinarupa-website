@@ -2,8 +2,7 @@ import React from "react";
 
 const Home1 = () => {
   return (
-
-    <div className="w-full min-h-screen px-6 pt-20 pb-10 flex flex-col items-center justify-center">
+    <div className="w-full h-[130dvh] px-6 pt-20 pb-10 flex flex-col items-center justify-center">
       {/* TITLE: LANGKAH SAPA */}
       <img
         src="/images/Langkah Sapa.svg"
@@ -17,10 +16,10 @@ const Home1 = () => {
       </h2>
 
       {/* Tombol Gambar */}
-      <a 
-        href="https://bit.ly/LangkahSapa" 
-        target="_blank" 
-        rel="noopener noreferrer" 
+      <a
+        href="https://bit.ly/LangkahSapa"
+        target="_blank"
+        rel="noopener noreferrer"
         className="relative w-[200px] sm:w-[240px] md:w-[260px] lg:w-[312px] transition-transform transform hover:scale-105"
       >
         <img
@@ -32,7 +31,6 @@ const Home1 = () => {
           Daftar Sekarang
         </div>
       </a>
-
     </div>
   );
 };

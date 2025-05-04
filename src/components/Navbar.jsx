@@ -7,33 +7,26 @@ import { motion } from "motion/react";
 
 const Navbar = () => {
   const navList = [
-
-
     { title: "Latar Belakang", href: "latar-belakang" },
     { title: "Hadiah", href: "hadiah" },
     { title: "Timeline", href: "timeline" },
     { title: "Panduan", href: "panduan" },
     { title: "FAQ", href: "faq" },
     { title: "Hubungi Kami", href: "footer" },
-
-
   ];
 
   return (
-
     <div className="fixed flex flex-col w-screen z-50">
       <div className="bg-[url('/images/bar1.png')] bg-cover bg-top bg-no-repeat flex justify-between min-h-[10vh] px-[80px] items-center">
         <div className="flex flex-row items-center relative h-[20%] gap-4">
           <img src={logo} className="h-10 aspect-square" />
           <img src={langkahSapa} className="h-10 aspect-auto" />
-
         </div>
         <div className="flex gap-4">
           <BlueButton label="Vote Sekarang" navigateTo="/vote" />
           <BlueButton label="Pendaftaran" navigateTo="" />
         </div>
       </div>
-
 
       <div className="bg-[url('/images/bar2.png')] bg-cover bg-top bg-no-repeat min-h-[7vh] px-[80px] flex justify-end items-center">
         {navList.map((nav, index) => {
@@ -54,7 +47,6 @@ const Navbar = () => {
             </motion.div>
           );
         })}
-
       </div>
     </div>
   );

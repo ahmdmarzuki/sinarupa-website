@@ -15,6 +15,7 @@ const BannerOrange = ({ children, className }) => {
     <div className="">
       <div className="relative">
         <div
+
           className=" bg-[url('/images/cardOrange.png')] bg-cover"
           style={{ opacity: 0.6, width: size.width, height: size.height }}
         ></div>
@@ -25,6 +26,7 @@ const BannerOrange = ({ children, className }) => {
         <div
           ref={divRef}
           className="absolute px-[40px] py-[20px] bg-[url('/images/cardOrange.png')] bg-cover -left-4 -bottom-4"
+
         >
           <div className={className}>{children}</div>
         </div>

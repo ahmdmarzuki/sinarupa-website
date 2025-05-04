@@ -4,9 +4,7 @@ import { motion } from "framer-motion";
 import PageWrapper from "../../components/PageWrapper";
 
 const PanduanTeknisLomba1 = () => {
-
   return (
-
     <PageWrapper>
       <motion.div id="panduan">
         <div className="flex flex-col items-center gap-7 relative">
@@ -37,41 +35,70 @@ const PanduanTeknisLomba1 = () => {
                   II. PERATURAN LOMBA
                 </p>
                 <ul className="list-disc text-black text-base pl-6 space-y-1">
-                  <li>Peserta wajib hadir tepat waktu dan melakukan registrasi sebelum lomba dimulai.</li>
-                  <li>Karya akhir tidak boleh melebihi ukuran kanvas 30 × 40 cm.</li>
-                  <li>Peserta wajib menggunakan palet warna yang disediakan panitia dalam hasil akhir karya (link pdf copal).</li>
-                  <li>Peserta hanya diperkenankan melihat referensi berupa print out atau sketsa dalam satu lembar kertas A4 saat lomba berlangsung.</li>
-                  <li>Peserta bertanggung jawab atas alat dan bahan pribadi, panitia hanya menyediakan kanvas A3.</li>
-                  <li>Peserta harus menyimpan perangkat digital di dalam tas masing-masing selama lomba.</li>
-                  <li>Tidak ada perpanjangan waktu bagi peserta yang terlambat.</li>
-                  <li>Karya akhir harus bersifat orisinal dan tidak mengandung unsur pornografi atau SARA.</li>
-                  <li>Panitia berhak mendiskualifikasi peserta jika terjadi pelanggaran atau kecurangan.</li>
-                  <li>Jika peserta mengundurkan diri, dana tidak akan dikembalikan.</li>
-                  <li>Keputusan panitia bersifat final dan tidak dapat diganggu gugat.</li>
+                  <li>
+                    Peserta wajib hadir tepat waktu dan melakukan registrasi
+                    sebelum lomba dimulai.
+                  </li>
+                  <li>
+                    Karya akhir tidak boleh melebihi ukuran kanvas 30 × 40 cm.
+                  </li>
+                  <li>
+                    Peserta wajib menggunakan palet warna yang disediakan
+                    panitia dalam hasil akhir karya (link pdf copal).
+                  </li>
+                  <li>
+                    Peserta hanya diperkenankan melihat referensi berupa print
+                    out atau sketsa dalam satu lembar kertas A4 saat lomba
+                    berlangsung.
+                  </li>
+                  <li>
+                    Peserta bertanggung jawab atas alat dan bahan pribadi,
+                    panitia hanya menyediakan kanvas A3.
+                  </li>
+                  <li>
+                    Peserta harus menyimpan perangkat digital di dalam tas
+                    masing-masing selama lomba.
+                  </li>
+                  <li>
+                    Tidak ada perpanjangan waktu bagi peserta yang terlambat.
+                  </li>
+                  <li>
+                    Karya akhir harus bersifat orisinal dan tidak mengandung
+                    unsur pornografi atau SARA.
+                  </li>
+                  <li>
+                    Panitia berhak mendiskualifikasi peserta jika terjadi
+                    pelanggaran atau kecurangan.
+                  </li>
+                  <li>
+                    Jika peserta mengundurkan diri, dana tidak akan
+                    dikembalikan.
+                  </li>
+                  <li>
+                    Keputusan panitia bersifat final dan tidak dapat diganggu
+                    gugat.
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <Link to="/rules">
-  <div className="relative w-fit">
-    <img
-      src="/images/blue-button.png"
-      alt="Tombol Panduan"
-      className="w-[300px]"
-    />
-    <p className="absolute inset-0 flex items-center justify-center text-lg font-semibold text-purple-900">
-      Panduan Lebih Rinci
-    </p>
-  </div>
-</Link>
-
+          <Link onClick={() => window.location.reload()} to="/rules">
+            <div className="relative w-fit">
+              <img
+                src="/images/blue-button.png"
+                alt="Tombol Panduan"
+                className="w-[300px]"
+              />
+              <p className="absolute inset-0 flex items-center justify-center text-lg font-semibold text-purple-900">
+                Panduan Lebih Rinci
+              </p>
+            </div>
+          </Link>
         </div>
       </motion.div>
     </PageWrapper>
-
   );
-
 };
 
 export default PanduanTeknisLomba1;

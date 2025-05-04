@@ -1,32 +1,40 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageWrapper from "../components/PageWrapper";
+import Banner from "../components/Banner";
 
-export default function DetailRules() {
+function DetailRules() {
   return (
     <PageWrapper>
-      <motion.div className="min-h-screen bg-[#ff9900] py-10 px-4">
-        <div className="min-h-screen pt-20 pb-20 px-4 flex justify-center">
-          <div className="flex flex-col items-center gap-8 w-full max-w-4xl">
-            {/* Box */}
-            <div className="bg-[#463c8d] w-full rounded-md shadow-lg">
-              {/* Header */}
-              <div className="bg-[#ff7e00] text-yellow-100 text-center py-4 rounded-t-md">
-            <h1 className="text-4xl font-oddval tracking-wide">
-              PANDUAN TEKNIS LOMBA
-            </h1>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
+        <section id="latar-belakang" className="min-h-screen w-screen">
+          <h1 className="font-oddval text-[#4A3D8F] text-4xl flex justify-center py-8">
+            Latar Belakang
+          </h1>
+
+          <div className="flex justify-center mb-3">
+            <Banner className="w-[80vw] grid grid-cols-4">
+          
+              <div className="bg-[#ff7e00] text-yellow-100 text-center py-4 rounded-t-md col-span-4">
+                <h1 className="text-4xl font-oddval tracking-wide">
+                  PANDUAN TEKNIS LOMBA
+                </h1>
               </div>
 
-
-
-              {/* Content */}
-              <div className="px-8 py-6 text-white text-sm leading-relaxed space-y-6">
+        
+              <div className="px-8 py-6 text-white text-sm leading-relaxed space-y-6 col-span-4 text-justify">
+               
                 <div>
                   <h2 className="font-bold text-white">I. KETENTUAN PESERTA</h2>
                   <p>Terbuka untuk tingkat SMA, SMK, dan setara se-Indonesia</p>
                 </div>
 
-                <div>
+         
+                <div className="mt-4">
                   <h2 className="font-bold text-white">II. PERATURAN LOMBA</h2>
                   <ul className="list-disc list-inside space-y-1">
                     <li>Peserta wajib hadir tepat waktu dan melakukan registrasi sebelum lomba dimulai.</li>
@@ -43,7 +51,8 @@ export default function DetailRules() {
                   </ul>
                 </div>
 
-                <div>
+            
+                <div className="mt-4">
                   <h2 className="font-bold text-white">III. KRITERIA PENILAIAN</h2>
                   <ul className="list-disc list-inside space-y-1">
                     <li>Kreativitas dan Orisinalitas Ide: 30%</li>
@@ -54,7 +63,7 @@ export default function DetailRules() {
                   </ul>
                 </div>
 
-                <div>
+                <div className="mt-4">
                   <h2 className="font-bold text-white">IV. HADIAH PEMENANG</h2>
                   <ul className="space-y-1">
                     <li><strong>Juara I:</strong> 1.000.000 + (device)</li>
@@ -64,7 +73,8 @@ export default function DetailRules() {
                   </ul>
                 </div>
 
-                <div>
+               
+                <div className="mt-4">
                   <h2 className="font-bold text-white">V. RINCIAN LOMBA</h2>
                   <ul className="list-disc list-inside space-y-1">
                     <li>Lomba bersifat individu dan akan berjalan secara luring (offline) pada Sabtu, 31 Mei 2025 di GSG ITB Jatinangor.</li>
@@ -78,9 +88,10 @@ export default function DetailRules() {
                   </ul>
                 </div>
 
-                <div>
+               
+                <div className="mt-4">
                   <h2 className="font-bold text-white">VI. PELAKSANAAN LOMBA</h2>
-                  
+
                   <p className="font-semibold">• Tahap Pendaftaran Ulang</p>
                   <p>Peserta hadir di GSG, ITB Jatinangor dan wajib melakukan pendaftaran ulang sebelum pemaparan materi dimulai.</p>
 
@@ -104,17 +115,20 @@ export default function DetailRules() {
                   </ul>
                 </div>
               </div>
-            </div>
+            </Banner>
+          </div>
 
-            {/* Back Button */}
-            <Link to="/">
+          <div className="flex justify-center pb-8">
+            <Link to="/panduan">
               <button className="bg-[#fc6423] text-white font-semibold px-8 py-2 rounded-md hover:bg-[#e2561a] transition">
                 KEMBALI
               </button>
             </Link>
           </div>
-        </div>
+        </section>
       </motion.div>
     </PageWrapper>
   );
 }
+
+export default DetailRules;

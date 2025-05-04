@@ -3,16 +3,20 @@ import { Link } from "react-router-dom";
 import { BlueButton } from "./Button";
 import logo from "/images/logo.png";
 import langkahSapa from "/images/langkah-sapa.png";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const Navbar = () => {
   const navList = [
-    { title: "Latar Belakang", href: "#" },
-    { title: "Hadiah", href: "#" },
-    { title: "Timeline", href: "/timeline" },
-    { title: "Panduan", href: "/panduan" },
-    { title: "FAQ", href: "#" },
-    { title: "Hubungi Kami", href: "#" },
+
+
+    { title: "Latar Belakang", href: "latar-belakang" },
+    { title: "Hadiah", href: "hadiah" },
+    { title: "Timeline", href: "timeline" },
+    { title: "Panduan", href: "panduan" },
+    { title: "FAQ", href: "faq" },
+    { title: "Hubungi Kami", href: "footer" },
+
+
   ];
 
   return (
@@ -26,7 +30,7 @@ const Navbar = () => {
         </div>
         <div className="flex gap-4">
           <BlueButton label="Vote Sekarang" navigateTo="/vote" />
-          <BlueButton label="Pendaftaran" navigateTo="/pendaftaran" />
+          <BlueButton label="Pendaftaran" navigateTo="" />
         </div>
       </div>
 

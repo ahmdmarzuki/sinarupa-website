@@ -1,21 +1,21 @@
 import React from "react";
-import PageWrapper from "../../components/PageWrapper";
+import BannerOrange from "../../components/BannerOrange";
+import timeline from "/images/timeline.png";
 
 const Timeline1 = () => {
   return (
     <div className="h-screen w-screen">
-      <PageWrapper>
-        <div className="min-h-screen bg-yellow-100 py-10 px-4">
-          <div className="max-w-5xl mx-auto text-center">
-            <img
-              src="/images/timeline.png"
-              alt="Timeline Lomba"
-              className="mx-auto mb-10 w-full max-w-4xl"
-            />
-            <h1 className="text-5xl font-bold text-purple-800">TIMELINE</h1>
-          </div>
-        </div>
-      </PageWrapper>
+
+      <div className="relative w-full flex justify-center">
+        <BannerOrange className="w-[40vw] flex justify-center items-center">
+          <h1 className="font-oddval text-[#4A3D8F] text-5xl">Timeline</h1>
+        </BannerOrange>
+      </div>
+
+    <div className="flex justify-center items-center h-screen">
+      <img src={timeline} className="lg:w-[75vw] sm:w-[100vw] flex"></img>
+    </div>
+
     </div>
   );
 };

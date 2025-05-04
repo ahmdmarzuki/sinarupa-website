@@ -19,6 +19,7 @@ const LatarBelakang1 = () => {
             <p className="text-justify font-host text-[#4A3D8F] leading-loose">
             <b>Langkah Sapa</b> hadir sebagai titik awal dari setiap perubahan. Pengunjung diajak untuk keluar dari zona nyaman dan menyelami dunia baru yang penuh ketidakpastian dan potensi. Dengan menghadirkan lomba mixed media art, kami mengajak peserta untuk menuangkan kreativitas dan mendalami proses perpisahan dengan <b>menciptakan suatu karya yang menggambarkan perjalanan penuh perubahan.</b> Langkah Sapa mempersembahkan ruang terbuka kepada para pengunjung untuk membenamkan diri pada perpisahan sebagai gestur awal untuk melangkah menuju transisi pada suatu perubahan.
 
+
             </p>
           </div>
           <div className="flex col-span-1 justify-end">

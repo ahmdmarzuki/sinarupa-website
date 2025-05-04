@@ -12,7 +12,7 @@ const Navbar = () => {
     { title: "Timeline", href: "timeline" },
     { title: "Panduan", href: "panduan" },
     { title: "FAQ", href: "faq" },
-    { title: "Hubungi Kami", href: "footer" },
+    { title: "Hubungi Kami", href: "" },
   ];
 
   return (

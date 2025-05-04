@@ -15,7 +15,7 @@ import ReactLenis from "lenis/react";
 
 const PreEventHomepage = () => {
   return (
-    <div className="bg-[url('/images/bg-full.png')] bg-cover bg-top bg-no-repeat min-h-screen ">
+    <div className="bg-[url('/images/Website-01.png')] bg-cover bg-top bg-no-repeat min-h-screen ">
       <ReactLenis root options={{ lerp: 0.05 }}>
         <Navbar />
         <Home1 />

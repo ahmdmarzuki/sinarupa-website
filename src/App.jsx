@@ -1,15 +1,16 @@
-import PreEventHomepage from "./pages/PreEventHomepage";
-import { Route, Routes } from "react-router-dom";
-import LoginPage from "./pages/LoginPage";
-import ImageUpload from "./pages/ImageUpload";
 import { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import { onAuthStateChanged, signInAnonymously } from "firebase/auth";
 import { auth } from "./firebase/auth";
+import PreEventHomepage from "./pages/PreEventHomepage";
+import LoginPage from "./pages/LoginPage";
+import ImageUpload from "./pages/ImageUpload";
 import VotingPage from "./pages/VotingPage";
-
 import DetailRules from "./pages/DetailRules";
 import Navbar from "./components/Navbar";
 import Timeline from "./pages/Timeline";
+import PanduanTeknisLomba1 from "./sections/preEvent/PanduanTeknisLomba1.jsx";
+
 
 function App() {
   useEffect(() => {
@@ -32,7 +33,7 @@ function App() {
 
   return (
     <main>
-      <Navbar /> {/* Navbar tetap muncul di semua halaman */}
+
       <Routes>
         <Route path="/" element={<PreEventHomepage />} />
         <Route path="/login" element={<LoginPage />} />
@@ -40,9 +41,12 @@ function App() {
         <Route path="/voting" element={<VotingPage />} />
         <Route path="/rules" element={<DetailRules />} />
         <Route path="/timeline" element={<Timeline />} />
+        <Route path="/panduan" element={<PanduanTeknisLomba1 />} />
+
       </Routes>
     </main>
   );
 }
 
 export default App;
+

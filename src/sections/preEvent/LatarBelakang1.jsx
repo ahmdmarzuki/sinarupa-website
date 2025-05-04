@@ -12,7 +12,7 @@ const LatarBelakang1 = () => {
               </BannerOrange>
             </div>
 
-      <div className="flex justify-center mb-3">
+      <div className="flex justify-center mb-4">
         <Banner className="w-[80vw] grid grid-cols-4">
           {/* Row 1 */}
           <div className="col-span-3">

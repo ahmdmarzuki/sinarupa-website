@@ -32,6 +32,7 @@ function App() {
 
   return (
     <main>
+      <Navbar /> {/* Navbar tetap muncul di semua halaman */}
       <Routes>
         <Route path="/" element={<PreEventHomepage />} />
         <Route path="/login" element={<LoginPage />} />

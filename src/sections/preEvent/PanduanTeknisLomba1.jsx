@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import PageWrapper from "../../components/PageWrapper";
 
 const PanduanTeknisLomba1 = () => {
+
   return (
 
     <PageWrapper>
@@ -70,6 +71,7 @@ const PanduanTeknisLomba1 = () => {
     </PageWrapper>
 
   );
+
 };
 
 export default PanduanTeknisLomba1;

@@ -2,7 +2,10 @@ import React from "react";
 
 const Home1 = () => {
   return (
-    <div className="w-full h-[130dvh] px-6 pt-20 pb-10 flex flex-col items-center justify-center">
+    <div
+      id="home"
+      className="w-full h-[130dvh] px-6 pt-20 pb-10 flex flex-col items-center justify-center"
+    >
       {/* TITLE: LANGKAH SAPA */}
       <img
         src="/images/Langkah Sapa.svg"

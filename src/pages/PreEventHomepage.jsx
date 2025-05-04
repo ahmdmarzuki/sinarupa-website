@@ -20,7 +20,7 @@ const PreEventHomepage = () => {
 
   return (
     <div className="bg-[url('/images/Website-01.png')] bg-cover bg-top bg-no-repeat min-h-screen ">
-      <ReactLenis root options={{ lerp: 0.05 }}>
+      <ReactLenis root options={{ lerp: 0.2 }}>
         {isMobile ? <MobileNavbar /> : <Navbar />}
         <Home1 />
         <LatarBelakang1 />

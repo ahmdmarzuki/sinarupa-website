@@ -9,11 +9,11 @@ const RincianLomba1 = () => {
          <h1 className="relative font-oddval mb-[10px] text-5xl text-[#4a3d8f] z-10 text-center">Rincian Lomba</h1>
         </BannerOrange>
 </div>
-<div className="relative container mx-auto px-5 pt-15 flex flex-col items-center gap-8 md:grid md:grid-cols-3 md:gap-8">
+<div className="relative container mx-auto px-20 pt-15 flex flex-col items-center gap-8 md:grid md:grid-cols-3 md:gap-8">
   {/* Lokasi */}
   <div className="flex flex-col items-center text-center">
     <div className="text-5xl text-[#4a3d8f] font-host font-bold">Lokasi</div>
-    <img src="/images/lokasi.png" className="object-contain max-w-md"/>
+    <img src="/images/lokasi.png" className="object-contain max-w-full h-auto"/>
     <div className="text-3xl text-[#4a3d8f] font-host font-bold -mt-10 whitespace-pre-line">
       Gedung Serba Guna,{"\n"} ITB Jatinangor
     </div>
@@ -22,14 +22,14 @@ const RincianLomba1 = () => {
   {/* Waktu */}
   <div className="flex flex-col items-center text-center">
     <div className="text-5xl text-[#4a3d8f] font-host font-bold">Waktu</div>
-    <img src="/images/waktu.png" className="object-contain max-w-md"/>
+    <img src="/images/waktu.png" className="object-contain max-w-full h-auto"/>
     <div className="text-3xl text-[#4a3d8f] font-host font-bold -mt-10">240 menit</div>
   </div>
 
   {/* Dimensi */}
   <div className="flex flex-col items-center text-center">
     <div className="text-5xl text-[#4a3d8f] font-host font-bold">Dimensi</div>
-    <img src="/images/dimensi.png" className="object-contain max-w-md"/>
+    <img src="/images/dimensi.png" className="object-contain max-w-full h-auto"/>
     <div className="text-3xl text-[#4a3d8f] font-host font-bold -mt-10 whitespace-pre-line">
       Canvas{"\n"}30x30cm
     </div>

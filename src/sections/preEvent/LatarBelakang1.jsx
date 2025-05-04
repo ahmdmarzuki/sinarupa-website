@@ -17,7 +17,7 @@ const LatarBelakang1 = () => {
           {/* Row 1 */}
           <div className="col-span-3">
             <p className="text-justify font-host text-[#4A3D8F]">
-            <b>Langkah Sapa</b> hadir sebagai titik awal dari setiap perubahan. Audiens diajak untuk keluar dari zona nyaman dan menyelami dunia baru yang penuh ketidakpastian dan potensi. Dengan menghadirkan lomba mixed media art, kami mengajak peserta untuk menuangkan kreativitas dan mendalami proses perpisahan dengan <b>menciptakan suatu karya yang menggambarkan perjalanan penuh perubahan.</b>
+            <b>Langkah Sapa</b> hadir sebagai titik awal dari setiap perubahan. Pengunjung diajak untuk keluar dari zona nyaman dan menyelami dunia baru yang penuh ketidakpastian dan potensi. Dengan menghadirkan lomba mixed media art, kami mengajak peserta untuk menuangkan kreativitas dan mendalami proses perpisahan dengan <b>menciptakan suatu karya yang menggambarkan perjalanan penuh perubahan.</b>
             <br />
             <br />
             Langkah Sapa mempersembahkan ruang terbuka kepada para audiens untuk membenamkan diri pada perpisahan sebagai gestur awal untuk melangkah menuju transisi pada suatu perubahan.

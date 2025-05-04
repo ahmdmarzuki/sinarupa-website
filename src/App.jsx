@@ -7,10 +7,7 @@ import LoginPage from "./pages/LoginPage";
 import ImageUpload from "./pages/ImageUpload";
 import VotingPage from "./pages/VotingPage";
 import DetailRules from "./pages/DetailRules";
-import Navbar from "./components/Navbar";
-import Timeline from "./pages/Timeline";
 import PanduanTeknisLomba1 from "./sections/preEvent/PanduanTeknisLomba1.jsx";
-
 
 function App() {
   useEffect(() => {
@@ -33,20 +30,16 @@ function App() {
 
   return (
     <main>
-
       <Routes>
         <Route path="/" element={<PreEventHomepage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/vote" element={<ImageUpload />} />
         <Route path="/voting" element={<VotingPage />} />
         <Route path="/rules" element={<DetailRules />} />
-        <Route path="/timeline" element={<Timeline />} />
         <Route path="/panduan" element={<PanduanTeknisLomba1 />} />
-
       </Routes>
     </main>
   );
 }
 
 export default App;
-

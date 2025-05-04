@@ -88,8 +88,6 @@ const PanduanTeknisLomba1 = () => {
           </div>
         </Banner>
       </div>
-
-      {/* Tombol navigasi */}
       <div className="flex justify-center mt-4">
         <BlueButton label="Panduan Teknis" navigateTo="/rules" />
       </div>

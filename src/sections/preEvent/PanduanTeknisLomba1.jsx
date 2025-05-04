@@ -17,7 +17,7 @@ const PanduanTeknisLomba1 = () => {
   return (
     <section id="latar-belakang" className="h-screen w-screen">
     
-    <div className="flex justify-center py-8">
+    <div id="panduan" className="flex justify-center py-8">
       <BannerOrange className="text-5xl sm:text-5xl font-oddval px-8 py-4 text-justify font-host text-[#4A3D8F] pointer-events-none">
         Panduan Teknis Lomba
       </BannerOrange>

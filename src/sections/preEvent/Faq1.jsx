@@ -103,12 +103,14 @@ const qnaList = [
       </div>
 
       <div
-
-        className=" relative bg-cover bg-center w-[90vw] h-[400vw] overflow-y-scroll p-6"
-        style={{ backgroundImage: `url(${bgCard})`,
-        boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-        overflowY: "scroll", 
-      }}
+        className="
+        relative bg-cover bg-center w-[90vw]  
+        md:max-h-[70vh] md:overflow-y-auto p-8"
+        style={{
+          backgroundImage: `url(${bgCard})`,
+          boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+          overflowY: "scroll",
+        }}
       >
         <div
        className="grid grid-cols-2 gap-4">

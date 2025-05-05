@@ -7,6 +7,7 @@ import AnimatedDiv from "../../components/AnimatedDiv";
 
 const LatarBelakang1 = () => {
   return (
+
     <AnimatedDiv>
       <div
         id="latar-belakang"
@@ -17,6 +18,7 @@ const LatarBelakang1 = () => {
             <Header text="Latar Belakang" />{" "}
           </BannerOrange>
         </div>
+
 
         <div className="mb-4 items-center">
           <Banner className="w-[60vw] md:w-[80vw] grid grid-cols-3 py-10 items-center">

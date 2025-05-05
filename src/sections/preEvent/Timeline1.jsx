@@ -9,7 +9,7 @@ const Timeline1 = () => {
     <AnimatedDiv>
       <div
         id="timeline"
-        className="h-screen w-screen items-center flex flex-col justify-center"
+        className="my-15 w-screen items-center flex flex-col justify-center"
       >
         <div className="relative w-full flex justify-center">
           <BannerOrange className="w-[40vw] flex justify-center items-center">

@@ -2,6 +2,7 @@ import React from "react";
 import BannerOrange from "../../components/BannerOrange";
 import Header from "../../components/Header";
 import { useMediaQuery } from "../../useMediaQuery";
+import AnimatedDiv from "../../components/AnimatedDiv";
 
 const Hadiah = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -40,18 +41,20 @@ const Hadiah = () => {
   );
 
   return (
-    <div className="my-30">
-      <div className="relative w-full flex justify-center mb-18">
-        <BannerOrange className="w-[40vw] flex justify-center items-center">
-          <Header text="Hadiah" />{" "}
-        </BannerOrange>
+    <AnimatedDiv>
+      <div className="my-15">
+        <div className="relative w-full flex justify-center mb-18">
+          <BannerOrange className="w-[40vw] flex justify-center items-center">
+            <Header text="Hadiah" />{" "}
+          </BannerOrange>
+        </div>
+        <div className="flex md:flex-row flex-col justify-center items-center h-fit md:py-20">
+          {renderPodium(6, "Juara 1", "Rp 1.000.000", isMobile ? 0 : -40)}
+          {renderPodium(6, "Juara 2", "Rp 600.000", isMobile ? -100 : 0)}
+          {renderPodium(6, "Juara 3", "Rp 400.000", isMobile ? -200 : 40)}
+        </div>
       </div>
-      <div className="flex md:flex-row flex-col justify-center items-center h-fit md:py-20">
-        {renderPodium(6, "Juara 1", "Rp 1.000.000", isMobile ? 0 : -40)}
-        {renderPodium(6, "Juara 2", "Rp 600.000", isMobile ? -100 : 0)}
-        {renderPodium(6, "Juara 3", "Rp 400.000", isMobile ? -200 : 40)}
-      </div>
-    </div>
+    </AnimatedDiv>
   );
 };
 

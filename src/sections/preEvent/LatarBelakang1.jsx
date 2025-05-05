@@ -7,18 +7,16 @@ import AnimatedDiv from "../../components/AnimatedDiv";
 
 const LatarBelakang1 = () => {
   return (
-
     <AnimatedDiv>
       <div
         id="latar-belakang"
-        className="h-screen w-screen flex flex-col items-center py-17"
+        className=" w-screen flex flex-col items-center py-17"
       >
         <div className="relative w-full flex justify-center mb-17">
-          <BannerOrange className="w-[40vw] flex justify-center items-center">
-            <Header text="Latar Belakang" />{" "}
+          <BannerOrange className="flex justify-center items-center">
+            <Header text="Latar Belakang" />
           </BannerOrange>
         </div>
-
 
         <div className="mb-4 items-center">
           <Banner className="w-[60vw] md:w-[80vw] grid grid-cols-3 py-10 items-center">

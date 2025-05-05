@@ -28,7 +28,7 @@ const PanduanPendaftaran = () => {
         />
         {/* Konten */}
         <div
-          className="relative z-10 px-6 py-4"
+          className="relative flex justify-center  z-10 py-4"
           style={{
             backgroundImage: "url('/images/Box Orange.png')",
             backgroundSize: "cover",

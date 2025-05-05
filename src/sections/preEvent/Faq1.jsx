@@ -3,6 +3,7 @@ import BannerOrange from "../../components/BannerOrange";
 import bgCard from "/images/bgCard.png";
 import Accordion from "../../components/Accordion";
 import cardOrange from "/images/cardOrange.png";
+import Header from "../../components/Header";
 
 const Faq1 = () => {
   const qnaRef = useRef(null);
@@ -77,7 +78,7 @@ const Faq1 = () => {
     <div id="faq" className="w-screen flex flex-col items-center py-4">
       <div className="relative w-full flex justify-center mb-13">
         <BannerOrange className="w-[40vw] flex justify-center items-center">
-          <h1 className="font-oddval text-[#4A3D8F] text-5xl">FAQ</h1>
+          <Header text="FAQ" />
         </BannerOrange>
       </div>
 

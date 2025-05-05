@@ -115,7 +115,7 @@ const PanduanPendaftaran = ({ className }) => {
     className="underline text-sm"
     style={{ color: "#FAA363" }}
   >
-    https://bit.ly/LangkahSapa
+    Daftar Sekarang!!
   </a>
 </div>
         </div>

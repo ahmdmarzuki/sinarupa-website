@@ -5,7 +5,7 @@ import BannerOrange from "../../components/BannerOrange";
 
 const LatarBelakang1 = () => {
   return (
-    <div className="h-screen w-screen">
+    <div className=" w-screen">
       <div className="relative w-full flex justify-center mb-13">
               <BannerOrange className="w-[40vw] flex justify-center items-center">
                 <h1 className="font-oddval text-[#4A3D8F] text-5xl">Latar Belakang</h1>

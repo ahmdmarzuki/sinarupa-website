@@ -1,4 +1,3 @@
-// src/pages/PanduanTeknisLomba1.jsx
 
 import React from "react";
 import { Link } from "react-router-dom";
@@ -13,13 +12,12 @@ const PanduanTeknisLomba1 = () => {
     <PageWrapper>
       <section id="panduan" className="min-h-screen w-screen">
         {/* Judul Utama */}
-        <div className="flex justify-center py-8">
-          <BannerOrange className="font-oddval px-8 py-4 text-justify text-[#4A3D8F] pointer-events-none">
-            <Header text="Panduan Teknis Lomba" />
+        <div className="relative w-full flex justify-center mb-17">
+          <BannerOrange className="w-[40vw] flex justify-center items-center">
+            <Header text="Panduan Teknis Lomba" />{" "}
           </BannerOrange>
         </div>
 
-        {/* Konten Ringkasan */}
         <div className="flex justify-center mb-3">
           <Banner className="w-[60vw] md:w-[80vw]">
             <div className="col-span-3">
@@ -83,7 +81,6 @@ const PanduanTeknisLomba1 = () => {
           </Banner>
         </div>
 
-      {/* Tombol Menuju Detail */}
       <div className="flex justify-center py-6">
       <button
   onClick={() => (window.location.href = "/rules")}
@@ -92,8 +89,8 @@ const PanduanTeknisLomba1 = () => {
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
-    width: "200px", // atau sesuaikan
-    height: "50px", // atau sesuaikan
+    width: "200px", 
+    height: "50px", 
   }}
   className="text-white font-semibold transition flex items-center justify-center"
 >

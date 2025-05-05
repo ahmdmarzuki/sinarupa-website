@@ -16,11 +16,11 @@ const DetailRules = () => {
       >
         <section className="min-h-screen w-screen bg-[url('/images/Website-01.webp')]">
           <ReactLenis root options={{ lerp: 0.2 }}>
-            <div className="relative w-full flex justify-center pt-10 pb-8">
-              <BannerOrange className="flex justify-center items-center py-4">
-                <Header text="PANDUAN TEKNIS LOMBA" />
-              </BannerOrange>
-            </div>
+          <div className="relative w-full flex justify-center mb-17">
+          <BannerOrange className="w-[40vw] flex justify-center items-center">
+            <Header text="Panduan Teknis Lomba" />{" "}
+          </BannerOrange>
+        </div>
 
             <div className="mt-20 flex justify-center">
               <Banner className=" w-[70vw]">
@@ -211,8 +211,8 @@ const DetailRules = () => {
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
-    width: "150px", // atau sesuaikan
-    height: "50px", // atau sesuaikan
+    width: "150px", 
+    height: "50px", 
   }}
   className="text-white font-semibold transition flex items-center justify-center"
 >

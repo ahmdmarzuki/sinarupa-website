@@ -3,6 +3,7 @@ import { BlueButton } from "./Button";
 import logo from "/images/logo.png";
 import langkahSapa from "/images/langkah-sapa.png";
 import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const navList = [
@@ -55,7 +56,9 @@ const Navbar = () => {
           <img src={langkahSapa} className="h-10 aspect-auto" />
         </div>
         <div className="flex gap-4">
-          <BlueButton label="Vote Sekarang" navigateTo="/vote" />
+          <NavLink to="/vote">
+            <BlueButton label="Vote Sekarang" />
+          </NavLink>
           <BlueButton label="Pendaftaran" navigateTo="/pendaftaran" />
         </div>
       </motion.div>

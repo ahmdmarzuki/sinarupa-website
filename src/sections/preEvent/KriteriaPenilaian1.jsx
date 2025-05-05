@@ -1,16 +1,17 @@
 import React from "react";
 import BannerOrange from "../../components/BannerOrange";
 import BannerUngu from "../../components/BannerUngu";
+import Header from "../../components/Header";
 
 const KriteriaPenilaian1 = () => {
   return (
-    <div className="h-screen w-screen flex flex-col justify-center items-center">
+    <div className="md:h-screen w-screen flex flex-col justify-center items-center">
       <div className="relative w-full flex flex-col items-center mb-8 pt-90 md:pt-40">
         <BannerOrange className="w-[40vw] h-[5vh] flex justify-center items-center">
-          <h1 className="relative font-oddval mb-[10px] text-5xl md:text-6xl text-[#4a3d8f] z-10 text-center">Kriteria</h1>
+          <Header text="Kriteria" />
         </BannerOrange>
       </div>
-  
+
       <div className="relative container mx-auto mr-15 px-10 pt-10 flex flex-col items-center gap-8 md:grid md:grid-cols-3 md:gap-10">
         {/* Tema */}
         <BannerUngu className="w-full h-[auto] md:w-[15vw] md:h-[37vh] flex flex-col items-center text-center">
@@ -18,10 +19,11 @@ const KriteriaPenilaian1 = () => {
             Tema
           </div>
           <div className="text-lg md:text-2xl text-[#f9b363] font-oddval mt-2 whitespace-pre-line object-contain text-center">
-            Kesesuaian {"\n"} pengembangan {"\n"} konsep karya {"\n"} dengan tema utama
+            Kesesuaian {"\n"} pengembangan {"\n"} konsep karya {"\n"} dengan
+            tema utama
           </div>
         </BannerUngu>
-  
+
         {/* Orisinalitas */}
         <BannerUngu className="w-full h-[auto] md:w-[15vw] md:h-[37vh] flex flex-col items-center text-center">
           <div className="text-xl md:text-4xl text-[#f9b363] font-oddval mt-4 whitespace-pre-line object-contain">
@@ -31,14 +33,15 @@ const KriteriaPenilaian1 = () => {
             Keunikan karya {"\n"} dalam menyajikan {"\n"} konsep dan ide
           </div>
         </BannerUngu>
-  
+
         {/* Kerapian */}
         <BannerUngu className="w-full h-[auto] md:w-[15vw] md:h-[37vh] flex flex-col items-center text-center">
           <div className="text-xl md:text-4xl text-[#f9b363] font-oddval mt-4 whitespace-pre-line object-contain">
             Kerapian
           </div>
           <div className="text-lg md:text-2xl text-[#f9b363] font-oddval mt-2 whitespace-pre-line object-contain text-center">
-            Kebersihan dari hasil {"\n"} karya serta proporsi {"\n"} dari komposisi
+            Kebersihan dari hasil {"\n"} karya serta proporsi {"\n"} dari
+            komposisi
           </div>
         </BannerUngu>
       </div>

@@ -40,14 +40,7 @@ const MobileNavbar = () => {
 
   return (
     <div className="fixed flex flex-col w-screen z-50">
-      <motion.div
-        initial={{ y: 0 }}
-        animate={{
-          y: hide ? "-100%" : 0, // Membuat navbar bergerak ke atas saat di-scroll
-        }}
-        transition={{ duration: hide ? 0.3 : 0.5 }}
-        className="bg-[url('/images/bar1.png')] bg-cover bg-top bg-no-repeat flex justify-between min-h-[10vh] px-[20px] items-center"
-      >
+      <div className="bg-[url('/images/bar1.png')] bg-cover bg-top bg-no-repeat flex justify-between min-h-[10vh] px-[20px] items-center">
         <div
           onClick={() => {
             const target = document.getElementById("home");
@@ -61,32 +54,11 @@ const MobileNavbar = () => {
           <BlueButton label="Vote Sekarang" navigateTo="/vote" />
           <BlueButton label="Pendaftaran" navigateTo="/pendaftaran" />
         </div>
-      </motion.div>
+      </div>
 
-      <motion.div
-        initial={{ opacity: 1, y: 0 }}
-        animate={{
-          y: hide ? "-10vh" : 0, // Membuat navbar bergerak ke atas saat di-scroll
-        }}
-        transition={{ duration: hide ? 0.3 : 0.5 }}
-        className="bg-[url('/images/bar2.png')] bg-cover bg-top bg-no-repeat h-[5vh] px-[20px] flex justify-between items-center"
-      >
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{
-            opacity: hide ? 1 : 0,
-          }}
-          transition={{ duration: 0.3 }}
-          onClick={() => {
-            const target = document.getElementById("home");
-            target?.scrollIntoView({ behavior: "smooth" });
-          }}
-          className="flex flex-row pl-2 items-center relative h-[5vh]"
-        >
-          <img src={logo} className="h-6 aspect-square" />
-        </motion.div>
+      <div className="bg-[url('/images/bar2.png')] bg-cover bg-top bg-no-repeat h-[5vh] px-[20px] flex justify-end items-center">
         <Hamburger color="white" size={18} toggle={setOpen} toggled={open} />
-      </motion.div>
+      </div>
       <AnimatePresence>
         {open && (
           <div className="w-screen  flex justify-end">

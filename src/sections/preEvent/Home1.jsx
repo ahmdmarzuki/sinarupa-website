@@ -4,7 +4,7 @@ const Home1 = () => {
   return (
     <div
       id="home"
-      className="w-full h-[130dvh] px-6 pt-20 pb-10 flex flex-col items-center justify-center"
+      className="w-full h-[100vh]  md:h-[130dvh] px-6 lg:pt-20 pb-10 flex flex-col items-center justify-center"
     >
       {/* TITLE: LANGKAH SAPA */}
       <img

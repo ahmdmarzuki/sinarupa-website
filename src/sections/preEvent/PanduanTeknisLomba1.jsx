@@ -84,11 +84,12 @@ const PanduanTeknisLomba1 = () => {
 
         {/* Tombol Menuju Detail */}
         <div className="flex justify-center py-6">
-          <Link to="/rules">
-            <button className="bg-[#4A3D8F] hover:bg-[#372f6f] text-white font-semibold px-6 py-2 rounded-md transition">
-              Lihat Panduan Lengkap
-            </button>
-          </Link>
+          <button
+            onClick={() => (window.location.href = "/rules")}
+            className="bg-[#4A3D8F] hover:bg-[#372f6f] text-white font-semibold px-6 py-2 rounded-md transition"
+          >
+            Lihat Panduan Lengkap
+          </button>
         </div>
       </section>
     </PageWrapper>

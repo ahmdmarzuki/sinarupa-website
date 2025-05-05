@@ -13,7 +13,7 @@ const Home1 = () => {
 
       {/* Subjudul */}
       <h2 className="text-[#2E1E78] text-center font-bold text-[1.17rem] sm:text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] mb-8 tracking-wide">
-        Fragments of Change
+        PERUBAHAN
       </h2>
 
       {/* Tombol Gambar */}

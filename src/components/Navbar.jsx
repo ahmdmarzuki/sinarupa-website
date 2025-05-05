@@ -56,9 +56,8 @@ const Navbar = () => {
           <img src={langkahSapa} className="h-10 aspect-auto" />
         </div>
         <div className="flex gap-4">
-          <NavLink to="/vote">
-            <BlueButton label="Vote Sekarang" />
-          </NavLink>
+          <BlueButton navigateTo={"/vote"} label="Vote Sekarang" />
+
           <BlueButton label="Pendaftaran" navigateTo="/pendaftaran" />
         </div>
       </motion.div>

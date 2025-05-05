@@ -9,11 +9,10 @@ const Banner = ({ children, className }) => {
       const { width, height } = divRef.current.getBoundingClientRect();
       setSize({ width, height });
     }
-  }, []);
+  }, [size]);
 
   return (
     <div className="relative w-fit h-fit">
-     
       <div
         className="pointer-events-none absolute top-0 left-0 bg-[url('/images/bgCard.png')] bg-cover z-0"
         style={{ opacity: 0.6, width: size.width, height: size.height }}

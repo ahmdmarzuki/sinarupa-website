@@ -12,12 +12,16 @@ import PanduanPendaftaran1 from "../sections/preEvent/PanduanPendaftaran1";
 import Faq1 from "../sections/preEvent/Faq1";
 import Footer1 from "../sections/preEvent/Footer1";
 import ReactLenis from "lenis/react";
+import { useMediaQuery } from "../useMediaQuery";
+import MobileNavbar from "../components/MobileNavbar";
 
 const PreEventHomepage = () => {
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
   return (
-    <div className="bg-[url('/images/Website-01.png')] bg-cover bg-top bg-no-repeat min-h-screen ">
-      <ReactLenis root options={{ lerp: 0.05 }}>
-        <Navbar />
+    <div className="bg-[url('/images/Website-01.webp')] bg-cover bg-top bg-no-repeat min-h-screen ">
+      <ReactLenis root options={{ lerp: 0.2 }}>
+        {isMobile ? <MobileNavbar /> : <Navbar />}
         <Home1 />
         <LatarBelakang1 />
         <Hadiah1 />

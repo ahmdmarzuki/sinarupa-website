@@ -1,9 +1,14 @@
 import React from "react";
+import BannerOrange from "../../components/BannerOrange";
+import Header from "../../components/Header";
+import { useMediaQuery } from "../../useMediaQuery";
 
 const Hadiah = () => {
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
   const renderPodium = (layerCount, label, amount, offsetY = 0) => (
     <div
-      className="relative w-full max-w-[300px] sm:max-w-[320px] md:max-w-[340px] lg:max-w-[360px] flex flex-col items-center justify-end"
+      className=" relative w-full max-w-[300px] sm:max-w-[320px] md:max-w-[340px] lg:max-w-[360px] flex flex-col items-center justify-end"
       style={{ transform: `translateY(${offsetY}px)` }}
     >
       {/* Teks di atas */}
@@ -15,7 +20,7 @@ const Hadiah = () => {
       </div>
 
       {/* Podium stack */}
-      <div className="relative w-full h-[300px] sm:h-[320px] md:h-[340px] lg:h-[360px] flex items-end justify-center">
+      <div className="relative w-full h-[300px] md:h-[360px] flex items-end justify-center">
         {[...Array(layerCount)].map((_, index) => (
           <img
             key={index}
@@ -25,7 +30,7 @@ const Hadiah = () => {
             style={{
               top: `${index * 20}px`,
               opacity: 1 - index * 0.1,
-              transform: `scale(${1 - index * 0.02})`,
+              transform: `scale(${0.8 - index * 0.02})`,
               zIndex: 10 - index,
             }}
           />
@@ -35,13 +40,17 @@ const Hadiah = () => {
   );
 
   return (
-    <div
-      className="w-full min-h-screen grid grid-cols-1 sm:grid-cols-3 items-end justify-center gap-x-2 px-4 py-20"
-      style={{ transform: "translateX(5%)" }}
-    >
-      {renderPodium(6, "Juara 1", "Rp 1.000.000", -40)}
-      {renderPodium(6, "Juara 2", "Rp 600.000", 0)}
-      {renderPodium(6, "Juara 3", "Rp 400.000", 40)}
+    <div className="my-30">
+      <div className="relative w-full flex justify-center mb-18">
+        <BannerOrange className="w-[40vw] flex justify-center items-center">
+          <Header text="Hadiah" />{" "}
+        </BannerOrange>
+      </div>
+      <div className="flex md:flex-row flex-col justify-center items-center h-fit md:py-20">
+        {renderPodium(6, "Juara 1", "Rp 1.000.000", isMobile ? 0 : -40)}
+        {renderPodium(6, "Juara 2", "Rp 600.000", isMobile ? -100 : 0)}
+        {renderPodium(6, "Juara 3", "Rp 400.000", isMobile ? -200 : 40)}
+      </div>
     </div>
   );
 };

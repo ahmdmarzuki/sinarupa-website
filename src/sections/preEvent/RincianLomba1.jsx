@@ -1,13 +1,15 @@
 import React from "react";
 import BannerOrange from "../../components/BannerOrange";
+import Header from "../../components/Header";
 
 const RincianLomba1 = () => {
   return (
-    <div className="h-screen w-screen flex flex-col justify-center items-center">
-      <div className="relative w-full flex justify-center mb-5 pt-40">
+    <div className="md:h-screen w-screen flex flex-col justify-center items-center">
+      <div className="relative w-full flex justify-center mb-5">
         <BannerOrange className="w-[40vw] h-[5vh] flex justify-center items-center">
-         <h1 className="relative font-oddval mb-[10px] text-5xl text-[#4a3d8f] z-10 text-center">Rincian Lomba</h1>
+          <Header text="Rincian Lomba" />
         </BannerOrange>
+
 </div>
 <div className="relative container mx-auto px-20 pt-15 flex flex-col items-center gap-8 md:grid md:grid-cols-3 md:gap-8">
   {/* Lokasi */}
@@ -35,8 +37,9 @@ const RincianLomba1 = () => {
     </div>
   </div>
 </div>
+
     </div>
-  )
+  );
 };
 
 export default RincianLomba1;

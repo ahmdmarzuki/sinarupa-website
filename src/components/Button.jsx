@@ -5,7 +5,7 @@ const BlueButton = ({ label, navigateTo }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(navigateTo);
+    window.location.href = navigateTo;
   };
   return (
     <button

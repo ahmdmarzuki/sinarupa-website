@@ -14,7 +14,7 @@ const DetailRules = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <section className="min-h-screen w-screen bg-[url('/images/Website-01.png')]">
+        <section className="min-h-screen w-screen bg-[url('/images/Website-01.webp')]">
           <ReactLenis root options={{ lerp: 0.2 }}>
             <div className="relative w-full flex justify-center pt-10 pb-8">
               <BannerOrange className="flex justify-center items-center py-4">

@@ -14,7 +14,7 @@ const DetailRules = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <section className="min-h-screen w-screen bg-[url('/images/Website-01.png')]">
+        <section className="min-h-screen w-screen bg-[url('/images/Website-01.webp')]">
           <ReactLenis root options={{ lerp: 0.2 }}>
             <div className="relative w-full flex justify-center pt-10 pb-8">
               <BannerOrange className="flex justify-center items-center py-4">
@@ -203,14 +203,23 @@ const DetailRules = () => {
               </Banner>
             </div>
 
-            <div className="flex justify-center pb-8 mt-20">
-              <button
-                onClick={() => (window.location.href = "/")}
-                className="bg-[#fc6423] text-white font-semibold px-8 py-2 rounded-md hover:bg-[#e2561a] transition"
-              >
-                KEMBALI
-              </button>
+            <div className="flex justify-center pb-7 mt-20">
+            <button
+  onClick={() => (window.location.href = "/")}
+  style={{
+    backgroundImage: "url('/images/Box Ungu.png')",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    width: "150px", // atau sesuaikan
+    height: "50px", // atau sesuaikan
+  }}
+  className="text-white font-semibold transition flex items-center justify-center"
+>
+  Kembali
+</button>
             </div>
+
           </ReactLenis>
         </section>
       </motion.div>

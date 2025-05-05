@@ -7,6 +7,7 @@ import PageWrapper from "../../components/PageWrapper";
 import BannerOrange from "../../components/BannerOrange";
 import Header from "../../components/Header";
 
+
 const PanduanTeknisLomba1 = () => {
   return (
     <PageWrapper>
@@ -82,14 +83,24 @@ const PanduanTeknisLomba1 = () => {
           </Banner>
         </div>
 
-        {/* Tombol Menuju Detail */}
-        <div className="flex justify-center py-6">
-          <button
-            onClick={() => (window.location.href = "/rules")}
-            className="bg-[#4A3D8F] hover:bg-[#372f6f] text-white font-semibold px-6 py-2 rounded-md transition"
-          >
-            Lihat Panduan Lengkap
-          </button>
+      {/* Tombol Menuju Detail */}
+      <div className="flex justify-center py-6">
+      <button
+  onClick={() => (window.location.href = "/rules")}
+  style={{
+    backgroundImage: "url('/images/Box Ungu.png')",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    width: "200px", // atau sesuaikan
+    height: "50px", // atau sesuaikan
+  }}
+  className="text-white font-semibold transition flex items-center justify-center"
+>
+  Lihat Panduan Lengkap
+</button>
+
+
         </div>
       </section>
     </PageWrapper>

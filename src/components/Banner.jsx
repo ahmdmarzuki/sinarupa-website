@@ -12,22 +12,21 @@ const Banner = ({ children, className }) => {
   }, [size]);
 
   return (
-    <div className="">
-      <div className="relative">
-        <div
-          className=" bg-[url('/images/bgCard.png')] bg-cover"
-          style={{ opacity: 0.6, width: size.width, height: size.height }}
-        ></div>
-        <div
-          className="absolute  bg-[url('/images/bgCard.png')] bg-cover -left-2 -bottom-2"
-          style={{ opacity: 0.8, width: size.width, height: size.height }}
-        ></div>
-        <div
-          ref={divRef}
-          className="absolute px-[40px] py-[20px] bg-[url('/images/bgCard.png')] bg-cover -left-4 -bottom-4"
-        >
-          <div className={className}>{children}</div>
-        </div>
+    <div className="relative w-fit h-fit">
+      <div
+        className="pointer-events-none absolute top-0 left-0 bg-[url('/images/bgCard.png')] bg-cover z-0"
+        style={{ opacity: 0.6, width: size.width, height: size.height }}
+      ></div>
+      <div
+        className="pointer-events-none absolute -left-2 -bottom-2 bg-[url('/images/bgCard.png')] bg-cover z-0"
+        style={{ opacity: 0.8, width: size.width, height: size.height }}
+      ></div>
+
+      <div
+        ref={divRef}
+        className="relative z-10 px-[40px] py-[20px] bg-[url('/images/bgCard.png')] bg-cover -left-4 -bottom-4"
+      >
+        <div className={className}>{children}</div>
       </div>
     </div>
   );

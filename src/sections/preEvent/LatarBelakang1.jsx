@@ -1,60 +1,47 @@
 import React from "react";
 import Banner from "../../components/Banner";
 import logo from "/images/logo.png";
+import BannerOrange from "../../components/BannerOrange";
+import Header from "../../components/Header";
 
 const LatarBelakang1 = () => {
   return (
-    <section id="latar-belakang" className="h-screen w-screen">
-      <h1 className="font-oddval text-[#4A3D8F] text-4xl sm:text-4xl flex justify-center top-0 py-8">
-        Latar Belakang
-      </h1>
+    <div
+      id="latar-belakang"
+      className="h-screen w-screen flex flex-col items-center py-17"
+    >
+      <div className="relative w-full flex justify-center mb-17">
+        <BannerOrange className="w-[40vw] flex justify-center items-center">
+          <Header text="Latar Belakang" />{" "}
+        </BannerOrange>
+      </div>
 
-      <div className="flex justify-center mb-3">
-        <Banner className="w-[80vw] grid grid-cols-4">
+      <div className="mb-4 items-center">
+        <Banner className="w-[60vw] md:w-[80vw] grid grid-cols-3 mt-8  py-7">
           {/* Row 1 */}
-          <div className="col-span-3">
-            <p className="flex text-justify">
-              Langkah Sapa hadir sebagai titik awal dari setiap perubahan.
-              Audiens diajak untuk keluar dari zona nyaman dan menyelami dunia
-              baru yang penuh ketidakpastian dan potensi. Dengan menghadirkan
-              lomba mixed media art, kami mengajak peserta untuk menuangkan
-              kreativitas dan mendalami proses perpisahan dengan menciptakan
-              suatu karya yang menggambarkan perjalanan penuh perubahan.
-              <br />
-              <br />
-              Langkah Sapa mempersembahkan ruang terbuka kepada para audiens
+
+          <div className="col-span-2">
+            <p className="text-justify font-host text-[#4A3D8F] md:leading-loose">
+              <b>Langkah Sapa</b> hadir sebagai titik awal dari setiap
+              perubahan. Pengunjung diajak untuk keluar dari zona nyaman dan
+              menyelami dunia baru yang penuh ketidakpastian dan potensi. Dengan
+              menghadirkan lomba mixed media art, kami mengajak peserta untuk
+              menuangkan kreativitas dan mendalami proses perpisahan dengan{" "}
+              <b>
+                menciptakan suatu karya yang menggambarkan perjalanan penuh
+                perubahan.
+              </b>{" "}
+              Langkah Sapa mempersembahkan ruang terbuka kepada para pengunjung
               untuk membenamkan diri pada perpisahan sebagai gestur awal untuk
               melangkah menuju transisi pada suatu perubahan.
             </p>
           </div>
-          <div className="flex justify-end col-span-1 items-center">
-            <img src={logo} className="w-[15vw] h-[15vw] object-center" />
-          </div>
-
-          {/* Row 2 */}
-          <div className="flex col-span-1 items-center">
-            <img src={logo} className="w-[15vw] h-[15vw] object-center" />
-          </div>
-          <div className="col-span-3">
-            <p className="flex text-justify">
-              Tema “Fragments of Change” merujuk pada kondisi transisi atau
-              peralihan yang terjadi pada seseorang ataupun sesuatu. Dalam
-              setiap perubahan, kondisi lama akan mengalami pemisahan untuk
-              memberi ruang bagi sesuatu yang baru dan lebih berkembang.
-              <br />
-              <br />
-              Maka dari itu, peserta dapat menuangkan ide dan kreativitas
-              terkait pemisahan sebagai awal dari sebuah perubahan melalui
-              objek, suasana, atau bentuk abstrak sesuai interpretasi
-              masing-masing pribadi. Perubahan bukanlah akhir, melainkan awal
-              dari sesuatu yang lebih besar. Melalui perpisahan, tercipta ruang
-              bagi perkembangan yang lebih signifikan, di mana kita belajar
-              untuk melepaskan yang lama demi menyambut yang baru.
-            </p>
+          <div className="flex col-span-1 justify-end">
+            <img src={logo} className="w-[15vw] h-[15vw]" />
           </div>
         </Banner>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -12,9 +12,12 @@ const Rundown1 = () => {
         </BannerOrange>
       </div>
 
-      <div className="flex justify-center items-center object-center mt-15">
-        <img src={Rundown2} className="md:w-[75vw] w-[90vw] flex"></img>
-      </div>
+
+    <div className="flex justify-center items-center mt-10 mb-10">
+      <img src={Rundown2} className="md:w-[70vw] w-[90vw] object-center"></img>
+    </div>
+
+
     </div>
   );
 };

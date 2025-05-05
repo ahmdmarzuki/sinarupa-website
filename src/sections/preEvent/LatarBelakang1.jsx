@@ -17,7 +17,9 @@ const LatarBelakang1 = () => {
       </div>
 
       <div className="mb-4 items-center">
-        <Banner className="w-[60vw] md:w-[80vw] grid grid-cols-3 mt-8  py-7">
+
+        <Banner className="w-[60vw] md:w-[80vw] grid grid-cols-3 py-10 items-center">
+
           {/* Row 1 */}
 
           <div className="col-span-2">
@@ -36,7 +38,7 @@ const LatarBelakang1 = () => {
               melangkah menuju transisi pada suatu perubahan.
             </p>
           </div>
-          <div className="flex col-span-1 justify-end">
+          <div className="col-span-1 flex justify-center items-center">
             <img src={logo} className="w-[15vw] h-[15vw]" />
           </div>
         </Banner>

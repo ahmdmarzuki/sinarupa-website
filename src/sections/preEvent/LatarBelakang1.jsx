@@ -2,6 +2,7 @@ import React from "react";
 import LatarBelakang from "../../components/LatarBelakang";
 import LatarBelakangMobile from "../../components/LatarBelakangMobile";
 import BannerOrange from "../../components/BannerOrange";
+
 import { useMediaQuery } from "../../useMediaQuery";
 
 const LatarBelakang1 = () => {
@@ -19,8 +20,9 @@ const LatarBelakang1 = () => {
 
       <div className="mb-4 items-center">
        {isMobile ? <LatarBelakangMobile /> : <LatarBelakang />}
+
       </div>
-    </div>
+    </AnimatedDiv>
   );
 };
 

@@ -10,10 +10,10 @@ import Header from "../../components/Header";
 const PanduanTeknisLomba1 = () => {
   return (
     <PageWrapper>
-      <section id="panduan" className="min-h-screen w-screen">
+      <section id="panduan" className="min-h-screen w-screen py-30">
         {/* Judul Utama */}
         <div className="flex justify-center py-8">
-          <BannerOrange className="font-oddval px-8 py-4 text-justify text-[#4A3D8F] pointer-events-none">
+          <BannerOrange className="flex justify-center items-center">
             <Header text="Panduan Teknis Lomba" />
           </BannerOrange>
         </div>
@@ -86,7 +86,15 @@ const PanduanTeknisLomba1 = () => {
         <div className="flex justify-center py-6">
           <button
             onClick={() => (window.location.href = "/rules")}
-            className="bg-[#4A3D8F] hover:bg-[#372f6f] text-white font-semibold px-6 py-2 rounded-md transition"
+            style={{
+              backgroundImage: "url('/images/Box Ungu.png')",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+              width: "200px", // atau sesuaikan
+              height: "50px", // atau sesuaikan
+            }}
+            className="text-white font-semibold transition flex items-center justify-center"
           >
             Lihat Panduan Lengkap
           </button>

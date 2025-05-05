@@ -48,11 +48,24 @@ const MobileNavbar = () => {
           }}
           className="flex flex-row items-center relative h-[5vh] gap-4"
         >
-          <img src={logo} className="h-6 aspect-square" />
+          <img src={logo} className="h-10 aspect-square" />
         </div>
-        <div className="flex gap-2">
-          <BlueButton label="Vote Sekarang" navigateTo="/vote" />
-          <BlueButton label="Pendaftaran" navigateTo="/pendaftaran" />
+        <div className="flex">
+          <a
+            href="https://bit.ly/LangkahSapa"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative w-[200px] sm:w-[240px] md:w-[260px] lg:w-[312px] transition-transform transform -right-2"
+          >
+            <img
+              src="/images/blue-button.png"
+              alt="Tombol Daftar"
+              className="w-full"
+            />
+            <div className="absolute inset-0 flex items-center justify-center text-white font-semibold text-[1rem] sm:text-[1.2rem] md:text-[1.3rem] lg:text-[1.5rem]">
+              Daftar Sekarang
+            </div>
+          </a>
         </div>
       </div>
 

@@ -6,15 +6,16 @@ import PageWrapper from "../../components/PageWrapper";
 import BannerOrange from "../../components/BannerOrange";
 import Header from "../../components/Header";
 
-
 const PanduanTeknisLomba1 = () => {
   return (
     <PageWrapper>
-      <section id="panduan" className="min-h-screen w-screen">
+      <section id="panduan" className="min-h-screen w-screen py-30">
         {/* Judul Utama */}
-        <div className="relative w-full flex justify-center mb-17">
-          <BannerOrange className="w-[40vw] flex justify-center items-center">
-            <Header text="Panduan Teknis Lomba" />{" "}
+
+        <div className="flex justify-center py-8">
+          <BannerOrange className="flex justify-center items-center">
+            <Header text="Panduan Teknis Lomba" />
+
           </BannerOrange>
         </div>
 
@@ -81,22 +82,23 @@ const PanduanTeknisLomba1 = () => {
           </Banner>
         </div>
 
-      <div className="flex justify-center py-6">
-      <button
-  onClick={() => (window.location.href = "/rules")}
-  style={{
-    backgroundImage: "url('/images/Box Ungu.png')",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
-    width: "200px", 
-    height: "50px", 
-  }}
-  className="text-white font-semibold transition flex items-center justify-center"
->
-  Lihat Panduan Lengkap
-</button>
 
+        {/* Tombol Menuju Detail */}
+        <div className="flex justify-center py-6">
+          <button
+            onClick={() => (window.location.href = "/rules")}
+            style={{
+              backgroundImage: "url('/images/Box Ungu.png')",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+              width: "200px", // atau sesuaikan
+              height: "50px", // atau sesuaikan
+            }}
+            className="text-white font-semibold transition flex items-center justify-center"
+          >
+            Lihat Panduan Lengkap
+          </button>
 
         </div>
       </section>

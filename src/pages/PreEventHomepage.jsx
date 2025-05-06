@@ -14,6 +14,7 @@ import Footer1 from "../sections/preEvent/Footer1";
 import ReactLenis from "lenis/react";
 import { useMediaQuery } from "../useMediaQuery";
 import MobileNavbar from "../components/MobileNavbar";
+import Hadiah from "../sections/preEvent/Hadiah1";
 
 const PreEventHomepage = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -24,7 +25,7 @@ const PreEventHomepage = () => {
         {isMobile ? <MobileNavbar /> : <Navbar />}
         <Home1 />
         <LatarBelakang1 />
-        <Hadiah1 />
+        <Hadiah />
         <Timeline1 />
         <Rundown1 />
         <RincianLomba1 />

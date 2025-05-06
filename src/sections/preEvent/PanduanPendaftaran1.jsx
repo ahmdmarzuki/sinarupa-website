@@ -112,6 +112,7 @@ const PanduanPendaftaran = ({ className }) => {
 
           {/* Link Pendaftaran */}
 
+
           <div
             className="p-6 rounded-none"
             style={{
@@ -136,6 +137,7 @@ const PanduanPendaftaran = ({ className }) => {
               https://bit.ly/LangkahSapa
             </a>
           </div>
+
         </div>
       </section>
     </div>

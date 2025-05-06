@@ -16,11 +16,11 @@ const DetailRules = () => {
       >
         <section className="min-h-screen w-screen bg-[url('/images/Website-01.webp')]">
           <ReactLenis root options={{ lerp: 0.2 }}>
-            <div className="relative w-full flex justify-center pt-10 pb-8">
-              <BannerOrange className="flex justify-center items-center py-4">
-                <Header text="PANDUAN TEKNIS LOMBA" />
-              </BannerOrange>
-            </div>
+          <div className="relative w-full flex justify-center mb-17">
+          <BannerOrange className="w-[40vw] flex justify-center items-center">
+            <Header text="Panduan Teknis Lomba" />{" "}
+          </BannerOrange>
+        </div>
 
             <div className="mt-20 flex justify-center">
               <Banner className=" w-[70vw]">
@@ -140,23 +140,23 @@ const DetailRules = () => {
               </Banner>
             </div>
 
-            <div className="flex flex-col md:flex-row justify-center gap-6 pb-7 mt-20">
-              <button
-                onClick={() => (window.location.href = "/")}
-                style={{
-                  backgroundImage: "url('/images/Box Ungu.png')",
-                  backgroundSize: "cover",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center",
-                  width: "150px",
-                  height: "50px",
-                }}
-                className="text-white font-semibold transition flex items-center justify-center"
-              >
-                Kembali
-              </button>
 
-              <button
+            <div className="flex flex-col md:flex-row justify-center gap-6 pb-7 mt-20">
+            <button
+  onClick={() => (window.location.href = "/")}
+  style={{
+    backgroundImage: "url('/images/Box Ungu.png')",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    width: "150px", 
+    height: "50px", 
+  }}
+  className="text-white font-semibold transition flex items-center justify-center"
+>
+  Kembali
+</button>
+<button
                 onClick={() => window.open("https://drive.google.com/drive/folders/1Hcsy7rvw--8CilrpxcxVwwowrl3zFcu0?usp=sharing", "_blank")}
                 style={{
                   backgroundImage: "url('/images/Box Orange.png')",
@@ -170,6 +170,7 @@ const DetailRules = () => {
               >
                 Unduh TOR
               </button>
+
             </div>
 
           </ReactLenis>

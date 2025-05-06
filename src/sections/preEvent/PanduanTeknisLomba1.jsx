@@ -1,4 +1,3 @@
-// src/pages/PanduanTeknisLomba1.jsx
 
 import React from "react";
 import { Link } from "react-router-dom";
@@ -12,13 +11,14 @@ const PanduanTeknisLomba1 = () => {
     <PageWrapper>
       <section id="panduan" className="min-h-screen w-screen py-30">
         {/* Judul Utama */}
+
         <div className="flex justify-center py-8">
           <BannerOrange className="flex justify-center items-center">
             <Header text="Panduan Teknis Lomba" />
+
           </BannerOrange>
         </div>
 
-        {/* Konten Ringkasan */}
         <div className="flex justify-center mb-3">
           <Banner className="w-[60vw] md:w-[80vw]">
             <div className="col-span-3">
@@ -82,6 +82,7 @@ const PanduanTeknisLomba1 = () => {
           </Banner>
         </div>
 
+
         {/* Tombol Menuju Detail */}
         <div className="flex justify-center py-6">
           <button
@@ -98,6 +99,7 @@ const PanduanTeknisLomba1 = () => {
           >
             Lihat Panduan Lengkap
           </button>
+
         </div>
       </section>
     </PageWrapper>

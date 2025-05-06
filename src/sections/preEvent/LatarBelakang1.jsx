@@ -13,7 +13,7 @@ const LatarBelakang1 = () => {
     <AnimatedDiv>
       <div
         id="latar-belakang"
-        className="sm:mt-25 lg:mt-10 w-screen flex flex-col items-center py-17"
+        className="sm:mt-25 lg:mt-10 w-screen flex flex-col items-center py-17 mt-60"
       >
         <div className="relative w-full flex justify-center mb-17">
           <BannerOrange className="w-[40vw] flex justify-center items-center">

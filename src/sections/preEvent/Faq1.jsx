@@ -4,6 +4,7 @@ import bgCard from "/images/bgCard.png";
 import Accordion from "../../components/Accordion";
 import cardOrange from "/images/cardOrange.png";
 import Header from "../../components/Header";
+import AnimatedDiv from "../../components/AnimatedDiv";
 
 const Faq1 = () => {
   const qnaRef = useRef(null);
@@ -75,46 +76,48 @@ const Faq1 = () => {
   ];
 
   return (
-    <div id="faq" className="w-screen flex flex-col items-center py-4">
-      <div className="relative w-full flex justify-center mb-13">
-        <BannerOrange className="w-[40vw] flex justify-center items-center">
-          <Header text="FAQ" />
-        </BannerOrange>
-      </div>
+    <AnimatedDiv>
+      <div id="faq" className="w-screen flex flex-col items-center py-4">
+        <div className="relative w-full flex justify-center mb-13">
+          <BannerOrange className="w-[40vw] flex justify-center items-center">
+            <Header text="FAQ" />
+          </BannerOrange>
+        </div>
 
-      <div
-        className="
-        relative bg-cover bg-center w-[90vw]  
-        md:max-h-[70vh] md:overflow-y-auto p-8"
-        style={{
-          backgroundImage: `url(${bgCard})`,
-          boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-          overflowY: "scroll",
-        }}
-      >
-        <div className="flex flex-col md:flex-row gap-4">
-          <div>
-            {qnaList1.map((item, index) => (
-              <Accordion
-                key={index}
-                question={item.question}
-                answer={item.answer}
-                cardBackground={`url(${bgCard})`}
-              />
-            ))}
-          </div>
-          <div>
-            {qnaList2.map((item, index) => (
-              <Accordion
-                key={index}
-                question={item.question}
-                answer={item.answer}
-              />
-            ))}
+        <div
+          className="
+      relative bg-cover bg-center w-[90vw]  
+      md:max-h-[70vh] md:overflow-y-auto p-8"
+          style={{
+            backgroundImage: `url(${bgCard})`,
+            boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+            overflowY: "scroll",
+          }}
+        >
+          <div className="flex flex-col md:flex-row gap-4">
+            <div>
+              {qnaList1.map((item, index) => (
+                <Accordion
+                  key={index}
+                  question={item.question}
+                  answer={item.answer}
+                  cardBackground={`url(${bgCard})`}
+                />
+              ))}
+            </div>
+            <div>
+              {qnaList2.map((item, index) => (
+                <Accordion
+                  key={index}
+                  question={item.question}
+                  answer={item.answer}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </AnimatedDiv>
   );
 };
 

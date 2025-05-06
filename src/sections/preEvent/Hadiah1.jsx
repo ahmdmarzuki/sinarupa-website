@@ -42,7 +42,7 @@ const Hadiah = () => {
 
   return (
     <AnimatedDiv>
-      <div className="my-15">
+      <div id="hadiah" className="my-15">
         <div className="relative w-full flex justify-center mb-18">
           <BannerOrange className="w-[40vw] flex justify-center items-center">
             <Header text="Hadiah" />{" "}

@@ -14,7 +14,7 @@ const Hadiah = () => {
     >
       {/* Teks di atas */}
       <div className="mb-2 text-center">
-        <h3 className="text-[#FAA363] text-3xl font-bold">{label}</h3>
+        <h3 className="text-[#4A3D8F] text-3xl font-bold mb-10">{label}</h3>
         <p className="bg-[#4A3D8F] text-[#FAA363] text-2xl font-bold px-6 py-2 rounded-none">
           {amount}
         </p>

@@ -13,7 +13,7 @@ const Faq1 = () => {
     {
       question: "Apa itu Langkah Sapa?",
       answer:
-        "Langkah Sapa adalah pre-event dari pameran Sinarupa 2025 yang menghadirkan lomba mixed media art. Acara ini mengajak peserta menyelami makna perpisahan sebagai gestur awal menuju perubahan.",
+        "Langkah Sapa adalah pre-event dari pameran SINARUPA 2025 yang menghadirkan lomba mixed media art. Acara ini mengajak peserta menyelami makna perpisahan sebagai gestur awal menuju perubahan.",
     },
     {
       question: "Siapa saja yang boleh mengikuti lomba Mixed Media Art?",
@@ -23,7 +23,7 @@ const Faq1 = () => {
     {
       question: "Apa tema lomba tahun ini?",
       answer:
-        "Tema ini merujuk pada kondisi transisi atau peralihan yang terjadi pada seseorang ataupun sesuatu.",
+        "Tema lomba tahun ini adalah perubahan. Tema ini akan diwujudkan dalam bentuk karya kolase 2D abstrak oleh tiap peserta.",
     },
     {
       question: "Kapan dan di mana lomba akan dilaksanakan?",

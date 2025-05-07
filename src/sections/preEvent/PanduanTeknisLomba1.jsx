@@ -30,52 +30,26 @@ const PanduanTeknisLomba1 = () => {
                 </p>
 
                 <p className="text-justify text-[#4A3D8F] text-lg font-semibold mt-4">
-                  II. PERATURAN LOMBA
+                  II. KETENTUAN KARYA
                 </p>
                 <ul className="list-inside space-y-2 text-base text-[#4A3D8F] pl-6">
-                  <li className="flex items-start">
-                    <span className="mr-3">•</span> Peserta wajib hadir tepat
-                    waktu dan melakukan registrasi sebelum lomba dimulai.
+                  <li className="">
+                    <span className="mr-3">•</span> Karya mengangkat teknik{" "}
+                    <b>Visual Abstrak.</b>
                   </li>
-                  <li className="flex items-start">
-                    <span className="mr-3">•</span> Karya akhir tidak boleh
-                    melebihi ukuran kanvas 30 × 40 cm.
+                  <li className="">
+                    <span className="mr-3">•</span> Peserta wajb memanfaatkan
+                    kanvas 30 x 30 cm, kertas A4 dan medium.
                   </li>
-                  <li className="flex items-start">
+                  <li className="flex">
                     <span className="mr-3">•</span> Peserta wajib menggunakan
-                    palet warna yang disediakan panitia dalam hasil akhir karya.
+                    media campuran dangan pilihan media terbatas yang ditentukan
+                    panitia. Panitia tidak menyediakan media atau alat
+                    menggambar/lukis dalam bentuk apapun selain kanvas.
                   </li>
-                  <li className="flex items-start">
-                    <span className="mr-3">•</span> Hanya boleh membawa
-                    referensi berupa satu lembar print/sketsa ukuran A4.
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-3">•</span> Bertanggung jawab atas alat
-                    & bahan pribadi. Panitia hanya menyediakan kanvas A3.
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-3">•</span> Perangkat digital harus
-                    disimpan selama lomba berlangsung.
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-3">•</span> Tidak ada tambahan waktu
-                    bagi peserta yang terlambat.
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-3">•</span> Karya harus orisinal dan
-                    tidak mengandung unsur pornografi atau SARA.
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-3">•</span> Panitia berhak
-                    mendiskualifikasi peserta jika melanggar aturan.
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-3">•</span> Pengunduran diri tidak
-                    mendapat pengembalian dana.
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-3">•</span> Keputusan panitia bersifat
-                    final dan tidak dapat diganggu gugat.
+                  <li className="">
+                    <span className="mr-3">•</span> Karya akhir tidak boleh
+                    melebihi dimensi <b>30 cm x 30 cm x 1 cm</b> di atas kanvas.
                   </li>
                 </ul>
               </div>

@@ -13,7 +13,7 @@ const Faq1 = () => {
     {
       question: "Apa itu Langkah Sapa?",
       answer:
-        "Langkah Sapa adalah pre-event dari pameran Sintesa Rupa 2025 yang menghadirkan lomba mixed media art. Acara ini mengajak peserta menyelami makna perpisahan sebagai gestur awal menuju perubahan.",
+        "Langkah Sapa adalah pre-event dari pameran Sinarupa 2025 yang menghadirkan lomba mixed media art. Acara ini mengajak peserta menyelami makna perpisahan sebagai gestur awal menuju perubahan.",
     },
     {
       question: "Siapa saja yang boleh mengikuti lomba Mixed Media Art?",

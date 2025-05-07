@@ -23,7 +23,7 @@ const Faq1 = () => {
     {
       question: "Apa tema lomba tahun ini?",
       answer:
-        "Tema lomba adalah “Perubahan”, yang mencakup berbagai bentuk transisi dalam kehidupan seperti pertumbuhan manusia, perubahan musim, regulasi emosi, hingga metamorfosis makhluk hidup.",
+        "Tema ini merujuk pada kondisi transisi atau peralihan yang terjadi pada seseorang ataupun sesuatu.",
     },
     {
       question: "Kapan dan di mana lomba akan dilaksanakan?",
@@ -31,9 +31,35 @@ const Faq1 = () => {
         "Lomba akan dilaksanakan secara luring (offline) pada Sabtu, 31 Mei 2025, bertempat di Gedung Serba Guna (GSG), ITB Jatinangor, Jawa Barat.",
     },
     {
-      question: "Apa saja media dan alat yang diperbolehkan digunakan?",
-      answer:
-        "Peserta hanya boleh menggunakan cat akrilik, cat poster, oil pastel, dan pilox. Panitia menyediakan kanvas 30 x 30 cm, tetapi peserta wajib membawa alat dan bahan pribadi.",
+      question: "Apa saja ketentuan media lomba?",
+      answer: (
+        <>
+          <p>
+            Peserta diwajibkan untuk membawa alat dan bahan pribadi yang
+            mendukung pelaksanaan lomba. Peserta diwajibkan menggunakan minimal
+            satu media dari tiap kategori media yang dipaparkan:
+          </p>
+          <br />
+          <p>1. Media A</p>
+          <ul className="list-disc pl-6">
+            <li>Cat akrilik</li>
+            <li>Cat poster</li>
+            <li>Oil pastel</li>
+            <li>Pilox</li>
+          </ul>
+          <br />
+          <p>2. Media B (lembaran)</p>
+          <ul className="list-disc pl-6">
+            <li>Plastik</li>
+            <li>Kertas tekstur</li>
+            <li>Kain perca</li>
+            <li>Kardus</li>
+            <li>Koran</li>
+            <li>Majalah</li>
+            <li>Kemasan makanan</li>
+          </ul>
+        </>
+      ),
     },
     {
       question: "Berapa biaya pendaftaran lomba?",
@@ -71,7 +97,7 @@ const Faq1 = () => {
     {
       question: "Apa hadiah yang disediakan untuk para pemenang?",
       answer:
-        "Juara I: Rp 1.000.000, Juara II: Rp 600.000, Juara III: Rp 400.000, Juara Favorit: Voucher Artemedia Rp 200.000",
+        "Juara I: Rp 1.000.000, Juara II: Rp 600.000, Juara III: Rp 400.000, Juara Favorit: Rp 200.000",
     },
   ];
 
@@ -86,12 +112,11 @@ const Faq1 = () => {
 
         <div
           className="
-      relative bg-cover bg-center w-[90vw]  
-      md:max-h-[70vh] md:overflow-y-auto p-8"
+      relative bg-cover bg-center w-[90vw] p-8"
           style={{
             backgroundImage: `url(${bgCard})`,
             boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-            overflowY: "scroll",
+            // overflowY: "scroll",
           }}
         >
           <div className="flex flex-col md:flex-row gap-4">

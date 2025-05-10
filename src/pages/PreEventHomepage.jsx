@@ -16,7 +16,7 @@ import { useMediaQuery } from "../useMediaQuery";
 import MobileNavbar from "../components/MobileNavbar";
 import Hadiah from "../sections/preEvent/Hadiah1";
 import bgDesktop from "/images/bgDesktopRevisi.webp";
-import bgMobile from "/images/bgMobileRevisi.avif";
+import bgMobile from "/images/bgMobileRevisi_11zon.jpg";
 
 const PreEventHomepage = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");

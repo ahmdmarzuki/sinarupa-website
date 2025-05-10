@@ -1,13 +1,17 @@
 import React, { useRef, useEffect } from "react";
 import BannerOrange from "../../components/BannerOrange";
 import bgCard from "/images/bgCard.png";
+import bgBlueVertical from "/images/bgBlueVertical.png";
 import Accordion from "../../components/Accordion";
 import cardOrange from "/images/cardOrange.png";
 import Header from "../../components/Header";
 import AnimatedDiv from "../../components/AnimatedDiv";
+import { useMediaQuery } from "../../useMediaQuery";
 
 const Faq1 = () => {
   const qnaRef = useRef(null);
+
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   const qnaList1 = [
     {
@@ -103,7 +107,7 @@ const Faq1 = () => {
 
   return (
     <AnimatedDiv>
-      <div id="faq" className="w-screen flex flex-col items-center py-4">
+      <div id="faq" className="w-screen flex flex-col items-center py-10 pt-30">
         <div className="relative w-full flex justify-center mb-13">
           <BannerOrange className="w-[40vw] flex justify-center items-center">
             <Header text="FAQ" />
@@ -114,7 +118,7 @@ const Faq1 = () => {
           className="
       relative bg-cover bg-center w-[90vw] p-8"
           style={{
-            backgroundImage: `url(${bgCard})`,
+            backgroundImage: `url(${isMobile ? bgBlueVertical : bgCard})`,
             boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
             // overflowY: "scroll",
           }}

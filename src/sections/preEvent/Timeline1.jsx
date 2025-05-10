@@ -1,10 +1,13 @@
 import React from "react";
 import BannerOrange from "../../components/BannerOrange";
 import timeline from "/images/timeline.png";
+import timelineMobile from "/images/timelineMobile.png";
 import Header from "../../components/Header";
 import AnimatedDiv from "../../components/AnimatedDiv";
+import { useMediaQuery } from "../../useMediaQuery";
 
 const Timeline1 = () => {
+  const isMobile = useMediaQuery("(max-width: 768px)");
   return (
     <AnimatedDiv>
       <div
@@ -19,7 +22,7 @@ const Timeline1 = () => {
 
         <div className="flex justify-center items-center object-center mt-15">
           <img
-            src={timeline}
+            src={isMobile ? timelineMobile : timeline}
             className="md:w-[60vw] w-[80vw] flex items-center object-center"
           ></img>
         </div>

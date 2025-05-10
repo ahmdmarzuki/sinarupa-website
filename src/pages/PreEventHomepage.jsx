@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Home1 from "../sections/preEvent/Home1";
 import LatarBelakang1 from "../sections/preEvent/LatarBelakang1";
@@ -15,12 +15,17 @@ import ReactLenis from "lenis/react";
 import { useMediaQuery } from "../useMediaQuery";
 import MobileNavbar from "../components/MobileNavbar";
 import Hadiah from "../sections/preEvent/Hadiah1";
+import bgDesktop from "/images/Website-01.webp";
+import bgMobile from "/images/bgMobile-min.png";
 
 const PreEventHomepage = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
-    <div className="bg-[url('/images/Website-01.webp')] bg-cover bg-top bg-no-repeat min-h-screen">
+    <div
+      className="bg-cover bg-top bg-no-repeat min-h-screen"
+      style={{ backgroundImage: `url(${isMobile ? bgMobile : bgDesktop})` }}
+    >
       <ReactLenis root options={{ lerp: 0.2 }}>
         {isMobile ? <MobileNavbar /> : <Navbar />}
         <Home1 />

@@ -5,8 +5,13 @@ import ImageUpload from "./pages/ImageUpload";
 import VotingPage from "./pages/VotingPage";
 import DetailRules from "./pages/DetailRules";
 import PanduanTeknisLomba1 from "./sections/preEvent/PanduanTeknisLomba1.jsx";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    document.title = "Langkah Sapa";
+  }, []);
+
   return (
     <Routes>
       <Route path="/" element={<PreEventHomepage />} />

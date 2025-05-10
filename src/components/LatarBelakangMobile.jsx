@@ -1,12 +1,12 @@
 import React from "react";
-import Banner from "./Banner";
 import gif from "/images/gif.gif";
 import frameoren from "/images/frameoren.png";
+import BannerMobile from "./BannerMobile";
 
 const LatarBelakangMobile = () => {
   return (
     <div>
-      <Banner className="w-[60vw] grid grid-cols-1 py-10 items-center">
+      <BannerMobile className="w-[60vw] grid grid-cols-1 py-10 items-center">
         <div className="col-span-1 flex justify-center items-center mb-15">
           <img
             src={frameoren}
@@ -31,7 +31,7 @@ const LatarBelakangMobile = () => {
             melangkah menuju transisi pada suatu perubahan.
           </p>
         </div>
-      </Banner>
+      </BannerMobile>
     </div>
   );
 };

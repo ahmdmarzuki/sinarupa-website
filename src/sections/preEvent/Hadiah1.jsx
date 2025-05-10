@@ -12,17 +12,9 @@ const Hadiah1 = () => {
 
   return (
     <div id="hadiah" className="py-16 md:px-40">
-      <AnimatedDiv>
-        <div className="flex justify-center mb-18">
-          <BannerOrange className="w-[40vw] flex justify-center items-center">
-            <Header text="Hadiah" />
-          </BannerOrange>
-        </div>
-      </AnimatedDiv>
-
       <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
-        <AnimatedDiv>
-          <div className="md:order-2 flex flex-col items-center">
+        <div className="md:order-2 flex flex-col items-center">
+          <AnimatedDiv>
             <div className="mb-2 text-center">
               <h3 className="text-[#4A3D8F] text-3xl font-bold mb-6">
                 Juara 1
@@ -32,11 +24,11 @@ const Hadiah1 = () => {
               </p>
             </div>
             <img src={podium1} alt="juara1" className="w-[50vw]" />
-          </div>
-        </AnimatedDiv>
+          </AnimatedDiv>
+        </div>
 
-        <AnimatedDiv>
-          <div className="md:order-1 md:mt-20 flex flex-col items-center">
+        <div className="md:order-1 md:mt-20 flex flex-col items-center">
+          <AnimatedDiv>
             <h3 className="text-[#4A3D8F] text-center text-3xl font-bold mb-6">
               Juara 2
             </h3>
@@ -44,11 +36,11 @@ const Hadiah1 = () => {
               Rp1.000.000
             </p>
             <img src={podium2} alt="juara2" className="w-[50vw]" />
-          </div>
-        </AnimatedDiv>
+          </AnimatedDiv>
+        </div>
 
-        <AnimatedDiv>
-          <div className="md:order-3 md:mt-20 flex flex-col items-center">
+        <div className="md:order-3 md:mt-20 flex flex-col items-center">
+          <AnimatedDiv>
             <h3 className="text-[#4A3D8F] text-center text-3xl font-bold mb-6">
               Juara 3
             </h3>
@@ -56,8 +48,8 @@ const Hadiah1 = () => {
               Rp1.000.000
             </p>
             <img src={podium3} alt="juara3" className="w-[50vw]" />
-          </div>
-        </AnimatedDiv>
+          </AnimatedDiv>
+        </div>
       </div>
     </div>
   );

@@ -14,16 +14,16 @@ const DetailRules = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <section className="min-h-screen w-screen bg-[url('/images/Website-01.webp')]">
+        <section className="min-h-screen w-screen bg-[url('/images/bgDesktopRevisi.webp')] flex flex-col items-center py-20">
           <ReactLenis root options={{ lerp: 0.2 }}>
-            <div className="relative w-full flex justify-center mb-17">
+            <div className="relative w-full flex justify-center mb-10">
               <BannerOrange className="w-[40vw] flex justify-center items-center">
                 <Header text="Panduan Teknis Lomba" />{" "}
               </BannerOrange>
             </div>
 
             <div className="mt-20 flex justify-center">
-              <Banner className=" w-[70vw]">
+              <Banner className=" w-[60vw]">
                 <div className="text-[#4A3D8F] text-justify text-lg space-y-6">
                   <section className="mt-6">
                     <h3 className="font-bold text-xl">I. KETENTUAN PESERTA</h3>

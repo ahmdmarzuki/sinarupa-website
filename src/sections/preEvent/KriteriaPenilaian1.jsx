@@ -14,7 +14,7 @@ const KriteriaPenilaian1 = () => {
           </BannerOrange>
         </div>
 
-        <div className="relative container mx-auto mr-15 px-10 pt-10 flex flex-col items-center gap-8 md:grid md:grid-cols-3 md:gap-10">
+        <div className="relative px-10 pt-10 flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20">
           {/* Tema */}
           <BannerUngu className="w-full h-[auto] md:w-[15vw] flex flex-col items-center text-center">
             <div className="text-xl md:text-4xl text-[#fbf5ae] font-oddval mt-4 whitespace-pre-line object-contain">

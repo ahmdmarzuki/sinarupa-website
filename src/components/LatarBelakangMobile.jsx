@@ -20,8 +20,9 @@ const LatarBelakangMobile = () => {
             <b>Langkah Sapa</b> hadir sebagai titik awal dari setiap perubahan.
             Pengunjung diajak untuk keluar dari zona nyaman dan menyelami dunia
             baru yang penuh ketidakpastian dan potensi. Dengan menghadirkan
-            lomba mixed media art, kami mengajak peserta untuk menuangkan
-            kreativitas dan mendalami proses perpisahan dengan{" "}
+            lomba <span className="italic">mixed media art</span>, kami mengajak
+            peserta untuk menuangkan kreativitas dan mendalami proses perpisahan
+            dengan{" "}
             <b>
               menciptakan suatu karya yang menggambarkan perjalanan penuh
               perubahan.

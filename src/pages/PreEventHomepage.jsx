@@ -15,8 +15,8 @@ import ReactLenis from "lenis/react";
 import { useMediaQuery } from "../useMediaQuery";
 import MobileNavbar from "../components/MobileNavbar";
 import Hadiah from "../sections/preEvent/Hadiah1";
-import bgDesktop from "/images/Website-01.webp";
-import bgMobile from "/images/bgMobile-min.png";
+import bgDesktop from "/images/bgDesktopRevisi.webp";
+import bgMobile from "/images/bgMobileRevisi.png";
 
 const PreEventHomepage = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");

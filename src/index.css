@@ -25,6 +25,13 @@ body {
 }
 
 @font-face {
+  font-family: Host Grotesk;
+  src: url("/fonts/HostGrotesk-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
   font-family: Oddval;
   src: url("/fonts/Oddval-SemiBold.ttf");
 }

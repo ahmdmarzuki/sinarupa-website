@@ -20,7 +20,7 @@ const Rundown1 = () => {
         <div className="flex justify-center items-center mt-16 mb-10">
           <img
             src={isMobile ? rundownMobile : Rundown2}
-            className="w-[75vw] md:w-[70vw] lg:w-[90vw] object-center"
+            className="w-[75vw] md:w-[70vw] object-center"
           ></img>
         </div>
       </div>

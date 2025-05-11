@@ -16,9 +16,9 @@ const KriteriaPenilaian1 = () => {
 
         <div className="relative px-10 pt-10 flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20">
           {/* Tema */}
-          <BannerUngu className="w-full h-[auto] md:w-[15vw] flex flex-col items-center text-center">
-            <div className="text-xl md:text-4xl text-[#fbf5ae] font-oddval mt-4 whitespace-pre-line object-contain">
-              Tema
+          <BannerUngu className="w-full h-[auto] md:w-[15vw] flex flex-col items-center text-center py-5">
+            <div className="text-2xl md:text-4xl text-[#fbf5ae] font-oddval whitespace-pre-line object-contain">
+              TEMA
             </div>
 
             <div className="text-lg md:text-2xl text-[#f9b363] font-oddval mt-5 whitespace-pre-line object-contain text-center">
@@ -28,19 +28,18 @@ const KriteriaPenilaian1 = () => {
           </BannerUngu>
 
           {/* Orisinalitas */}
-          <BannerUngu className="w-full h-[auto] md:w-[15vw] flex flex-col items-center text-center">
-            <div className="text-xl md:text-4xl text-[#fbf5ae] font-oddval mt-4 whitespace-pre-line object-contain">
-              Orisinalitas
+          <BannerUngu className="w-full h-[auto] md:w-[18vw] flex flex-col items-center text-center py-5">
+            <div className="text-2xl md:text-4xl text-[#fbf5ae] font-oddval whitespace-pre-line object-contain">
+              ORISINALITAS
             </div>
             <div className="text-lg md:text-2xl text-[#f9b363] font-oddval mt-5 whitespace-pre-line object-contain text-center">
               Keunikan karya {"\n"} dalam menyajikan {"\n"} konsep dan ide
             </div>
           </BannerUngu>
 
-          {/* Kerapian */}
-          <BannerUngu className="w-full h-[auto] md:w-[15vw] flex flex-col items-center text-center">
-            <div className="text-xl md:text-4xl text-[#fbf5ae] font-oddval mt-4 whitespace-pre-line object-contain">
-              Kerapian
+          <BannerUngu className="w-full h-[auto] md:w-[15vw] flex flex-col items-center text-center py-5">
+            <div className="text-2xl md:text-4xl text-[#fbf5ae] font-oddval  whitespace-pre-line object-contain">
+              KERAPIAN
             </div>
 
             <div className="text-lg md:text-2xl text-[#f9b363] font-oddval mt-5 whitespace-pre-line object-contain text-center">

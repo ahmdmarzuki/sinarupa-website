@@ -33,7 +33,7 @@ const Hadiah1 = () => {
               Juara 2
             </h3>
             <p className="bg-[#4A3D8F] text-[#FAA363] text-2xl font-bold px-6 py-2 mb-12  rounded-none">
-              Rp1.000.000
+              Rp600.000
             </p>
             <img src={podium2} alt="juara2" className="w-[50vw]" />
           </AnimatedDiv>
@@ -45,7 +45,7 @@ const Hadiah1 = () => {
               Juara 3
             </h3>
             <p className="bg-[#4A3D8F] text-[#FAA363] text-2xl font-bold px-6 py-2 mb-12  rounded-none">
-              Rp1.000.000
+              Rp400.000
             </p>
             <img src={podium3} alt="juara3" className="w-[50vw]" />
           </AnimatedDiv>

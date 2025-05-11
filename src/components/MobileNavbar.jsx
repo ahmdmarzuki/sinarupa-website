@@ -62,7 +62,7 @@ const MobileNavbar = () => {
               alt="Tombol Daftar"
               className="w-full"
             />
-            <div className="absolute inset-0 flex items-center justify-center text-[#4A3D8F] font-semibold text-[1rem] sm:text-[1.2rem] md:text-[1.3rem] lg:text-[1.5rem]">
+            <div className="font-host absolute inset-0 flex items-center justify-center text-[#4A3D8F] font-semibold text-[1rem] sm:text-[1.2rem] md:text-[1.3rem] lg:text-[1.5rem]">
               Daftar Sekarang
             </div>
           </a>

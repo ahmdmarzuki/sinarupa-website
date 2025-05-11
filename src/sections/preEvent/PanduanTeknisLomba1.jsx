@@ -10,7 +10,7 @@ const PanduanTeknisLomba1 = () => {
   return (
     <AnimatedDiv>
       <PageWrapper>
-        <section id="panduan" className="min-h-screen w-screen py-30">
+        <section id="panduan" className="min-h-screen w-screen py-15 my-15">
           {/* Judul Utama */}
 
           <div className="flex justify-center py-8">

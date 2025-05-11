@@ -11,7 +11,15 @@ const Hadiah1 = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
-    <div id="hadiah" className="py-16 md:px-40">
+    <div className="py-16 md:px-40">
+      <div id="hadiah" className="h-30" />
+      <div className="relative w-full flex justify-center mb-17">
+        <BannerOrange className="w-[40vw] flex justify-center items-center">
+          <h1 className="font-oddval text-[#4A3D8F] lg:text-5xl sm:text-4xl">
+            Hadiah
+          </h1>
+        </BannerOrange>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
         <div className="md:order-2 flex flex-col items-center">
           <AnimatedDiv>

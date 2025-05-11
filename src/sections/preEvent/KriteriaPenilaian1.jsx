@@ -8,7 +8,7 @@ const KriteriaPenilaian1 = () => {
   return (
     <AnimatedDiv>
       <div className="w-screen flex flex-col justify-center items-center">
-        <div className="relative w-full flex flex-col items-center mb-8 pt-90 md:pt-40">
+        <div className="relative w-full flex flex-col items-center mb-8 pt-90 md:pt-60">
           <BannerOrange className="w-[40vw] h-[5vh] flex justify-center items-center">
             <Header text="Kriteria" />
           </BannerOrange>

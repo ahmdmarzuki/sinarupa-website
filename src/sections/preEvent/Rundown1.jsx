@@ -10,7 +10,7 @@ const Rundown1 = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   return (
     <AnimatedDiv>
-      <div className="w-screen items-center flex flex-col justify-center py-30">
+      <div className="w-screen items-center flex flex-col justify-center py-60">
         <div className="relative w-full flex justify-center">
           <BannerOrange className="w-[40vw] flex justify-center items-center">
             <Header text="Rundown" />

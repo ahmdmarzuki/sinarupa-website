@@ -35,6 +35,12 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  function scrollOffset(id, offset = 100) {
+    const element = document.getElementById(id);
+    const y = element.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+
   return (
     <div className="fixed flex flex-col w-screen z-50 select-none">
       <motion.div

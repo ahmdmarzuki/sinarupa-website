@@ -10,10 +10,8 @@ const Timeline1 = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   return (
     <AnimatedDiv>
-      <div
-        id="timeline"
-        className="my-15 w-screen items-center flex flex-col justify-center"
-      >
+      <div id="timeline" className="h-30" />
+      <div className="w-screen items-center flex flex-col justify-center">
         <div className="relative w-full flex justify-center">
           <BannerOrange className="w-[40vw] flex justify-center items-center">
             <Header text="Timeline" />

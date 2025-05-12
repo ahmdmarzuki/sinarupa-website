@@ -8,27 +8,10 @@ import {
   deleteDoc,
   doc,
 } from "firebase/firestore";
-import { auth } from "./auth";
-import { useId } from "react";
 
 const db = getFirestore(app);
 const usersCollectionRef = collection(db, "users");
 const artToVoteRef = collection(db, "artToVote");
-
-const createUser = async (name, age) => {
-  await addDoc(usersCollectionRef, { name: name, age: Number(age) });
-};
-
-const updateUser = async (id, age) => {
-  const userDoc = doc(db, "users", id);
-  const newFields = { age: age + 1 };
-  await updateDoc(userDoc, newFields);
-};
-
-const deleteUser = async (id) => {
-  const userDoc = doc(db, "users", id);
-  await deleteDoc(userDoc);
-};
 
 const createArtToVote = async (name, desc, url) => {
   await addDoc(artToVoteRef, {
@@ -91,9 +74,6 @@ const resetVote = async (visitorId) => {
 export {
   db,
   usersCollectionRef,
-  createUser,
-  updateUser,
-  deleteUser,
   createArtToVote,
   getAllArtToVote,
   vote,

@@ -1,11 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-import PreEventHomepage from "./pages/PreEventHomepage";
-import LoginPage from "./pages/LoginPage";
-import ImageUpload from "./pages/ImageUpload";
-import VotingPage from "./pages/VotingPage";
-import DetailRules from "./pages/DetailRules";
-import PanduanTeknisLomba1 from "./sections/preEvent/PanduanTeknisLomba1.jsx";
-import { useEffect } from "react";
+import { useEffect, Suspense, lazy } from "react";
+
+// Lazy load semua halaman
+const PreEventHomepage = lazy(() => import("./pages/PreEventHomepage"));
+const DetailRules = lazy(() => import("./pages/DetailRules"));
+const ImageUpload = lazy(() => import("./pages/ImageUpload"));
 
 function App() {
   useEffect(() => {
@@ -13,14 +12,13 @@ function App() {
   }, []);
 
   return (
-    <Routes>
-      <Route path="/" element={<PreEventHomepage />} />
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/vote" element={<ImageUpload />} />
-      <Route path="/voting" element={<VotingPage />} />
-      <Route path="/rules" element={<DetailRules />} />
-      <Route path="/panduan" element={<PanduanTeknisLomba1 />} />
-    </Routes>
+    <Suspense fallback={<div className="p-10 text-center">Loading...</div>}>
+      <Routes>
+        <Route path="/" element={<PreEventHomepage />} />
+        <Route path="/vote" element={<ImageUpload />} />
+        <Route path="/rules" element={<DetailRules />} />
+      </Routes>
+    </Suspense>
   );
 }
 

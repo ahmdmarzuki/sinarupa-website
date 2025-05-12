@@ -16,7 +16,6 @@ import {
 } from "../firebase/firestore";
 import Banner from "../components/Banner";
 import { motion } from "motion/react";
-import FingerprintJS from "@fingerprintjs/fingerprintjs";
 import { doc, getDoc } from "firebase/firestore";
 
 const imageDb = getStorage(app);
@@ -45,9 +44,9 @@ const ImageUpload = () => {
   // };
   useEffect(() => {
     const loadFingerprint = async () => {
-      const fp = await FingerprintJS.load();
+      const fpModule = await import("@fingerprintjs/fingerprintjs");
+      const fp = await fpModule.load();
       const result = await fp.get();
-
       setVisitorId(result.visitorId);
     };
 
@@ -64,7 +63,7 @@ const ImageUpload = () => {
       setArts(result);
     };
     fetchArts();
-  }, [arts]);
+  }, []);
 
   const uploadImage = async () => {
     if (!img) return alert("Pilih gambar terlebih dahulu!");

@@ -6,16 +6,18 @@ import AnimatedDiv from "../../components/AnimatedDiv";
 
 const KriteriaPenilaian1 = () => {
   return (
-    <AnimatedDiv>
-      <div className="w-screen flex flex-col justify-center items-center">
-        <div className="relative w-full flex flex-col items-center mb-8 pt-90 md:pt-60">
+    <div className="w-screen flex flex-col justify-center items-center">
+      <div className="relative w-full flex flex-col items-center mb-8 pt-90 md:pt-60">
+        <AnimatedDiv>
           <BannerOrange className="w-[40vw] h-[5vh] flex justify-center items-center">
             <Header text="Kriteria" />
           </BannerOrange>
-        </div>
+        </AnimatedDiv>
+      </div>
 
-        <div className="relative px-10 pt-10 flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20">
-          {/* Tema */}
+      <div className="relative px-10 pt-10 flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20">
+        {/* Tema */}
+        <AnimatedDiv>
           <BannerUngu className="w-full h-[auto] md:w-[15vw] flex flex-col items-center text-center py-5">
             <div className="text-2xl md:text-4xl text-[#fbf5ae] font-oddval whitespace-pre-line object-contain">
               TEMA
@@ -26,8 +28,10 @@ const KriteriaPenilaian1 = () => {
               tema utama
             </div>
           </BannerUngu>
+        </AnimatedDiv>
 
-          {/* Orisinalitas */}
+        {/* Orisinalitas */}
+        <AnimatedDiv>
           <BannerUngu className="w-full h-[auto] md:w-[18vw] flex flex-col items-center text-center py-5">
             <div className="text-2xl md:text-4xl text-[#fbf5ae] font-oddval whitespace-pre-line object-contain">
               ORISINALITAS
@@ -36,7 +40,9 @@ const KriteriaPenilaian1 = () => {
               Keunikan karya {"\n"} dalam menyajikan {"\n"} konsep dan ide
             </div>
           </BannerUngu>
+        </AnimatedDiv>
 
+        <AnimatedDiv>
           <BannerUngu className="w-full h-[auto] md:w-[15vw] flex flex-col items-center text-center py-5">
             <div className="text-2xl md:text-4xl text-[#fbf5ae] font-oddval  whitespace-pre-line object-contain">
               KERAPIAN
@@ -47,9 +53,9 @@ const KriteriaPenilaian1 = () => {
               komposisi
             </div>
           </BannerUngu>
-        </div>
+        </AnimatedDiv>
       </div>
-    </AnimatedDiv>
+    </div>
   );
 };
 

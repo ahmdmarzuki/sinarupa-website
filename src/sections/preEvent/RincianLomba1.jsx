@@ -8,15 +8,17 @@ const RincianLomba1 = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
-    <AnimatedDiv>
-      <div className="md:h-screen w-screen flex flex-col justify-center items-center">
-        <div className="relative w-full flex justify-center mb-5">
+    <div className="md:h-screen w-screen flex flex-col justify-center items-center">
+      <div className="relative w-full flex justify-center mb-5">
+        <AnimatedDiv>
           <BannerOrange className="flex justify-center items-center">
             <Header text="Rincian Lomba" />
           </BannerOrange>
-        </div>
-        <div className="relative container mx-auto px-20 pt-15 flex flex-col items-center gap-8 md:grid md:grid-cols-3 md:gap-8">
-          {/* Lokasi */}
+        </AnimatedDiv>
+      </div>
+      <div className="relative container mx-auto px-20 pt-15 flex flex-col items-center gap-8 md:grid md:grid-cols-3 md:gap-8">
+        {/* Lokasi */}
+        <AnimatedDiv>
           <div
             className="flex flex-col items-center text-center gap-6"
             style={{ transform: isMobile ? "translateX(-80px)" : "" }}
@@ -32,8 +34,10 @@ const RincianLomba1 = () => {
               Gedung Serba Guna,{"\n"} ITB Jatinangor
             </div>
           </div>
+        </AnimatedDiv>
 
-          {/* Waktu */}
+        {/* Waktu */}
+        <AnimatedDiv>
           <div
             className="flex flex-col items-center text-center gap-6"
             style={{ transform: isMobile ? "translateX(80px)" : "" }}
@@ -49,8 +53,10 @@ const RincianLomba1 = () => {
               240 menit
             </div>
           </div>
+        </AnimatedDiv>
 
-          {/* Dimensi */}
+        {/* Dimensi */}
+        <AnimatedDiv>
           <div
             className="flex flex-col items-center text-center gap-6"
             style={{ transform: isMobile ? "translateX(-80px)" : "" }}
@@ -66,9 +72,9 @@ const RincianLomba1 = () => {
               Canvas{"\n"}30x30cm
             </div>
           </div>
-        </div>
+        </AnimatedDiv>
       </div>
-    </AnimatedDiv>
+    </div>
   );
 };
 

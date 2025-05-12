@@ -1,53 +1,28 @@
 import React from "react";
 import Header from "../../components/Header";
 import AnimatedDiv from "../../components/AnimatedDiv";
+import BannerOrange from "../../components/BannerOrange";
 
 const PanduanPendaftaran = ({ className }) => {
   return (
-    <AnimatedDiv>
-      <div className="w-full flex flex-col justify-center items-center pt-10 pb-6 min-h-[120px] px-4 sm:px-6 md:px-8 text-[#4a3d8f]">
-        {/* Banner Judul */}
-        <div className="relative w-full max-w-[724px]">
-          {/* Layer belakang 1 */}
-          <div
-            className="absolute top-0 left-0 w-full h-full"
-            style={{
-              backgroundImage: "url('/images/Box Orange.png')",
-              backgroundSize: "cover",
-              opacity: 0.6,
-              zIndex: 0,
-            }}
-          />
-          {/* Layer belakang 2 */}
-          <div
-            className="absolute -left-2 -bottom-2 w-full h-full"
-            style={{
-              backgroundImage: "url('/images/Box Orange.png')",
-              backgroundSize: "cover",
-              opacity: 0.8,
-              zIndex: 0,
-            }}
-          />
-          {/* Konten */}
-          <div
-            className="relative flex justify-center  z-10 py-4"
-            style={{
-              backgroundImage: "url('/images/Box Orange.png')",
-              backgroundSize: "cover",
-            }}
-          >
-            <h1
-              className={`font-oddval text-2xl sm:text-3xl md:text-4xl text-center w-full ${className}`}
-            >
-              Panduan Pendaftaran
-            </h1>
-          </div>
+    <div className="w-full flex flex-col justify-center items-center pt-10 pb-6 min-h-[120px] px-4 sm:px-6 md:px-8 text-[#4a3d8f]">
+      {/* Banner Judul */}
+      <div className="relative w-full max-w-[724px]">
+        {/* Konten */}
+        <div className="relative w-full flex justify-center mb-8">
+          <AnimatedDiv>
+            <BannerOrange className="flex justify-center items-center">
+              <Header text="Panduan Pendaftaran" />
+            </BannerOrange>
+          </AnimatedDiv>
         </div>
+      </div>
 
-        {/* Informasi */}
-        <section className="w-full flex flex-col items-center px-4 md:px-8 lg:px-20 pt-10 gap-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-6xl">
-            {/* Biaya Pendaftaran */}
+      {/* Informasi */}
+      <section className="w-full flex flex-col items-center px-4 md:px-8 lg:px-20 pt-10 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-6xl">
+          {/* Biaya Pendaftaran */}
+          <AnimatedDiv>
             <div
               className="p-6 rounded-none"
               style={{
@@ -70,8 +45,10 @@ const PanduanPendaftaran = ({ className }) => {
                 </li>
               </ul>
             </div>
+          </AnimatedDiv>
 
-            {/* Dokumen */}
+          {/* Dokumen */}
+          <AnimatedDiv>
             <div
               className="p-6 rounded-none"
               style={{
@@ -88,8 +65,10 @@ const PanduanPendaftaran = ({ className }) => {
                 membawanya untuk registrasi ulang di hari pelaksanaan lomba.
               </p>
             </div>
+          </AnimatedDiv>
 
-            {/* Ketentuan Pendaftaran */}
+          {/* Ketentuan Pendaftaran */}
+          <AnimatedDiv>
             <div
               className="p-6 rounded-none"
               style={{
@@ -111,9 +90,11 @@ const PanduanPendaftaran = ({ className }) => {
                 </li>
               </ul>
             </div>
+          </AnimatedDiv>
 
-            {/* Link Pendaftaran */}
+          {/* Link Pendaftaran */}
 
+          <AnimatedDiv>
             <div
               className="p-6 rounded-none"
               style={{
@@ -138,10 +119,10 @@ const PanduanPendaftaran = ({ className }) => {
                 https://bit.ly/LangkahSapa
               </a>
             </div>
-          </div>
-        </section>
-      </div>
-    </AnimatedDiv>
+          </AnimatedDiv>
+        </div>
+      </section>
+    </div>
   );
 };
 

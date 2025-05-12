@@ -8,17 +8,19 @@ import AnimatedDiv from "../../components/AnimatedDiv";
 
 const PanduanTeknisLomba1 = () => {
   return (
-    <AnimatedDiv>
-      <PageWrapper>
-        <section id="panduan" className="min-h-screen w-screen py-15 my-15">
-          {/* Judul Utama */}
+    <PageWrapper>
+      <section id="panduan" className="min-h-screen w-screen py-15 my-15">
+        {/* Judul Utama */}
 
-          <div className="flex justify-center py-8">
+        <div className="flex justify-center pt-20 pb-16">
+          <AnimatedDiv>
             <BannerOrange className="flex justify-center items-center">
               <Header text="Panduan Teknis Lomba" />
             </BannerOrange>
-          </div>
+          </AnimatedDiv>
+        </div>
 
+        <AnimatedDiv>
           <div className="flex justify-center mb-3">
             <Banner className="w-[60vw] md:w-[80vw]">
               <div className="col-span-3">
@@ -55,8 +57,10 @@ const PanduanTeknisLomba1 = () => {
               </div>
             </Banner>
           </div>
+        </AnimatedDiv>
 
-          {/* Tombol Menuju Detail */}
+        {/* Tombol Menuju Detail */}
+        <AnimatedDiv>
           <div className="flex justify-center py-6">
             <button
               onClick={() => (window.location.href = "/rules")}
@@ -73,9 +77,9 @@ const PanduanTeknisLomba1 = () => {
               Lihat Panduan Lengkap
             </button>
           </div>
-        </section>
-      </PageWrapper>
-    </AnimatedDiv>
+        </AnimatedDiv>
+      </section>
+    </PageWrapper>
   );
 };
 

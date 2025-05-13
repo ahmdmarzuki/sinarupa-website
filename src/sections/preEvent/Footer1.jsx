@@ -20,7 +20,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="transition duration-200 hover:underline hover:opacity-80"
           >
-            Gedung GSG, ITB Jatinangor
+            GSG, ITB Jatinangor, Jl Let. Jen. Purn. Dr. (HC). Mashudi No. 1
           </a>
         </p>
       </div>

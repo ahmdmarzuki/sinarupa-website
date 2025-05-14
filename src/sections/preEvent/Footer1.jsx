@@ -15,7 +15,7 @@ const Footer = () => {
         <p className="mt-2">
           Lokasi:{" "}
           <a
-            href="https://goo.gl/maps/EFNy9GeCZKFMvX3U9"
+            href="https://maps.app.goo.gl/hUZ3fXw87wgefheT7"
             target="_blank"
             rel="noopener noreferrer"
             className="transition duration-200 hover:underline hover:opacity-80"

@@ -39,9 +39,8 @@ const DetailRules = () => {
                         Karya mengangkat teknik <strong>Visual Abstrak</strong>.
                       </li>
                       <li>
-                        Peserta wajib memanfaatkan kanvas 30 x 30 cm, kertas A4
-                        dan medium lembaran yang telah disediakan oleh pihak
-                        panitia.
+                        Peserta wajib memanfaatkan kanvas 30 x 30 cm dan kertas
+                        A4 yang telah disediakan oleh pihak panitia.
                       </li>
                       <li>
                         Peserta wajib menggunakan media campuran dengan pilihan

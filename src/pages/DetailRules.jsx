@@ -216,7 +216,7 @@ const DetailRules = () => {
               <button
                 onClick={() =>
                   window.open(
-                    "https://drive.google.com/file/d/1Uj6XUwD_7YXmBAZitMkZKq1MMhYyQPM1/view?usp=sharing"
+                    "https://drive.google.com/file/d/1U0ecT__MxjxzoT074hcIGLRC5aljKB_C/view?usp=share_link"
                   )
                 }
                 style={{

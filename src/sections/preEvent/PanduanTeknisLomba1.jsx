@@ -41,7 +41,8 @@ const PanduanTeknisLomba1 = () => {
                   </li>
                   <li className="">
                     <span className="mr-3">•</span> Peserta wajb memanfaatkan
-                    kanvas 30 x 30 cm, kertas A4 dan medium.
+                    kanvas 30 x 30 cm dan kertas A4 yang telah disediakan oleh
+                    pihak panitia.
                   </li>
                   <li className="flex">
                     <span className="mr-3">•</span> Peserta wajib menggunakan

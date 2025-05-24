@@ -1,11 +1,17 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Pagination } from "swiper/modules";
-
+import "./styleVotingPage2.css";
 import "swiper/css/pagination";
 import "swiper/css";
-import "./styleVotingPage.css";
+
+import {
+  createArtToVote,
+  getAllArtToVote,
+  resetVote,
+  vote,
+} from "../firebase/firestore";
 
 const slidesData = [
   {
@@ -32,10 +38,18 @@ const slidesData = [
     title: "INI TITLEE",
     desc: "ini descc, gatauu mau nulis apaa",
   },
+  {
+    imgSrc:
+      "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "INI TITLEE",
+    desc: "ini descc, gatauu mau nulis apaa",
+  },
 ];
 
-const VotingPage = () => {
+const VotingPage2 = () => {
   const swiperWrappedRef = useRef(null);
+
+  const [arts, setArts] = useState([]);
 
   const adjustMargin = () => {
     const screenWidth = window.innerWidth;
@@ -58,10 +72,19 @@ const VotingPage = () => {
     return () => window.removeEventListener("resize", adjustMargin);
   }, []);
 
+  useEffect(() => {
+    const fetchArts = async () => {
+      const result = await getAllArtToVote();
+      setArts(result);
+    };
+    fetchArts();
+  }, []);
+
   return (
-    <main className="main">
-      <div className="container">
+    <main className="main2">
+      <div className="container2">
         <Swiper
+          className=""
           modules={[Pagination]}
           grabCursor
           initialSlide={0}
@@ -79,16 +102,22 @@ const VotingPage = () => {
             swiperWrappedRef.current = swiper.wrapperEl;
           }}
         >
-          {slidesData.map((slide, index) => (
-            <SwiperSlide key={index} className="swiper-slide w-[300px]">
-              <img src={slide.imgSrc} alt={slide.title} className="artImage" />
+          {arts.map((art) => (
+            <SwiperSlide key={art.id} className=" bg-teal-300">
+              <div className="flex flex-row justify-center items-center h-[100%]">
+                <img
+                  src={art.url}
+                  alt={art.name}
+                  className="aspect-square w-60"
+                />
 
-              <div className="content">
-                <div className="title">
-                  <h1>{slide.title}</h1>
-                </div>
-                <div className="text-box">
-                  <p>{slide.desc}</p>
+                <div className="flex flex-col">
+                  <div className="">
+                    <h1>{art.name}</h1>
+                  </div>
+                  <div className="">
+                    <p>{art.desc}</p>
+                  </div>
                 </div>
               </div>
             </SwiperSlide>
@@ -99,4 +128,4 @@ const VotingPage = () => {
   );
 };
 
-export default VotingPage;
+export default VotingPage2;

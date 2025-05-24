@@ -4,15 +4,7 @@
   --accent-clr: #ae3c68;
 }
 
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-img {
+.artImage {
   display: block;
   width: 100%;
   height: 100%;
@@ -20,7 +12,7 @@ img {
   z-index: -1;
 }
 
-main {
+.main {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,13 +47,13 @@ main {
   transition: width 1s ease-in-out;
 }
 
-.swiper-slide img {
+.swiper-slide .artImage {
   position: absolute;
   inset: 0;
   filter: grayscale(90%);
 }
 
-.swiper-slide-active img {
+.swiper-slide-active .artImage {
   filter: grayscale(0%);
 }
 

@@ -5,14 +5,6 @@ body {
   overflow-x: hidden;
 }
 
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 @font-face {
   font-family: Host Grotesk;
   src: url("/fonts/HostGrotesk-Regular.ttf") format("truetype");

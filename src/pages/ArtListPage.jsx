@@ -30,7 +30,7 @@ const ArtListPage = () => {
       style={{ backgroundImage: `url(${isMobile ? bgMobile : bgDesktop})` }}
     >
       <div className="grid grid-cols-5 gap-8">
-        {arts.map((art) => (
+        {/* {arts.map((art) => (
           <div
             key={art.id}
             className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"
@@ -41,7 +41,33 @@ const ArtListPage = () => {
               className="object-cover h-[90%] w-[90%]"
             />
           </div>
-        ))}
+        ))} */}
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
+        <div className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"></div>
       </div>
     </div>
   );

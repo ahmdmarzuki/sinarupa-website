@@ -20,6 +20,7 @@ import {
   vote,
 } from "../firebase/firestore";
 import { BlueButton } from "../components/Button";
+import gsap from "gsap";
 
 const VotingPage = () => {
   const swiperWrapperRef = useRef(null);
@@ -97,12 +98,20 @@ const VotingPage = () => {
           centeredSlides={true}
           slidesPerView={1.2}
           spaceBetween={10}
-          speed={1000}
+          speed={500}
           slideToClickedSlide={true}
           // pagination={{ clickable: true }}
           mousewheel={{ thresholdDelta: 30 }}
           onSwiper={(swiper) => {
             swiperWrapperRef.current = swiper.wrapperEl;
+          }}
+          onSlideChange={(swiper) => {
+            const activeSlide = swiper.slides[swiper.activeIndex];
+            gsap.fromTo(
+              activeSlide,
+              { scale: 0.5 },
+              { scale: 1, duration: 0.5, ease: "power2.out" }
+            );
           }}
         >
           {/* {arts.map((art, index) => (
@@ -122,20 +131,31 @@ const VotingPage = () => {
             </SwiperSlide>
           ))} */}
 
-          {slidesData.map((art, index) => (
+          {arts.map((art, index) => (
             <SwiperSlide key={index}>
               <div className="bg-[#48368A] flex flex-col md:flex-row justify-between px-10 sm:py-8 lg:px-30 items-start md:items-center h-[100%] text-white gap-20 md:gap-12 ">
                 <img
-                  src={art.imgSrc}
-                  alt={art.title}
+                  src={art.url}
+                  alt={art.name}
                   className="w-[90%] md:w-[40%] aspect-square"
                 />
 
-                <div className="flex flex-col gap-4 md:gap-8 h-[100%]  justify-center ">
+                <div className="flex flex-col gap-4 md:gap-8 h-[100%] items-start w-[100%]  justify-center ">
                   <h1 className="font-oddval text-xl lg:text-4xl">
-                    {art.title}
+                    {art.name}
                   </h1>
-                  <p>{art.desc}</p>
+                  <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Rerum reiciendis sapiente nisi nemo architecto sed placeat
+                    doloribus id suscipit quam, quis quidem iusto cumque
+                    molestiae est, dicta obcaecati asperiores sint.
+                  </p>
+                  <button
+                    // onClick={handleClick}
+                    className="relative px-8 py-2 rounded-lg w-auto text-md font-semibold text-[#48368A] bg-white hover:bg-blue-300 active:bg-blue-400"
+                  >
+                    <span className="z-10">Vote</span>
+                  </button>
                 </div>
               </div>
             </SwiperSlide>

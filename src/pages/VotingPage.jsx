@@ -7,6 +7,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
+import { v4 } from "uuid";
+
 import "./style.css";
 import { useMediaQuery } from "../useMediaQuery";
 
@@ -20,13 +22,15 @@ import {
   vote,
 } from "../firebase/firestore";
 import { BlueButton } from "../components/Button";
-import gsap from "gsap";
+import FingerprintJS from "@fingerprintjs/fingerprintjs";
 
 const VotingPage = () => {
   const swiperWrapperRef = useRef(null);
   const [arts, setArts] = useState([]);
 
   const isMobile = useMediaQuery("(max-width: 768px)");
+
+  const [visitorId, setVisitorId] = useState(null);
 
   // const adjustMargin = () => {
   //   const screenWidth = window.innerWidth;
@@ -84,6 +88,17 @@ const VotingPage = () => {
     fetchArts();
   }, []);
 
+  useEffect(() => {
+    const loadFingerprint = async () => {
+      const fp = await FingerprintJS.load();
+      const result = await fp.get();
+
+      setVisitorId(result.visitorId);
+    };
+
+    loadFingerprint();
+  }, []);
+
   return (
     <div
       className="relative flex justify-center items-center flex-col h-[100dvh] bg-cover bg-top bg-no-repeat min-h-screen"
@@ -114,25 +129,8 @@ const VotingPage = () => {
             );
           }}
         >
-          {/* {arts.map((art, index) => (
-            <SwiperSlide key={index}>
-              <div className="bg-[#48368A] flex justify-between px-40 py-32 items-center h-[100%] text-white gap-8 ">
-                <img
-                  src={art.url}
-                  alt={art.name}
-                  className="w-[40%] aspect-square"
-                />
-
-                <div className="w-[40%] flex flex-col gap-8 h-[100%]">
-                  <h1 className="font-oddval text-4xl">{art.name}</h1>
-                  <p>{art.desc}</p>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))} */}
-
-          {arts.map((art, index) => (
-            <SwiperSlide key={index}>
+          {arts.map((art) => (
+            <SwiperSlide key={art.id}>
               <div className="bg-[#48368A] flex flex-col md:flex-row justify-between px-10 sm:py-8 lg:px-30 items-start md:items-center h-[100%] text-white gap-20 md:gap-12 ">
                 <img
                   src={art.url}
@@ -150,12 +148,20 @@ const VotingPage = () => {
                     doloribus id suscipit quam, quis quidem iusto cumque
                     molestiae est, dicta obcaecati asperiores sint.
                   </p>
-                  <button
-                    // onClick={handleClick}
-                    className="relative px-8 py-2 rounded-lg w-auto text-md font-semibold text-[#48368A] bg-white hover:bg-blue-300 active:bg-blue-400"
-                  >
-                    <span className="z-10">Vote</span>
-                  </button>
+                  <div>
+                    <div
+                      onClick={async () => {
+                        await vote(art.id, visitorId);
+                        setTimeout(async () => {
+                          await getVoteData(visitorId);
+                        }, 500);
+                      }}
+                      className="px-4 py-0 border rounded-md items-center flex justify-center font-medium cursor-pointer hover:bg-blue-100 active:bg-blue-200"
+                    >
+                      Vote
+                    </div>
+                    <p>{`total voting: ${art.voteCount}`}</p>
+                  </div>
                 </div>
               </div>
             </SwiperSlide>

@@ -11,19 +11,17 @@
   border-radius: 12px;
   overflow: hidden;
   user-select: none;
-  transition: 1s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
   opacity: 0.8;
 }
 
 .swiper-slide-active {
   width: 800px;
-  transition: width 5s ease-in-out;
-  transition: 1s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
   opacity: 1;
 }
 
 .swiper-slide::after {
-  content: "";
   position: absolute;
   inset: 0;
   width: 100%;

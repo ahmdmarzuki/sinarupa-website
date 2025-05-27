@@ -30,9 +30,10 @@ const deleteUser = async (id) => {
   await deleteDoc(userDoc);
 };
 
-const createArtToVote = async (name, desc, url) => {
+const createArtToVote = async (name, title, desc, url) => {
   await addDoc(artToVoteRef, {
     name: name,
+    title: title,
     desc: desc,
     url: url,
     voteCount: 0,
@@ -55,7 +56,7 @@ const vote = async (artId, visitorId) => {
     const voteDoc = await getDoc(doc(db, "votes", visitorId));
 
     if (voteDoc.exists()) {
-      alert("UDAHHH VOTING WOEEE");
+      alert("UDAHHH VOTINGG");
       return;
     }
 

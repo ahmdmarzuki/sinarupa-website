@@ -21,64 +21,25 @@ import {
   resetVote,
   vote,
 } from "../firebase/firestore";
-import { BlueButton } from "../components/Button";
 import FingerprintJS from "@fingerprintjs/fingerprintjs";
 
 const VotingPage = () => {
   const swiperWrapperRef = useRef(null);
   const [arts, setArts] = useState([]);
 
+  const [selectedImg, setSelectedImg] = useState(null);
+
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   const [visitorId, setVisitorId] = useState(null);
 
-  // const adjustMargin = () => {
-  //   const screenWidth = window.innerWidth;
+  const handleImgClick = (src) => {
+    setSelectedImg(src);
+  };
 
-  //   if (swiperWrapperRef.current) {
-  //     swiperWrapperRef.current.style.marginLeft =
-  //       screenWidth <= 600 ? "-75px" : screenWidth <= 900 ? "-90px" : "-150px";
-  //   }
-  // };
-
-  const slidesData = [
-    {
-      imgSrc:
-        "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      title: "INI TITLEE",
-      desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus blanditiis vel, libero quae distinctio, facilis voluptatum explicabo quaerat fugit hic aspernatur fuga dicta, consequuntur itaque doloremque. Ipsum, deserunt sapiente! Rem!",
-    },
-    {
-      imgSrc:
-        "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      title: "INI TITLEE",
-      desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus blanditiis vel, libero quae distinctio, facilis voluptatum explicabo quaerat fugit hic aspernatur fuga dicta, consequuntur itaque doloremque. Ipsum, deserunt sapiente! Rem!",
-    },
-    {
-      imgSrc:
-        "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      title: "INI TITLEE",
-      desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus blanditiis vel, libero quae distinctio, facilis voluptatum explicabo quaerat fugit hic aspernatur fuga dicta, consequuntur itaque doloremque. Ipsum, deserunt sapiente! Rem!",
-    },
-    {
-      imgSrc:
-        "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      title: "INI TITLEE",
-      desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus blanditiis vel, libero quae distinctio, facilis voluptatum explicabo quaerat fugit hic aspernatur fuga dicta, consequuntur itaque doloremque. Ipsum, deserunt sapiente! Rem!",
-    },
-    {
-      imgSrc:
-        "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      title: "INI TITLEE",
-      desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus blanditiis vel, libero quae distinctio, facilis voluptatum explicabo quaerat fugit hic aspernatur fuga dicta, consequuntur itaque doloremque. Ipsum, deserunt sapiente! Rem!",
-    },
-    {
-      imgSrc:
-        "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      title: "INI TITLEE",
-      desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus blanditiis vel, libero quae distinctio, facilis voluptatum explicabo quaerat fugit hic aspernatur fuga dicta, consequuntur itaque doloremque. Ipsum, deserunt sapiente! Rem!",
-    },
-  ];
+  const closePopup = () => {
+    setSelectedImg(null);
+  };
 
   useEffect(() => {
     const fetchArts = async () => {
@@ -104,6 +65,21 @@ const VotingPage = () => {
       className="relative flex justify-center items-center flex-col h-[100dvh] bg-cover bg-top bg-no-repeat min-h-screen"
       style={{ backgroundImage: `url(${isMobile ? bgMobile : bgDesktop})` }}
     >
+      {selectedImg && (
+        <div
+          className="fixed inset-0 bg-[#000000BF] flex items-center justify-center z-50"
+          onClick={closePopup}
+        >
+          <div className="rounded-lg max-w-full max-h-full">
+            <img
+              src={selectedImg}
+              alt="Full view"
+              className="max-w-[90vw] max-h-[90vh] object-contain"
+              onClick={(e) => e.stopPropagation()} // biar klik gambar tidak menutup modal
+            />
+          </div>
+        </div>
+      )}
       <div className="w-[80%]">
         <Swiper
           // install Swiper modules
@@ -120,14 +96,6 @@ const VotingPage = () => {
           onSwiper={(swiper) => {
             swiperWrapperRef.current = swiper.wrapperEl;
           }}
-          onSlideChange={(swiper) => {
-            const activeSlide = swiper.slides[swiper.activeIndex];
-            gsap.fromTo(
-              activeSlide,
-              { scale: 0.5 },
-              { scale: 1, duration: 0.5, ease: "power2.out" }
-            );
-          }}
         >
           {arts.map((art) => (
             <SwiperSlide key={art.id}>
@@ -136,6 +104,7 @@ const VotingPage = () => {
                   src={art.url}
                   alt={art.name}
                   className="w-[90%] md:w-[40%] aspect-square"
+                  onClick={() => handleImgClick(art.url)}
                 />
 
                 <div className="flex flex-col gap-4 md:gap-8 h-[100%] items-start w-[100%]  justify-center ">
@@ -149,17 +118,17 @@ const VotingPage = () => {
                     molestiae est, dicta obcaecati asperiores sint.
                   </p>
                   <div>
-                    <div
+                    <button
                       onClick={async () => {
                         await vote(art.id, visitorId);
                         setTimeout(async () => {
                           await getVoteData(visitorId);
                         }, 500);
                       }}
-                      className="px-4 py-0 border rounded-md items-center flex justify-center font-medium cursor-pointer hover:bg-blue-100 active:bg-blue-200"
+                      className="relative px-8 py-2 rounded-lg w-auto text-md font-semibold text-[#48368A] bg-white hover:bg-blue-300 active:bg-blue-400"
                     >
-                      Vote
-                    </div>
+                      <span className="z-10">Vote</span>
+                    </button>
                     <p>{`total voting: ${art.voteCount}`}</p>
                   </div>
                 </div>
@@ -173,7 +142,7 @@ const VotingPage = () => {
         // onClick={handleClick}
         className="relative px-8 py-2 rounded-lg w-auto text-md font-semibold text-white bg-[#48368A] hover:bg-blue-300 active:bg-blue-400"
       >
-        <span className="z-10">Show More</span>
+        <span className="z-10">Show All</span>
       </button>
     </div>
   );

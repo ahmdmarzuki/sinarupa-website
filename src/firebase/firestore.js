@@ -78,14 +78,37 @@ const vote = async (artId, visitorId) => {
   }
 };
 
-const resetVote = async (visitorId) => {
+const getVoteCount = async (artId) => {
+  const votersColRef = collection(db, "artToVote", artId, "voters");
+
+  const snapshot = await getDocs(votersColRef);
+  const voteCount = snapshot.size;
+
+  return voteCount;
+};
+
+const resetVote = async (visitorId, artId) => {
   try {
     const voteDoc = doc(db, "votes", visitorId);
 
     await deleteDoc(voteDoc);
+
+    const artRef = doc(db, "artToVote", artId);
+    await updateDoc(artRef, {
+      voteCount: increment(-1),
+    });
     // alert(`berhasilll reset, ayok voting ulang`);
   } catch (error) {
     alert(`gagal reset: ${error}`);
+  }
+};
+
+const removeArt = async (artId) => {
+  try {
+    const artRef = doc(db, "artToVote", artId);
+    await deleteDoc(artRef);
+  } catch (error) {
+    alert(`gagal remove: ${error}`);
   }
 };
 
@@ -99,4 +122,5 @@ export {
   getAllArtToVote,
   vote,
   resetVote,
+  removeArt,
 };

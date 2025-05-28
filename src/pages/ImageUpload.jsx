@@ -11,6 +11,7 @@ import { app } from "../firebase/firebaseConfig";
 import {
   createArtToVote,
   getAllArtToVote,
+  removeArt,
   resetVote,
   vote,
 } from "../firebase/firestore";
@@ -153,12 +154,12 @@ const ImageUpload = () => {
             Kirimm ae
           </button>
         </div>
-        <button
+        {/* <button
           className="px-6 py-2 rounded-2xl border bg-red-300 hover:bg-red-400 active:bg-red-500"
           onClick={() => resetVote(visitorId)}
         >
           Reset vote (pencet ini biar bisa vote lagii)
-        </button>
+        </button> */}
       </div>
       <div className="grid grid-cols-2 lg:grid-cols-5 sm:grid-cols-2 md:grid-cols-4 mt-10 gap-4 ">
         {arts.map((art) => (
@@ -191,6 +192,17 @@ const ImageUpload = () => {
                   }}
                   className="px-4 py-0 mt-2 border rounded-md items-center flex justify-center font-medium cursor-pointer hover:bg-blue-100 active:bg-blue-200"
                 >
+                  Vote
+                </div>
+                <div
+                  onClick={async () => {
+                    await removeArt(art.id);
+                    setTimeout(async () => {
+                      await getVoteData(visitorId);
+                    }, 500);
+                  }}
+                  className="px-4 py-0 mt-2 border rounded-md items-center flex justify-center font-medium cursor-pointer hover:bg-blue-100 active:bg-blue-200"
+                >
                   Remove
                 </div>
               </div>
@@ -199,8 +211,7 @@ const ImageUpload = () => {
         ))}
       </div>
 
-      <Banner text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore doloremque, deleniti tempore iure eveniet, magnam ratione dolore reprehenderit est similique rem quam aut veritatis debitis temporibus aperiam quibusdam optio ducimus." />
-      <h1>Device ID kamu: {visitorId}</h1>
+      <h1 className="mt-20 flex justify-center">Device ID kamu: {visitorId}</h1>
       {/* <h1>{udahVote ? "udah votee" : "belom votee"}</h1> */}
     </div>
   );

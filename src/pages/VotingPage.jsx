@@ -136,27 +136,9 @@ const VotingPage = () => {
                   <h1 className="font-oddval text-xl lg:text-4xl">
                     {art.name}
                   </h1>
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Rerum reiciendis sapiente nisi nemo architecto sed placeat
-                    doloribus id suscipit quam, quis quidem iusto cumque
-                    molestiae est, dicta obcaecati asperiores sint.
-                  </p>
+                  <p>{art.desc}</p>
                   <div>
-                    {hasVoted && artVotedId == art.id ? (
-                      <button
-                        onClick={() =>
-                          resetVote(visitorId).then(setArtVotedId(null))
-                        }
-                        className="relative px-8 py-2 rounded-lg w-auto text-md font-semibold text-white bg-green-400 hover:bg-green-500 active:bg-green-600"
-                      >
-                        <span className="z-10">Voted</span>
-                      </button>
-                    ) : hasVoted && artVotedId != art.id ? (
-                      <button className="relative px-8 py-2 rounded-lg w-auto text-md font-semibold text-white bg-gray-400 ">
-                        <span className="z-10">udah vote yang lain</span>
-                      </button>
-                    ) : (
+                    {!hasVoted ? (
                       <button
                         onClick={async () => {
                           await vote(art.id, visitorId);
@@ -169,8 +151,22 @@ const VotingPage = () => {
                       >
                         <span className="z-10">Vote</span>
                       </button>
+                    ) : artVotedId == art.id ? (
+                      <button
+                        onClick={() =>
+                          resetVote(visitorId, art.id).then(setArtVotedId(null))
+                        }
+                        className="relative px-8 py-2 rounded-lg w-auto text-md font-semibold text-white bg-green-400 hover:bg-green-500 active:bg-green-600"
+                      >
+                        <span className="z-10">Voted</span>
+                      </button>
+                    ) : (
+                      <button className="relative px-8 py-2 rounded-lg w-auto text-md font-semibold text-white bg-gray-400 ">
+                        <span className="z-10">udah vote yang lain</span>
+                      </button>
                     )}
-                    {/* <p>{`total voting: ${art.voteCount}`}</p> */}
+
+                    <p>{`total voting: ${art.voteCount}`}</p>
                     {/* <p>{`status: ${hasVoted.valueOf}`}</p> */}
                   </div>
                 </div>

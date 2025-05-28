@@ -22,6 +22,10 @@ import {
   vote,
 } from "../firebase/firestore";
 import FingerprintJS from "@fingerprintjs/fingerprintjs";
+import { app } from "../firebase/firebaseConfig";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
+
+const db = getFirestore(app);
 
 const VotingPage = () => {
   const swiperWrapperRef = useRef(null);
@@ -32,6 +36,10 @@ const VotingPage = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   const [visitorId, setVisitorId] = useState(null);
+
+  const [hasVoted, setHasVoted] = useState(false);
+
+  const [artVotedId, setArtVotedId] = useState(null);
 
   const handleImgClick = (src) => {
     setSelectedImg(src);
@@ -59,6 +67,23 @@ const VotingPage = () => {
 
     loadFingerprint();
   }, []);
+
+  useEffect(() => {
+    const checkVote = async () => {
+      if (!visitorId) return;
+
+      const voteDoc = await getDoc(doc(db, "votes", visitorId));
+
+      if (voteDoc.exists()) {
+        setHasVoted(true);
+        setArtVotedId(voteDoc.data().id);
+      } else {
+        setHasVoted(false);
+      }
+    };
+
+    checkVote();
+  }, [visitorId, artVotedId]);
 
   return (
     <div
@@ -118,18 +143,35 @@ const VotingPage = () => {
                     molestiae est, dicta obcaecati asperiores sint.
                   </p>
                   <div>
-                    <button
-                      onClick={async () => {
-                        await vote(art.id, visitorId);
-                        setTimeout(async () => {
-                          await getVoteData(visitorId);
-                        }, 500);
-                      }}
-                      className="relative px-8 py-2 rounded-lg w-auto text-md font-semibold text-[#48368A] bg-white hover:bg-blue-300 active:bg-blue-400"
-                    >
-                      <span className="z-10">Vote</span>
-                    </button>
-                    <p>{`total voting: ${art.voteCount}`}</p>
+                    {hasVoted && artVotedId == art.id ? (
+                      <button
+                        onClick={() =>
+                          resetVote(visitorId).then(setArtVotedId(null))
+                        }
+                        className="relative px-8 py-2 rounded-lg w-auto text-md font-semibold text-white bg-green-400 hover:bg-green-500 active:bg-green-600"
+                      >
+                        <span className="z-10">Voted</span>
+                      </button>
+                    ) : hasVoted && artVotedId != art.id ? (
+                      <button className="relative px-8 py-2 rounded-lg w-auto text-md font-semibold text-white bg-gray-400 ">
+                        <span className="z-10">udah vote yang lain</span>
+                      </button>
+                    ) : (
+                      <button
+                        onClick={async () => {
+                          await vote(art.id, visitorId);
+                          setArtVotedId(art.id);
+                          setTimeout(async () => {
+                            await getVoteData(visitorId);
+                          }, 500);
+                        }}
+                        className="relative px-8 py-2 rounded-lg w-auto text-md font-semibold text-[#48368A] bg-white hover:bg-blue-300 active:bg-blue-400"
+                      >
+                        <span className="z-10">Vote</span>
+                      </button>
+                    )}
+                    {/* <p>{`total voting: ${art.voteCount}`}</p> */}
+                    {/* <p>{`status: ${hasVoted.valueOf}`}</p> */}
                   </div>
                 </div>
               </div>

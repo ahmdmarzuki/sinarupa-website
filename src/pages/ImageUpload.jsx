@@ -153,12 +153,12 @@ const ImageUpload = () => {
             Kirimm ae
           </button>
         </div>
-        {/* <button
+        <button
           className="px-6 py-2 rounded-2xl border bg-red-300 hover:bg-red-400 active:bg-red-500"
           onClick={() => resetVote(visitorId)}
         >
           Reset vote (pencet ini biar bisa vote lagii)
-        </button> */}
+        </button>
       </div>
       <div className="grid grid-cols-2 lg:grid-cols-5 sm:grid-cols-2 md:grid-cols-4 mt-10 gap-4 ">
         {arts.map((art) => (

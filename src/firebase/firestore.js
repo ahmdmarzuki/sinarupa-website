@@ -71,7 +71,7 @@ const vote = async (artId, visitorId) => {
       votedAt: new Date(),
     });
 
-    alert("Vote berhasil!");
+    // alert("Vote berhasil!");
   } catch (error) {
     alert("Error saat voting: ", error);
     // alert("Terjadi kesalahan saat voting. Coba lagi!");
@@ -83,7 +83,7 @@ const resetVote = async (visitorId) => {
     const voteDoc = doc(db, "votes", visitorId);
 
     await deleteDoc(voteDoc);
-    alert(`berhasilll reset, ayok voting ulang`);
+    // alert(`berhasilll reset, ayok voting ulang`);
   } catch (error) {
     alert(`gagal reset: ${error}`);
   }

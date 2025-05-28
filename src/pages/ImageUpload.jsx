@@ -91,7 +91,7 @@ const ImageUpload = () => {
         setDesc("");
         setImg("");
         clearFileInput();
-        alert("berhasilll");
+        // alert("berhasilll");
       });
 
       const url = await getDownloadURL(imgRef);
@@ -175,10 +175,12 @@ const ImageUpload = () => {
               className="h-20 lg:h-52 w-full rounded aspect-square object-contain"
             />
             <div className="flex flex-row justify-between items-end">
-              <div>
+              <div className="w-full">
                 <h3 className="mt-2 font-bold uppercase">{art.name}</h3>
                 <h3 className="font-bold">{art.title}</h3>
-                <p className="text-sm font-medium text-gray-800">{art.desc}</p>
+                <p className="text-sm font-medium text-gray-800 truncate ">
+                  {art.desc}
+                </p>
                 <p className="text-sm text-gray-600">
                   voteCount: {art.voteCount}
                 </p>

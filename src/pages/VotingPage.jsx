@@ -132,11 +132,16 @@ const VotingPage = () => {
                   onClick={() => handleImgClick(art.url)}
                 />
 
-                <div className="flex flex-col gap-4 md:gap-8 h-[100%] items-start w-[100%]  justify-center ">
-                  <h1 className="font-oddval text-xl lg:text-4xl">
+                <div className="flex flex-col h-full items-start w-full max-w-[60%] justify-center ">
+                  <h1 className="font-oddval md:mb-8 text-xl lg:text-4xl">
                     {art.name}
                   </h1>
-                  <p>{art.desc}</p>
+                  <h1 className="font-oddval md:mb-2 text-xl lg:text-2xl">
+                    {art.title}
+                  </h1>
+                  <p className="break-words whitespace-pre-wrap w-full max-w-full overflow-wrap break-word md:mb-8 ">
+                    {art.desc}
+                  </p>
                   <div>
                     {!hasVoted ? (
                       <button

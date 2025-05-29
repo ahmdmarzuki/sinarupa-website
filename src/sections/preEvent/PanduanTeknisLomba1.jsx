@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Banner from "../../components/Banner";
 import PageWrapper from "../../components/PageWrapper";
 import BannerOrange from "../../components/BannerOrange";
@@ -63,8 +63,9 @@ const PanduanTeknisLomba1 = () => {
         {/* Tombol Menuju Detail */}
         <AnimatedDiv>
           <div className="flex justify-center py-6">
-            <button
-              onClick={() => (window.location.href = "/rules")}
+            <NavLink
+              to="/rules"
+              // onClick={() => (window.location.href = "/rules")}
               style={{
                 backgroundImage: "url('/images/Box Ungu.png')",
                 backgroundSize: "cover",
@@ -76,7 +77,7 @@ const PanduanTeknisLomba1 = () => {
               className="text-white font-semibold transition flex items-center justify-center"
             >
               Lihat Panduan Lengkap
-            </button>
+            </NavLink>
           </div>
         </AnimatedDiv>
       </section>

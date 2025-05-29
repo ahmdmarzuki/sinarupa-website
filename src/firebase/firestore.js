@@ -31,13 +31,17 @@ const deleteUser = async (id) => {
 };
 
 const createArtToVote = async (name, title, desc, url) => {
-  await addDoc(artToVoteRef, {
-    name: name,
-    title: title,
-    desc: desc,
-    url: url,
-    voteCount: 0,
-  });
+  try {
+    await addDoc(artToVoteRef, {
+      name: name,
+      title: title,
+      desc: desc,
+      url: url,
+      voteCount: 0,
+    });
+  } catch (error) {
+    alert(`gagal upload: ${error}`);
+  }
 };
 
 const getAllArtToVote = async () => {

@@ -21,6 +21,8 @@ import FingerprintJS from "@fingerprintjs/fingerprintjs";
 import { doc, getDoc } from "firebase/firestore";
 
 import upload from "/images/upload.png";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth, logout } from "../firebase/auth";
 
 const imageDb = getStorage(app);
 
@@ -35,6 +37,8 @@ const ImageUpload = () => {
   const imgRef = useRef();
 
   const [visitorId, setVisitorId] = useState(null);
+
+  const [isUser, setIsUser] = useState(false);
 
   // const [udahVote, setUdahVote] = useState(false);
 
@@ -102,11 +106,38 @@ const ImageUpload = () => {
     }
   };
 
+  useEffect(() => {
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        setIsUser(true);
+      } else {
+        setIsUser(false);
+      }
+    });
+  }, []);
+
   return (
-    <div className="flex flex-col w-full justify-center p-20 gap-4 bg-[url('/images/bgDesktopRevisi.webp')] bg-cover bg-center bg-no-repeat min-h-screen ">
+    <div className="flex flex-col justify-center p-20 gap-4 bg-[url('/images/bgDesktopRevisi.webp')] bg-cover bg-center bg-no-repeat min-h-screen ">
       <div className="flex flex-row justify-center items-center w-[100%]">
         <div className="flex flex-col gap-2 sm:w-[80vw] md:w-[40vw]">
           <div onDrop={handleDrop} onDragOver={handleDragOver}>
+            <div className="flex justify-end">
+              {isUser ? (
+                <button
+                  onClick={() => logout()}
+                  className="mb-20 px-20 py-2 w-[20vw] rounded-lg text-md font-semibold text-white bg-red-400 hover:bg-red-500 active:bg-red-600"
+                >
+                  <span className="z-10">Logout</span>
+                </button>
+              ) : (
+                <button
+                  onClick={() => (window.location.href = "/login")}
+                  className="mb-20 px-20 py-2 w-[20vw] rounded-lg text-md font-semibold text-[#48368A] bg-white hover:bg-blue-300 active:bg-blue-400"
+                >
+                  <span className="z-10">Login as Admin</span>
+                </button>
+              )}
+            </div>
             <input
               id="upload"
               ref={imgRef}
@@ -214,6 +245,9 @@ const ImageUpload = () => {
       </div>
 
       <h1 className="mt-20 flex justify-center">Device ID kamu: {visitorId}</h1>
+      <h1 className="mt-20 flex justify-center">
+        UID: {auth.currentUser?.uid}
+      </h1>
       {/* <h1>{udahVote ? "udah votee" : "belom votee"}</h1> */}
     </div>
   );

@@ -23,6 +23,7 @@ import { doc, getDoc } from "firebase/firestore";
 import upload from "/images/upload.png";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth, logout } from "../firebase/auth";
+import { toast, ToastContainer } from "react-toastify";
 
 const imageDb = getStorage(app);
 
@@ -95,14 +96,14 @@ const ImageUpload = () => {
         setDesc("");
         setImg("");
         clearFileInput();
-        // alert("berhasilll");
       });
 
       const url = await getDownloadURL(imgRef);
 
       await createArtToVote(name, title, desc, url);
     } catch (error) {
-      alert("Gagal upload gambar: " + error.message);
+      // alert("Gagal upload gambar: " + error.message);
+      console.log(error);
     }
   };
 
@@ -184,6 +185,7 @@ const ImageUpload = () => {
           >
             Kirimm ae
           </button>
+          <ToastContainer />
         </div>
         {/* <button
           className="px-6 py-2 rounded-2xl border bg-red-300 hover:bg-red-400 active:bg-red-500"

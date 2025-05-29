@@ -85,7 +85,7 @@ const ArtListPage = () => {
 
   return (
     <div
-      className="bg-cover bg-center bg-no-repeat min-h-screen px-20 py-40"
+      className="bg-cover bg-center bg-no-repeat min-h-screen px-10 py-20 md:px-20 md:py-40"
       style={{ backgroundImage: `url(${isMobile ? bgMobile : bgDesktop})` }}
     >
       {img && (
@@ -103,12 +103,12 @@ const ArtListPage = () => {
           </div>
         </div>
       )}
-      <div className="grid grid-cols-5 gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-2 md:gap-8">
         {arts.map((art) => (
           <div>
             <div
               key={art.id}
-              className="aspect-square bg-[#48368A] items-center flex justify-center rounded-2xl"
+              className="aspect-square items-center flex justify-center rounded-2xl"
             >
               <img
                 src={art.url}

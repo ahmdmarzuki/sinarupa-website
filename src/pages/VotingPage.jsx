@@ -2,6 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Pagination } from "swiper/modules";
 
+import { confirmAlert } from "react-confirm-alert";
+import "react-confirm-alert/src/react-confirm-alert.css"; // ← ini wajib
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -47,6 +50,30 @@ const VotingPage = () => {
 
   const closePopup = () => {
     setSelectedImg(null);
+  };
+
+  const cancelVote = (id) => {
+    confirmAlert({
+      title: "Batal vote",
+      message: "Apakah kamu yakin ingin membatalkan vote karya ini?",
+      buttons: [
+        {
+          label: "Ya",
+          onClick: () => {
+            // Lanjutkan vote
+            resetVote(visitorId, id).then(setArtVotedId(null));
+            console.log("Vote dibatalkan");
+          },
+        },
+        {
+          label: "Batal",
+          onClick: () => {
+            // Vote dibatalkan
+            console.log("batal");
+          },
+        },
+      ],
+    });
   };
 
   useEffect(() => {
@@ -105,7 +132,7 @@ const VotingPage = () => {
           </div>
         </div>
       )}
-      <div className="w-[80%]">
+      <div className="w-[100%] md:w-[80%]">
         {/* <p>click image to see full</p> */}
         <Swiper
           // install Swiper modules
@@ -115,7 +142,7 @@ const VotingPage = () => {
           centeredSlides={true}
           slidesPerView={1.2}
           spaceBetween={10}
-          speed={500}
+          speed={isMobile ? 100 : 500}
           slideToClickedSlide={true}
           // pagination={{ clickable: true }}
           mousewheel={{ thresholdDelta: 30 }}
@@ -125,7 +152,7 @@ const VotingPage = () => {
         >
           {arts.map((art) => (
             <SwiperSlide key={art.id}>
-              <div className="bg-[#48368A] flex flex-col md:flex-row justify-between px-10 sm:py-8 lg:px-30 items-start md:items-center h-[100%] text-white gap-20 md:gap-12 ">
+              <div className="bg-[#48368A] flex flex-col md:flex-row justify-between px-8 py-8 lg:px-30 items-start md:items-center h-[100%] text-white gap-6 md:gap-12">
                 <img
                   src={art.url}
                   alt={art.name}
@@ -133,15 +160,20 @@ const VotingPage = () => {
                   onClick={() => handleImgClick(art.url)}
                 />
 
-                <div className="flex flex-col h-full items-start w-full max-w-[60%] justify-center ">
-                  <h1 className="font-oddval md:mb-8 text-xl lg:text-4xl">
+                <div className="flex flex-col h-full items-start w-[100%] justify-center text-ellipsis">
+                  <h1 className="font-oddval md:mb-2 text-lg lg:text-2xl">
                     {art.name}
                   </h1>
-                  <h1 className="font-oddval md:mb-2 text-xl lg:text-2xl">
+                  <h1 className="font-oddval md:mb-2 text-lg lg:text-2xl text-gray-200">
                     {art.title}
                   </h1>
-                  <p className="break-words whitespace-pre-wrap w-full max-w-full overflow-wrap break-word md:mb-8 ">
-                    {art.desc}
+                  <p className="text-gray-300 break-words whitespace-pre-wrap max-h-[60%] w-full max-w-full overflow-wrap break-word mb-2 md:mb-8 text-sm md:text-lg">
+                    {/* {art.desc} */}
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Ipsam unde accusamus aut, commodi accusantium molestiae,
+                    corporis alias sunt dolores qui distinctio odio tempora
+                    architecto ullam nemo? Est voluptatem necessitatibus
+                    consequuntur?
                   </p>
                   <div>
                     {!hasVoted ? (
@@ -159,9 +191,7 @@ const VotingPage = () => {
                       </button>
                     ) : artVotedId == art.id ? (
                       <button
-                        onClick={() =>
-                          resetVote(visitorId, art.id).then(setArtVotedId(null))
-                        }
+                        onClick={() => cancelVote(art.id)}
                         className="relative px-8 py-2 rounded-lg w-auto text-md font-semibold text-white bg-green-400 hover:bg-green-500 active:bg-green-600"
                       >
                         <span className="z-10">Voted</span>
@@ -172,7 +202,7 @@ const VotingPage = () => {
                       </button>
                     )}
 
-                    <p>{`total voting: ${art.voteCount}`}</p>
+                    {/* <p>{`total voting: ${art.voteCount}`}</p> */}
                     {/* <p>{`status: ${hasVoted.valueOf}`}</p> */}
                   </div>
                 </div>
@@ -184,7 +214,7 @@ const VotingPage = () => {
 
       <button
         onClick={() => (window.location.href = "/art")}
-        className="relative px-8 py-2 rounded-lg w-auto text-md font-semibold text-white bg-[#48368A] hover:bg-[#5a5375] active:bg-[#49435f]"
+        className="relative px-20 py-2 rounded-lg w-auto text-md font-semibold text-white bg-[#48368A] hover:bg-[#5a5375] active:bg-[#49435f]"
       >
         <span className="z-10">Show All</span>
       </button>

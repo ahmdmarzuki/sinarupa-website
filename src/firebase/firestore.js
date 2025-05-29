@@ -10,6 +10,7 @@ import {
 } from "firebase/firestore";
 import { auth } from "./auth";
 import { useId } from "react";
+import { toast } from "react-toastify";
 
 const db = getFirestore(app);
 const usersCollectionRef = collection(db, "users");
@@ -39,8 +40,28 @@ const createArtToVote = async (name, title, desc, url) => {
       url: url,
       voteCount: 0,
     });
+
+    toast.success("Berhasil Upload Karya!", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
   } catch (error) {
-    alert(`gagal upload: ${error}`);
+    toast.error("Gagal Upload Karya!", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
   }
 };
 

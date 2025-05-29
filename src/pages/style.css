@@ -1,13 +1,13 @@
 .swiper {
   width: 100%;
   padding: 5px 0;
-  padding-bottom: 60px;
+  padding-bottom: 20px;
 }
 
 .swiper-slide {
   position: relative;
   width: 200px;
-  height: 400px;
+  height: 500px;
   border-radius: 12px;
   overflow: hidden;
   user-select: none;
@@ -49,11 +49,13 @@
 @media (max-width: 600px) {
   .swiper-slide {
     width: 150px;
-    height: 60vh;
+    height: 70vh;
+    opacity: 1;
   }
 
   .swiper-slide-active {
     width: 300px;
+    opacity: 1;
   }
 
   .swiper-slide:nth-child(1) img,

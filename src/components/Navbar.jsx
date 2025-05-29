@@ -62,15 +62,12 @@ const Navbar = () => {
           <img src={langkahSapa} className="h-10 aspect-auto" />
         </div>
         <div className="flex gap-4">
-          <a
-            href="https://bit.ly/LangkahSapa"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => (window.location.href = "/voting")}
+            className="relative px-8 py-3 h-min text-md font-semibold text-purple-800 bg-blue-200 hover:bg-blue-300 active:bg-blue-400"
           >
-            <button className="relative px-8 py-3 h-min text-md font-semibold text-purple-800 bg-blue-200 hover:bg-blue-300 active:bg-blue-400">
-              <span className="relative z-10">Pendaftaran</span>
-            </button>
-          </a>
+            <span className="relative z-10">Pendaftaran</span>
+          </button>
         </div>
       </motion.div>
 

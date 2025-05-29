@@ -106,6 +106,7 @@ const VotingPage = () => {
         </div>
       )}
       <div className="w-[80%]">
+        {/* <p>click image to see full</p> */}
         <Swiper
           // install Swiper modules
           modules={[Mousewheel, Pagination]}
@@ -182,8 +183,8 @@ const VotingPage = () => {
       </div>
 
       <button
-        // onClick={handleClick}
-        className="relative px-8 py-2 rounded-lg w-auto text-md font-semibold text-white bg-[#48368A] hover:bg-blue-300 active:bg-blue-400"
+        onClick={() => (window.location.href = "/art")}
+        className="relative px-8 py-2 rounded-lg w-auto text-md font-semibold text-white bg-[#48368A] hover:bg-[#5a5375] active:bg-[#49435f]"
       >
         <span className="z-10">Show All</span>
       </button>

@@ -10,6 +10,7 @@ import { v4 } from "uuid";
 import { app } from "../firebase/firebaseConfig";
 import {
   createArtToVote,
+  createVoteCount,
   getAllArtToVote,
   removeArt,
   resetVote,
@@ -90,17 +91,18 @@ const ImageUpload = () => {
 
     const imgRef = ref(imageDb, `artToVote/${img.name + v4()}`);
     try {
-      await uploadBytes(imgRef, img).then(() => {
-        setName("");
-        setTitle("");
-        setDesc("");
-        setImg("");
-        clearFileInput();
-      });
+      await uploadBytes(imgRef, img);
 
       const url = await getDownloadURL(imgRef);
 
-      await createArtToVote(name, title, desc, url);
+      const artId = await createArtToVote(name, title, desc, url); // 🔥 dapetin ID
+      await createVoteCount(artId); // gunakan ID yg sama
+
+      setName("");
+      setTitle("");
+      setDesc("");
+      setImg("");
+      clearFileInput();
     } catch (error) {
       // alert("Gagal upload gambar: " + error.message);
       console.log(error);
@@ -180,7 +182,7 @@ const ImageUpload = () => {
             onChange={(e) => setDesc(e.target.value)}
           />
           <button
-            className="px-6 py-2 rounded-2xl border bg-blue-300 hover:bg-blue-400 active:bg-blue-500"
+            className="px-6 py-2 rounded-2xl text-white bg-blue-400 hover:bg-blue-500 active:bg-blue-600"
             onClick={uploadImage}
           >
             Kirimm ae
@@ -200,12 +202,12 @@ const ImageUpload = () => {
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
             key={art.id}
-            className="p-2 rounded-xl bg-cover"
+            className="p-2 rounded-xl bg-cover bg-[#ffffff80]"
           >
             <img
               src={art.url}
               alt={art.name}
-              className="h-20 lg:h-52 w-full rounded aspect-square object-contain"
+              className="h-20 lg:h-52 w-full rounded aspect-square object-cover"
             />
             <div className="flex flex-row justify-between items-end">
               <div className="w-full">
@@ -220,23 +222,12 @@ const ImageUpload = () => {
 
                 <div
                   onClick={async () => {
-                    await vote(art.id, visitorId);
-                    setTimeout(async () => {
-                      await getVoteData(visitorId);
-                    }, 500);
-                  }}
-                  className="px-4 py-0 mt-2 border rounded-md items-center flex justify-center font-medium cursor-pointer hover:bg-blue-100 active:bg-blue-200"
-                >
-                  Vote
-                </div>
-                <div
-                  onClick={async () => {
                     await removeArt(art.id);
                     setTimeout(async () => {
                       await getVoteData(visitorId);
                     }, 500);
                   }}
-                  className="px-4 py-0 mt-2 border rounded-md items-center flex justify-center font-medium cursor-pointer hover:bg-blue-100 active:bg-blue-200"
+                  className="px-4 py-2 mt-2 rounded-md items-center flex justify-center font-medium cursor-pointer text-[#48368A] bg-white hover:bg-red-400 active:bg-red-500"
                 >
                   Remove
                 </div>
@@ -247,9 +238,7 @@ const ImageUpload = () => {
       </div>
 
       <h1 className="mt-20 flex justify-center">Device ID kamu: {visitorId}</h1>
-      <h1 className="mt-20 flex justify-center">
-        UID: {auth.currentUser?.uid}
-      </h1>
+      <h1 className="mt-0 flex justify-center">UID: {auth.currentUser?.uid}</h1>
       {/* <h1>{udahVote ? "udah votee" : "belom votee"}</h1> */}
     </div>
   );

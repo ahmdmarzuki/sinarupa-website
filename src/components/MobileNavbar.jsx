@@ -51,21 +51,19 @@ const MobileNavbar = () => {
           <img src={logo} className="h-10 aspect-square" />
         </div>
         <div className="flex">
-          <a
-            href="https://bit.ly/LangkahSapa"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => (window.location.href = "/voting")}
             className="relative w-[200px] sm:w-[240px] md:w-[260px] lg:w-[312px] transition-transform transform -right-2"
           >
             <img
               src="/images/blue-button.png"
-              alt="Tombol Daftar"
+              alt="Tombol Vote"
               className="w-full"
             />
             <div className="font-oddval absolute inset-0 flex items-center justify-center text-[#4A3D8F] font-semibold text-[0.86rem]">
-              Daftar Sekarang
+              Vote Karya
             </div>
-          </a>
+          </button>
         </div>
       </div>
 

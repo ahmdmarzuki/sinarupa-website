@@ -66,7 +66,7 @@ const Navbar = () => {
             onClick={() => (window.location.href = "/voting")}
             className="relative px-8 py-3 h-min text-md font-semibold text-purple-800 bg-blue-200 hover:bg-blue-300 active:bg-blue-400"
           >
-            <span className="relative z-10">Pendaftaran</span>
+            <span className="relative z-10">Vote Karya</span>
           </button>
         </div>
       </motion.div>

@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<PreEventHomepage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/vote" element={<ImageUpload />} />
+        <Route path="/iniBuatUploadKaryaaaa" element={<ImageUpload />} />
         <Route path="/voting" element={<VotingPage />} />
         <Route path="/art" element={<ArtListPage />} />
         <Route path="/rules" element={<DetailRules />} />

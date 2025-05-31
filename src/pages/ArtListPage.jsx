@@ -147,7 +147,7 @@ const ArtListPage = () => {
 
   return (
     <div
-      className="relative bg-cover bg-center bg-no-repeat min-h-screen px-10 py-20 md:px-20 md:py-40"
+      className="relative flex flex-col justify-center items-center bg-cover bg-center bg-no-repeat min-h-screen px-10 py-20 md:px-20 md:py-40"
       style={{ backgroundImage: `url(${isMobile ? bgMobile : bgDesktop})` }}
     >
       {isLoading ? (
@@ -222,6 +222,7 @@ const ArtListPage = () => {
           </div>
         </div>
       )}
+
       <div className="grid grid-cols-2 md:grid-cols-5 gap-2 md:gap-8">
         {arts.map((art) => (
           <AnimatedDiv>
@@ -273,6 +274,12 @@ const ArtListPage = () => {
           </AnimatedDiv>
         ))}
       </div>
+      <button
+        onClick={() => (window.location.href = "/voting")}
+        className="relative mt-20 px-20 py-2 rounded-lg w-auto text-md font-semibold text-white bg-[#48368A] hover:bg-[#5a5375] active:bg-[#49435f] max-w-[30%]"
+      >
+        <span className="z-10">Kembali</span>
+      </button>
     </div>
   );
 };

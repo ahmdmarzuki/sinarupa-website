@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Pagination } from "swiper/modules";
 
+import { ArrowLeft } from "react-feather";
+
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css"; // ← ini wajib
 
@@ -185,6 +187,7 @@ const VotingPage = () => {
           </div>
         </div>
       )}
+
       <div className="w-[100%] md:w-[80%] flex flex-col justify-center items-center">
         {/* <p>click image to see full</p> */}
         <Swiper
@@ -281,7 +284,7 @@ const VotingPage = () => {
                       </button>
                     )}
 
-                    <p>{`total voting: ${art.voteCount}`}</p>
+                    {/* <p>{`total voting: ${art.voteCount}`}</p> */}
                     {/* <p>{`status: ${hasVoted.valueOf}`}</p> */}
                     {/* <p>{isHover ? "hoverrr" : "keluarr"}</p> */}
                   </div>
@@ -293,16 +296,24 @@ const VotingPage = () => {
         {isLoading ? (
           ""
         ) : (
-          <button
-            onClick={() => (window.location.href = "/art")}
-            className="relative px-20 py-2 rounded-lg w-auto text-md font-semibold text-white bg-[#48368A] hover:bg-[#5a5375] active:bg-[#49435f] max-w-[30%]"
-          >
-            <span className="z-10">Show All</span>
-          </button>
+          <div className="w-[100%] flex justify-center items-center gap-10">
+            <button
+              onClick={() => (window.location.href = "/")}
+              className="relative px-20 py-2 rounded-lg w-auto text-md font-semibold text-white bg-gray-400 hover:bg-gray-500 active:bg-gray-600 max-w-[30%]"
+            >
+              <span className="z-10">Kembali</span>
+            </button>
+            <button
+              onClick={() => (window.location.href = "/art")}
+              className="relative px-20 py-2 rounded-lg w-auto text-md font-semibold text-white bg-[#48368A] hover:bg-[#5a5375] active:bg-[#49435f] max-w-[30%]"
+            >
+              <span className="z-10">Show All</span>
+            </button>
+          </div>
         )}
-        <h1 className="mt-2 flex justify-center">
+        {/* <h1 className="mt-2 flex justify-center">
           UID: {auth.currentUser?.uid}
-        </h1>
+        </h1> */}
       </div>
     </div>
   );

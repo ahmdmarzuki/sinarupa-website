@@ -50,7 +50,7 @@ const MobileNavbar = () => {
         >
           <img src={logo} className="h-10 aspect-square" />
         </div>
-        <div className="flex">
+        {/* <div className="flex">
           <button
             onClick={() => (window.location.href = "/voting")}
             className="relative w-[200px] sm:w-[240px] md:w-[260px] lg:w-[312px] transition-transform transform -right-2"
@@ -64,7 +64,7 @@ const MobileNavbar = () => {
               Vote Karya
             </div>
           </button>
-        </div>
+        </div> */}
       </div>
 
       <div className="bg-[url('/images/bar2.png')] bg-cover bg-top bg-no-repeat h-[5vh] px-[20px] flex justify-end items-center">

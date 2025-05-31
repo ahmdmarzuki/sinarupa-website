@@ -5,21 +5,30 @@ import {
   getAuth,
 } from "firebase/auth";
 import { app } from "./firebaseConfig";
-import { getFirestore, addDoc, collection } from "firebase/firestore";
+import {
+  getFirestore,
+  addDoc,
+  collection,
+  setDoc,
+  doc,
+} from "firebase/firestore";
 import { toast } from "react-toastify";
 
 const auth = getAuth(app);
+const db = getFirestore(app);
 
-const signup = async (name, email, password) => {
+const signup = async (email, password) => {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
     const user = res.user;
-    await addDoc(collection(db, "users"), {
+    await setDoc(doc(db, "users", user.uid), {
       uid: user.uid,
-      name,
+      role: "user",
       authProvider: "local",
       email,
     });
+
+    alert("berhasil sign up");
   } catch (error) {
     console.error("Error signing up:", error.message);
     toast.error(error.code.split("/")[1].split("-").join(" "));

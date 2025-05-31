@@ -48,7 +48,7 @@ const createArtToVote = async (name, title, desc, url) => {
       url: url,
     });
 
-    alert(artData.id);
+    // alert(artData.id);
 
     toast.success("Berhasil Upload Karya!", {
       position: "top-center",
@@ -63,7 +63,7 @@ const createArtToVote = async (name, title, desc, url) => {
 
     return artData.id;
   } catch (error) {
-    toast.error("Gagal Upload Karya!", {
+    toast.error("Gagal Upload Karya!: Login Sebagai Admin", {
       position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
@@ -82,7 +82,7 @@ const createVoteCount = async (id) => {
       voteBy: [],
     });
   } catch (error) {
-    alert(`errorrr: ${error}`);
+    // alert(`errorrr: ${error}`);
   }
 };
 

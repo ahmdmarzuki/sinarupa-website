@@ -18,6 +18,7 @@ import {
 import { auth } from "./auth";
 import { useId } from "react";
 import { toast } from "react-toastify";
+import { confirmAlert } from "react-confirm-alert";
 
 const db = getFirestore(app);
 const usersCollectionRef = collection(db, "users");
@@ -181,10 +182,27 @@ const resetVote = async (visitorId, artId) => {
 
 const removeArt = async (artId) => {
   try {
-    const artRef = doc(db, "artToVote", artId);
-    const voteRef = doc(db, "artVoteCount", artId);
-    await deleteDoc(artRef);
-    await deleteDoc(voteRef);
+    confirmAlert({
+      title: "Remove Karya",
+      message: "Apakah kamu yakin ingin menghapus vote karya ini?",
+      buttons: [
+        {
+          label: "Ya",
+          onClick: () => {
+            const artRef = doc(db, "artToVote", artId);
+            const voteRef = doc(db, "artVoteCount", artId);
+            deleteDoc(artRef);
+            deleteDoc(voteRef);
+          },
+        },
+        {
+          label: "Batal",
+          onClick: () => {
+            console.log("batal");
+          },
+        },
+      ],
+    });
   } catch (error) {
     alert(`gagal remove: ${error}`);
   }

@@ -49,7 +49,7 @@
 @media (max-width: 600px) {
   .swiper-slide {
     width: 150px;
-    height: 70vh;
+    height: 80vh;
     opacity: 1;
   }
 

@@ -167,11 +167,11 @@ const VotingPage = () => {
       className="relative flex justify-center items-center flex-col h-[100dvh] bg-cover bg-top bg-no-repeat min-h-screen"
       style={{ backgroundImage: `url(${isMobile ? bgMobile : bgDesktop})` }}
     >
-      {isLoading ? (
+      {/* {isLoading ? (
         <Loading imageLoaded={imagesLoaded} total={arts.length} />
       ) : (
         <></>
-      )}
+      )} */}
       {selectedImg && (
         <div
           className="fixed inset-0 bg-[#000000BF] flex items-center justify-center z-50"
@@ -192,7 +192,7 @@ const VotingPage = () => {
         {/* <p>click image to see full</p> */}
         <Swiper
           // install Swiper modules
-          modules={[Mousewheel, Pagination]}
+          modules={[Pagination]}
           grabCursor={true}
           initialSlide={0}
           centeredSlides={true}
@@ -200,8 +200,9 @@ const VotingPage = () => {
           spaceBetween={10}
           speed={isMobile ? 100 : 500}
           slideToClickedSlide={true}
+          // allowTouchMove={false}
           // pagination={{ clickable: true }}
-          mousewheel={{ thresholdDelta: 30 }}
+          // mousewheel={{ thresholdDelta: 30 }}
           onSwiper={(swiper) => {
             swiperWrapperRef.current = swiper.wrapperEl;
           }}
@@ -209,7 +210,7 @@ const VotingPage = () => {
           {arts.map((art) => (
             <SwiperSlide key={art.id}>
               <div className=" bg-[#48368A] flex flex-col md:flex-row justify-between px-8 py-8 lg:px-30 items-start md:items-center h-[100%] text-white gap-6 md:gap-12">
-                <div className="relative w-[90%] md:w-[50%] aspect-square">
+                <div className="relative min-w-[90%] md:min-w-[36%] md:max-w-[40%] aspect-square">
                   {isHover ? (
                     <div
                       onClick={() => handleImgClick(art.url)}
@@ -240,21 +241,21 @@ const VotingPage = () => {
                     src={art.url}
                     alt={art.name}
                     onImageLoad={handleImageLoad}
-                    className="w-[100%] md:w-[100%] aspect-square"
+                    className="w-[100%] md:max-w-[100%] aspect-square"
                     onClick={() => handleImgClick(art.url)}
                     onMouseEnter={() => handleMouseEnter(art.id)}
                     onMouseLeave={() => handleMouseLeave()}
                   />
                 </div>
 
-                <div className="flex flex-col h-full items-start w-[100%] justify-center text-ellipsis">
+                <div className="flex flex-col h-full items-start w-[100%] md:w-[60%] justify-center text-ellipsis">
                   <h1 className="font-oddval md:mb-2 text-lg lg:text-2xl">
                     {art.name}
                   </h1>
                   <h1 className="font-oddval md:mb-2 text-lg lg:text-2xl text-gray-200">
                     {art.title}
                   </h1>
-                  <p className="text-gray-300 break-words whitespace-pre-wrap max-h-[60%] w-full max-w-full overflow-wrap break-word mb-2 md:mb-8 text-sm md:text-lg">
+                  <p className="text-gray-300 break-words whitespace-pre-wrap md:max-h-[50%] w-full max-w-full overflow-wrap break-word mb-2 md:mb-8 text-sm md:text-lg overflow-y-scroll">
                     {art.desc}
                   </p>
                   <div>

@@ -16,7 +16,7 @@ const Home1 = () => {
         />
 
         {/* Tombol Gambar */}
-        {/* <button
+        <button
           onClick={() => (window.location.href = "/voting")}
           className="relative w-[240px] md:w-[340px] transition-transform transform hover:scale-105"
         >
@@ -28,7 +28,7 @@ const Home1 = () => {
           <div className="font-oddval absolute inset-0 flex items-center justify-center text-[#4A3D8F] font-semibold text-[1rem] sm:text-[1.2rem] md:text-[1.3rem] lg:text-[1.5rem]">
             Vote Karya
           </div>
-        </button> */}
+        </button>
       </div>
     </AnimatedDiv>
   );

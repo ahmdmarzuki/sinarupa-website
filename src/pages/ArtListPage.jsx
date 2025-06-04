@@ -7,6 +7,7 @@ import { useMediaQuery } from "../useMediaQuery";
 import {
   createArtToVote,
   getAllArtToVote,
+  getArtWithVotes,
   resetVote,
   vote,
 } from "../firebase/firestore";
@@ -104,10 +105,25 @@ const ArtListPage = () => {
   };
 
   useEffect(() => {
-    if (arts.length > 0 && imagesLoaded === arts.length) {
-      setIsLoading(false);
-    }
-  }, [imagesLoaded, arts.length]);
+    const fetchArts = async () => {
+      const result = await getArtWithVotes();
+      setArts(result);
+
+      // Preload all images
+      const preloadImages = result.map((art) => {
+        return new Promise((resolve) => {
+          const img = new Image();
+          img.src = art.imgUrl;
+          img.onload = img.onerror = () => resolve(); // handle cache or broken img
+        });
+      });
+
+      await Promise.all(preloadImages);
+      setIsLoading(false); // hanya setelah semua gambar siap
+    };
+
+    fetchArts();
+  }, []); // dijalankan sekali saat mount
 
   useEffect(() => {
     const loadFingerprint = async () => {
@@ -120,13 +136,13 @@ const ArtListPage = () => {
     loadFingerprint();
   }, []);
 
-  useEffect(() => {
-    const fetchArts = async () => {
-      const result = await getAllArtToVote();
-      setArts(result);
-    };
-    fetchArts();
-  }, []);
+  // useEffect(() => {
+  //   const fetchArts = async () => {
+  //     const result = await getAllArtToVote();
+  //     setArts(result);
+  //   };
+  //   fetchArts();
+  // }, []);
 
   useEffect(() => {
     const checkVote = async () => {
@@ -150,11 +166,7 @@ const ArtListPage = () => {
       className="relative flex flex-col justify-center items-center bg-cover bg-center bg-no-repeat min-h-screen px-10 py-20 md:px-20 md:py-40"
       style={{ backgroundImage: `url(${isMobile ? bgMobile : bgDesktop})` }}
     >
-      {isLoading ? (
-        <Loading imageLoaded={imagesLoaded} total={arts.length} />
-      ) : (
-        <></>
-      )}
+      {isLoading ? <Loading /> : <></>}
       {img && (
         <div
           className="fixed inset-0 bg-[#000000BF] flex items-center justify-center z-50"

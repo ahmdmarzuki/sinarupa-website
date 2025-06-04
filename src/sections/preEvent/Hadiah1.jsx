@@ -2,6 +2,12 @@ import React from "react";
 import podium1 from "/images/podium1.png";
 import podium2 from "/images/podium2.png";
 import podium3 from "/images/podium3.png";
+import kairo from "/images/kairo.jpg";
+import siti from "/images/siti.jpg";
+import dara from "/images/dara.jpg";
+import joice from "/images/joice.jpg";
+import nayla from "/images/nayla.jpg";
+import gwen from "/images/gwen.jpg";
 import BannerOrange from "../../components/BannerOrange";
 import Header from "../../components/Header";
 import { useMediaQuery } from "../../useMediaQuery";
@@ -29,10 +35,10 @@ const Hadiah1 = () => {
               </h3>
 
               <p className="bg-[#4A3D8F] text-[#FAA363] text-2xl font-bold px-6 py-2 mb-12 rounded-none">
-                Lorem, ipsum.
+                Kairo Ganesia D
               </p>
             </div>
-            <img src={podium1} alt="juara1" className="w-[50vw]" />
+            <img src={kairo} alt="juara1" className="w-[50vw]" />
           </AnimatedDiv>
         </div>
 
@@ -44,9 +50,9 @@ const Hadiah1 = () => {
               </h3>
 
               <p className="bg-[#4A3D8F] text-[#FAA363] text-2xl w-full flex justify-center font-bold px-6 py-2 mb-12  rounded-none">
-                Lorem, ipsum.
+                Siti Zahrahul Aziz
               </p>
-              <img src={podium2} alt="juara2" className="w-[50vw]" />
+              <img src={siti} alt="juara2" className="w-[50vw]" />
             </div>
           </AnimatedDiv>
         </div>
@@ -59,9 +65,9 @@ const Hadiah1 = () => {
               </h3>
 
               <p className="bg-[#4A3D8F] text-[#FAA363] w-full flex justify-center text-2xl font-bold px-6 py-2 mb-12  rounded-none font-oddval">
-                Lorem, ipsum.
+                Dara Fadhilah
               </p>
-              <img src={podium3} alt="juara3" className="w-[50vw]" />
+              <img src={dara} alt="juara3" className="w-[50vw]" />
             </div>
           </AnimatedDiv>
         </div>
@@ -71,14 +77,14 @@ const Hadiah1 = () => {
           <AnimatedDiv>
             <div className="mb-2 text-center">
               <h3 className="text-[#4A3D8F] text-3xl font-bold mb-6">
-                Juara 1
+                Harapan 1
               </h3>
 
               <p className="bg-[#4A3D8F] text-[#FAA363] text-2xl font-bold px-6 py-2 mb-12 rounded-none">
-                Lorem, ipsum.
+                Joice Givenya S
               </p>
             </div>
-            <img src={podium1} alt="juara1" className="w-[50vw]" />
+            <img src={joice} alt="juara1" className="w-[50vw]" />
           </AnimatedDiv>
         </div>
 
@@ -86,13 +92,13 @@ const Hadiah1 = () => {
           <AnimatedDiv>
             <div className="flex flex-col justify-center items-center">
               <h3 className="text-[#4A3D8F] text-center text-3xl font-bold mb-6">
-                Juara 2
+                Harapan 2
               </h3>
 
               <p className="bg-[#4A3D8F] text-[#FAA363] text-2xl w-full flex justify-center font-bold px-6 py-2 mb-12  rounded-none">
-                Lorem, ipsum.
+                Nayla Chiara Nur A
               </p>
-              <img src={podium2} alt="juara2" className="w-[50vw]" />
+              <img src={nayla} alt="juara2" className="w-[50vw]" />
             </div>
           </AnimatedDiv>
         </div>
@@ -101,13 +107,13 @@ const Hadiah1 = () => {
           <AnimatedDiv>
             <div className="flex flex-col justify-center items-center">
               <h3 className="text-[#4A3D8F] text-center text-3xl font-bold mb-6">
-                Juara 3
+                Harapan 3
               </h3>
 
               <p className="bg-[#4A3D8F] text-[#FAA363] w-full flex justify-center text-2xl font-bold px-6 py-2 mb-12  rounded-none font-oddval">
-                Lorem, ipsum.
+                Gwen Ashaleema
               </p>
-              <img src={podium3} alt="juara3" className="w-[50vw]" />
+              <img src={gwen} alt="juara3" className="w-[50vw]" />
             </div>
           </AnimatedDiv>
         </div>

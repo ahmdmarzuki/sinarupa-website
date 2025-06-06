@@ -191,11 +191,7 @@ const ArtListPage = () => {
                   {title}
                 </h1>
                 <p className="text-gray-300 break-words whitespace-pre-wrap max-h-[60%] w-full max-w-full overflow-wrap break-word mb-2 md:mb-8 text-sm md:text-lg">
-                  {/* {art.desc} */}
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-                  unde accusamus aut, commodi accusantium molestiae, corporis
-                  alias sunt dolores qui distinctio odio tempora architecto
-                  ullam nemo? Est voluptatem necessitatibus consequuntur?
+                  {desc}
                 </p>
                 <div>
                   {!hasVoted ? (

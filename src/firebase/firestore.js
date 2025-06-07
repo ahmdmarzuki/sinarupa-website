@@ -19,11 +19,13 @@ import { auth } from "./auth";
 import { useId } from "react";
 import { toast } from "react-toastify";
 import { confirmAlert } from "react-confirm-alert";
+import { getStorage, ref, deleteObject } from "firebase/storage";
 
 const db = getFirestore(app);
 const usersCollectionRef = collection(db, "users");
 const artToVoteRef = collection(db, "artToVote");
 const artVoteCountRef = collection(db, "artVoteCount");
+const imageDb = getStorage(app);
 
 const createUser = async (name, age) => {
   await addDoc(usersCollectionRef, { name: name, age: Number(age) });
@@ -180,32 +182,49 @@ const resetVote = async (visitorId, artId) => {
   }
 };
 
+// Fungsi untuk mengambil storage path dari Firebase Storage URL
+function getPathFromUrl(url) {
+  try {
+    const match = url.match(/\/o\/(.*?)\?/);
+    if (match && match[1]) {
+      return decodeURIComponent(match[1]);
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+
 const removeArt = async (artId) => {
   try {
-    confirmAlert({
-      title: "Remove Karya",
-      message: "Apakah kamu yakin ingin menghapus vote karya ini?",
-      buttons: [
-        {
-          label: "Ya",
-          onClick: () => {
-            const artRef = doc(db, "artToVote", artId);
-            const voteRef = doc(db, "artVoteCount", artId);
-            deleteDoc(artRef);
-            deleteDoc(voteRef);
-          },
-        },
-        {
-          label: "Batal",
-          onClick: () => {
-            console.log("batal");
-          },
-        },
-      ],
-    });
+    const artRef = doc(db, "artToVote", artId);
+    const voteRef = doc(db, "artVoteCount", artId);
+    // Ambil url gambar sebelum hapus dokumen
+    const artDocSnap = await getDoc(artRef);
+    if (artDocSnap.exists()) {
+      const { url } = artDocSnap.data();
+      if (url) {
+        const oldPath = getPathFromUrl(url);
+        if (oldPath) {
+          try {
+            const oldImgRef = ref(imageDb, oldPath);
+            await deleteObject(oldImgRef);
+          } catch (err) {
+            console.log("Gagal hapus gambar storage:", err);
+          }
+        }
+      }
+    }
+    await deleteDoc(artRef);
+    await deleteDoc(voteRef);
   } catch (error) {
     alert(`gagal remove: ${error}`);
   }
+};
+
+const updateArtToVote = async (id, updatedFields) => {
+  const artDoc = doc(db, "artToVote", id);
+  await updateDoc(artDoc, updatedFields);
 };
 
 export {
@@ -222,4 +241,5 @@ export {
   getVoteCount,
   createVoteCount,
   getArtWithVotes,
+  updateArtToVote,
 };

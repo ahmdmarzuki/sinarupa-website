@@ -38,9 +38,9 @@ const signup = async (email, password) => {
 const login = async (email, password) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
+    alert("berhasil login");
   } catch (error) {
-    console.error("Error logging in:", error.message);
-    toast.error(error.code.split("/")[1].split("-").join(" "));
+    alert("gagal loginnn:", error.message);
   }
 };
 

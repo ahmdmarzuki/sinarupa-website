@@ -266,9 +266,9 @@ const VotingPage = () => {
                       <h1 className="font-oddval md:mb-2 text-lg lg:text-2xl uppercase">
                         {art.name}
                       </h1>
-                      <h1 className="font-oddval md:mb-2 text-lg lg:text-2xl text-gray-200 capitalize">
+                      {/* <h1 className="font-oddval md:mb-2 text-lg lg:text-2xl text-gray-200 capitalize">
                         {art.title}
-                      </h1>
+                      </h1> */}
                       <p
                         className="text-gray-300 break-words whitespace-pre-wrap md:max-h-[50%] w-full max-w-full mb-2 md:mb-8 text-sm md:text-lg overflow-y-auto"
                         onWheel={(e) => {

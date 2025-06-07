@@ -187,12 +187,12 @@ const ArtListPage = () => {
                 <h1 className="font-oddval md:mb-2 text-lg lg:text-2xl">
                   {name}
                 </h1>
-                <h1 className="font-oddval md:mb-2 text-lg lg:text-2xl text-gray-200">
-                  {title}
-                </h1>
-                <p className="text-gray-300 break-words whitespace-pre-wrap max-h-[60%] w-full max-w-full overflow-wrap break-word mb-2 md:mb-8 text-sm md:text-lg">
-                  {desc}
-                </p>
+
+                <div className="max-h-[60%] overflow-y-auto mb-2 md:mb-8">
+                  <p className="text-gray-300 break-words whitespace-pre-wrap w-full max-w-full overflow-wrap break-word  text-sm md:text-lg">
+                    {desc}
+                  </p>
+                </div>
                 <div>
                   {!hasVoted ? (
                     <button

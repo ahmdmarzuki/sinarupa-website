@@ -20,12 +20,11 @@ function App() {
       <Routes>
         <Route path="/" element={<PreEventHomepage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/upload" element={<ImageUpload />} />
         <Route path="/voting" element={<VotingPage />} />
         <Route path="/art" element={<ArtListPage />} />
         <Route path="/rules" element={<DetailRules />} />
         <Route path="/panduan" element={<PanduanTeknisLomba1 />} />
-        <Route path="/update" element={<UpdateDbPanel />} />
+        <Route path="/upload" element={<UpdateDbPanel />} />
       </Routes>
     </main>
   );

@@ -3,6 +3,7 @@ import {
   createArtToVote,
   createVoteCount,
   getAllArtToVote,
+  getArtWithVotes,
   removeArt,
   updateArtToVote,
 } from "../firebase/firestore";
@@ -94,7 +95,7 @@ const UpdateDbPanel = () => {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      const data = await getAllArtToVote();
+      const data = await getArtWithVotes();
       setArtList(data);
       setLoading(false);
     };
@@ -103,7 +104,7 @@ const UpdateDbPanel = () => {
 
   const handleRemove = async (id, name) => {
     confirmAlert({
-      title: "Remove Karya",
+      title: "Yakin pengen dihapus nihh😔",
       message: `Hapus "${name}" dari daftar karya?`,
       buttons: [
         {
@@ -135,37 +136,53 @@ const UpdateDbPanel = () => {
   };
 
   const handleEditSave = async () => {
-    const { id, name, title, desc } = editModal.art;
-    let url = editModal.art.url;
+    confirmAlert({
+      title: "Simpan perubahann?",
+      buttons: [
+        {
+          label: "Ya",
+          onClick: async () => {
+            const { id, name, title, desc } = editModal.art;
+            let url = editModal.art.url;
 
-    // Jika ada gambar baru, hapus gambar lama lalu upload baru
-    if (editImg) {
-      // Hapus gambar lama jika ada
-      if (editModal.art.url) {
-        const oldPath = getPathFromUrl(editModal.art.url);
-        if (oldPath) {
-          try {
-            const oldImgRef = ref(imageDb, oldPath);
-            await deleteObject(oldImgRef);
-          } catch (err) {
-            console.log("Gagal hapus gambar lama:", err);
-          }
-        }
-      }
-      // Upload gambar baru
-      const imgRef = ref(imageDb, `artToVote/${editImg.name + v4()}`);
-      await uploadBytes(imgRef, editImg);
-      url = await getDownloadURL(imgRef);
-    }
+            // Jika ada gambar baru, hapus gambar lama lalu upload baru
+            if (editImg) {
+              // Hapus gambar lama jika ada
+              if (editModal.art.url) {
+                const oldPath = getPathFromUrl(editModal.art.url);
+                if (oldPath) {
+                  try {
+                    const oldImgRef = ref(imageDb, oldPath);
+                    await deleteObject(oldImgRef);
+                  } catch (err) {
+                    console.log("Gagal hapus gambar lama:", err);
+                  }
+                }
+              }
+              // Upload gambar baru
+              const imgRef = ref(imageDb, `artToVote/${editImg.name + v4()}`);
+              await uploadBytes(imgRef, editImg);
+              url = await getDownloadURL(imgRef);
+            }
 
-    await updateArtToVote(id, { name, title, desc, url });
-    setArtList((prev) =>
-      prev.map((art) =>
-        art.id === id ? { ...art, name, title, desc, url } : art
-      )
-    );
-    setEditModal({ open: false, art: null });
-    setEditImg(null);
+            await updateArtToVote(id, { name, title, desc, url });
+            setArtList((prev) =>
+              prev.map((art) =>
+                art.id === id ? { ...art, name, title, desc, url } : art
+              )
+            );
+            setEditModal({ open: false, art: null });
+            setEditImg(null);
+          },
+        },
+        {
+          label: "Batal",
+          onClick: () => {
+            console.log("batal");
+          },
+        },
+      ],
+    });
   };
 
   const handleEditClose = () => {
@@ -215,12 +232,16 @@ const UpdateDbPanel = () => {
         <div onDrop={handleDrop} onDragOver={handleDragOver}>
           <div className="flex justify-end">
             {isUser ? (
-              <button
-                onClick={() => logout()}
-                className="mb-20 px-20 py-2 w-[20vw] rounded-lg text-md font-semibold text-white bg-red-400 hover:bg-red-500 active:bg-red-600"
-              >
-                <span className="z-10">Logout</span>
-              </button>
+              <div className="mb-20 gap-4 flex flex-col justify-end items-end">
+                {" "}
+                <button
+                  onClick={() => logout()}
+                  className="px-20 py-2 w-[20vw] rounded-lg text-md font-semibold text-white bg-red-400 hover:bg-red-500 active:bg-red-600"
+                >
+                  <span className="z-10">Logout</span>
+                </button>
+                <p>UID: {auth.currentUser?.uid}</p>
+              </div>
             ) : (
               <button
                 onClick={() => (window.location.href = "/login")}
@@ -312,22 +333,28 @@ const UpdateDbPanel = () => {
                       <div className="text-gray-500 text-sm mt-1 overflow-ellipsis line-clamp-2">
                         {art.desc}
                       </div>
+                      <div className="text-blue-700 font-semibold mt-2">
+                        Total Vote:{" "}
+                        {Array.isArray(art.voteBy) ? art.voteBy.length : 0}
+                      </div>
                     </div>
                   </div>
-                  <div className="flex flex-col gap-2 ml-4">
-                    <button
-                      className="px-4 py-2 bg-gray-400 text-white rounded hover:bg-gray-500 transition"
-                      onClick={() => handleEditClick(art)}
-                    >
-                      Edit
-                    </button>
-                    <button
-                      className="px-4 py-2 bg-red-400 text-white rounded hover:bg-red-500 transition"
-                      onClick={() => handleRemove(art.id, art.name)}
-                    >
-                      Remove
-                    </button>
-                  </div>
+                  {isUser && (
+                    <div className="flex flex-col gap-2 ml-4">
+                      <button
+                        className="px-4 py-2 bg-gray-400 text-white rounded hover:bg-gray-500 transition"
+                        onClick={() => handleEditClick(art)}
+                      >
+                        Edit
+                      </button>
+                      <button
+                        className="px-4 py-2 bg-red-400 text-white rounded hover:bg-red-500 transition"
+                        onClick={() => handleRemove(art.id, art.name)}
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  )}
                 </div>
               ))}
           </div>
@@ -404,7 +431,7 @@ const UpdateDbPanel = () => {
                       editImg ? URL.createObjectURL(editImg) : editModal.art.url
                     }
                     alt="Preview"
-                    className="mt-2 h-24 rounded object-cover aspect-square"
+                    className="mt-2 rounded object-cover aspect-square"
                   />
                 )}
               </div>

@@ -15,7 +15,6 @@ const LoginPage = () => {
   const handleLogin = async () => {
     try {
       await login(email, password);
-      alert("berhasil login");
       window.location.href = "/upload";
     } catch (error) {
       alert(`gagal login: ${error}`);

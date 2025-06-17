@@ -20,6 +20,9 @@ import { useMediaQuery } from "../useMediaQuery";
 import bgDesktop from "/images/bgDesktopRevisi.webp";
 import bgMobile from "/images/bgMobileRevisi_11zon.jpg";
 
+import bannerDesktop from "/images/votingBannerDesktop1.png";
+import bannerMobile from "/images/votingBannerMobile1.png";
+
 import {
   createArtToVote,
   getAllArtToVote,
@@ -223,7 +226,14 @@ const VotingPage = () => {
             >
               {arts.map((art) => (
                 <SwiperSlide key={art.id}>
-                  <div className=" bg-[#48368A] flex flex-col md:flex-row justify-between px-8 py-8 lg:px-30 items-start md:items-center h-[100%] text-white gap-6 md:gap-12">
+                  <div
+                    className="flex flex-col md:flex-row justify-between px-8 py-12 lg:px-30 items-start md:items-center h-[100%] text-white gap-6 md:gap-12 bg-cover"
+                    style={{
+                      backgroundImage: `url(${
+                        isMobile ? bannerMobile : bannerDesktop
+                      })`,
+                    }}
+                  >
                     <div className="relative min-w-[90%] md:min-w-[36%] md:max-w-[40%] aspect-square">
                       {isHover ? (
                         <div
@@ -250,19 +260,21 @@ const VotingPage = () => {
                     onMouseEnter={() => handleMouseEnter()}
                     onMouseLeave={() => handleMouseLeave()}
                   /> */}
-                      <ImageLoad
-                        key={art.id}
-                        src={art.url}
-                        alt={art.name}
-                        onImageLoad={handleImageLoad}
-                        className="w-[100%] md:max-w-[100%] aspect-square"
-                        onClick={() => handleImgClick(art.url)}
-                        onMouseEnter={() => handleMouseEnter(art.id)}
-                        onMouseLeave={() => handleMouseLeave()}
-                      />
+                      <div className="border-2 ">
+                        <ImageLoad
+                          key={art.id}
+                          src={art.url}
+                          alt={art.name}
+                          onImageLoad={handleImageLoad}
+                          className="w-[100%] md:max-w-[100%] aspect-square"
+                          onClick={() => handleImgClick(art.url)}
+                          onMouseEnter={() => handleMouseEnter(art.id)}
+                          onMouseLeave={() => handleMouseLeave()}
+                        />
+                      </div>
                     </div>
 
-                    <div className="overflow-x-auto flex-shrink-0 flex flex-col h-full items-start w-[100%] md:w-[60%] justify-center text-ellipsis">
+                    <div className="overflow-x-auto flex flex-col h-full items-start w-[100%] md:w-[60%] justify-center text-ellipsis">
                       <h1 className="font-oddval md:mb-2 text-lg lg:text-2xl uppercase">
                         {art.name}
                       </h1>
@@ -270,7 +282,7 @@ const VotingPage = () => {
                         {art.title}
                       </h1> */}
                       <p
-                        className="text-gray-300 break-words whitespace-pre-wrap md:max-h-[50%] w-full max-w-full mb-2 md:mb-8 text-sm md:text-lg overflow-y-auto"
+                        className="text-gray-300 break-words whitespace-pre-wrap md:max-h-[50%] w-full max-w-full mb-4 md:mb-8 text-sm md:text-lg overflow-y-auto"
                         onWheel={(e) => {
                           if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
                             e.stopPropagation();
@@ -316,16 +328,16 @@ const VotingPage = () => {
               ))}
             </Swiper>
 
-            <div className="w-[100%] flex justify-center items-center gap-10">
+            <div className="w-[100%] flex flex-col md:flex-row justify-center items-center gap-4 md:gap-10">
               <button
                 onClick={() => (window.location.href = "/")}
-                className="relative px-20 py-2 rounded-lg w-auto text-md font-semibold text-white bg-gray-400 hover:bg-gray-500 active:bg-gray-600 max-w-[30%]"
+                className="relative px-20 py-2 rounded-lg w-auto text-md font-semibold text-white bg-gray-400 hover:bg-gray-500 active:bg-gray-600"
               >
                 <span className="z-10">Kembali</span>
               </button>
               <button
                 onClick={() => (window.location.href = "/art")}
-                className="relative px-20 py-2 rounded-lg w-auto text-md font-semibold text-white bg-[#48368A] hover:bg-[#5a5375] active:bg-[#49435f] max-w-[30%]"
+                className="relative px-20 py-2 rounded-lg w-auto text-md font-semibold text-white bg-[#48368A] hover:bg-[#5a5375] active:bg-[#49435f]"
               >
                 <span className="z-10">Show All</span>
               </button>

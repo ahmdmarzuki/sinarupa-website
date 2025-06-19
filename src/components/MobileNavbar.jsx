@@ -51,8 +51,8 @@ const MobileNavbar = () => {
           <img src={logo} className="h-10 aspect-square" />
         </div>
         <div className="flex">
-          <button
-            onClick={() => (window.location.href = "/voting")}
+          <a
+            href="https://voting.sinarupa.com"
             className="relative w-[200px] sm:w-[240px] md:w-[260px] lg:w-[312px] transition-transform transform -right-2"
           >
             <img
@@ -63,7 +63,7 @@ const MobileNavbar = () => {
             <div className="font-oddval absolute inset-0 flex items-center justify-center text-[#4A3D8F] font-semibold text-[0.86rem]">
               Vote Karya
             </div>
-          </button>
+          </a>
         </div>
       </div>
 

@@ -18,13 +18,8 @@ function App() {
   return (
     <main>
       <Routes>
-        <Route path="/" element={<PreEventHomepage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/voting" element={<VotingPage />} />
+        <Route path="/" element={<VotingPage />} />
         <Route path="/art" element={<ArtListPage />} />
-        <Route path="/rules" element={<DetailRules />} />
-        <Route path="/panduan" element={<PanduanTeknisLomba1 />} />
-        <Route path="/upload" element={<UpdateDbPanel />} />
       </Routes>
     </main>
   );

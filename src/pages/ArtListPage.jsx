@@ -22,6 +22,7 @@ import { confirmAlert } from "react-confirm-alert";
 
 import bannerDesktop from "/images/votingBannerDesktop1.png";
 import bannerMobile from "/images/votingBannerMobile1.png";
+import { Link } from "react-router-dom";
 
 const db = getFirestore(app);
 
@@ -289,12 +290,16 @@ const ArtListPage = () => {
           </AnimatedDiv>
         ))}
       </div>
-      <button
-        onClick={() => (window.location.href = "/voting")}
+      <Link
         className="relative mt-20 px-20 py-2 rounded-lg w-auto text-md font-semibold text-white bg-[#48368A] hover:bg-[#5a5375] active:bg-[#49435f] max-w-[30%]"
+        to={"/"}
       >
-        <span className="z-10">Kembali</span>
-      </button>
+        <button
+        // onClick={() => (window.location.href = "/voting")}
+        >
+          <span className="z-10">Kembali</span>
+        </button>
+      </Link>
     </div>
   );
 };

@@ -37,6 +37,7 @@ import { doc, getDoc, getFirestore } from "firebase/firestore";
 import Loading from "../components/Loading";
 import ImageLoad from "../components/ImageLoad";
 import { auth } from "../firebase/auth";
+import { Link } from "react-router-dom";
 
 const db = getFirestore(app);
 
@@ -331,18 +332,20 @@ const VotingPage = () => {
             </Swiper>
 
             <div className="w-[100%] flex flex-col md:flex-row justify-center items-center gap-4 md:gap-10">
-              <button
-                onClick={() => (window.location.href = "/")}
+              <a
+                href="https://sinarupa.com"
                 className="relative px-20 py-2 rounded-lg w-auto text-md font-semibold text-white bg-gray-400 hover:bg-gray-500 active:bg-gray-600"
               >
                 <span className="z-10">Kembali</span>
-              </button>
-              <button
-                onClick={() => (window.location.href = "/art")}
-                className="relative px-20 py-2 rounded-lg w-auto text-md font-semibold text-white bg-[#48368A] hover:bg-[#5a5375] active:bg-[#49435f]"
-              >
-                <span className="z-10">Show All</span>
-              </button>
+              </a>
+              <Link to={"/art"}>
+                <button
+                  // onClick={() => (window.location.href = "/art")}
+                  className="relative px-20 py-2 rounded-lg w-auto text-md font-semibold text-white bg-[#48368A] hover:bg-[#5a5375] active:bg-[#49435f]"
+                >
+                  <span className="z-10">Show All</span>
+                </button>
+              </Link>
             </div>
 
             {/* <h1 className="mt-2 flex justify-center">

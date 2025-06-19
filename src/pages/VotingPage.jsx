@@ -331,7 +331,7 @@ const VotingPage = () => {
               ))}
             </Swiper>
 
-            <div className="w-[100%] flex flex-col md:flex-row justify-center items-center gap-4 md:gap-10">
+            <div className="w-[100%] flex flex-col-reverse md:flex-row justify-center items-center gap-4 md:gap-10">
               <a
                 href="https://sinarupa.com"
                 className="relative px-20 py-2 rounded-lg w-auto text-md font-semibold text-white bg-gray-400 hover:bg-gray-500 active:bg-gray-600"

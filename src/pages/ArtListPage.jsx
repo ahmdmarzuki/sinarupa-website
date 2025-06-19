@@ -20,6 +20,9 @@ import Loading from "../components/Loading";
 import ImageLoad from "../components/ImageLoad";
 import { confirmAlert } from "react-confirm-alert";
 
+import bannerDesktop from "/images/votingBannerDesktop1.png";
+import bannerMobile from "/images/votingBannerMobile1.png";
+
 const db = getFirestore(app);
 
 const ArtListPage = () => {
@@ -169,31 +172,40 @@ const ArtListPage = () => {
       {isLoading ? <Loading /> : <></>}
       {img && (
         <div
-          className="fixed inset-0 bg-[#000000BF] flex items-center justify-center z-50"
+          className="fixed inset-0 bg-[#000000BF] flex items-center justify-center z-50 p-4 sm:p-6 lg:p-8"
           onClick={closePopup}
         >
-          <div className="rounded-lg max-w-full h-full flex flex-col items-center justify-center">
+          <div className="w-full h-full flex items-center justify-center">
             <div
-              className="bg-[#48368A] flex flex-col md:flex-row justify-between px-8 py-8 lg:px-30 items-start md:items-center w-[80%] h-[80%] text-white gap-6 md:gap-12 rounded-2xl"
+              className="flex flex-col lg:flex-row justify-between p-4 sm:p-6 lg:p-8 items-start lg:items-center w-full max-w-sm sm:max-w-2xl lg:max-w-4xl xl:max-w-6xl h-auto max-h-[90vh] lg:max-h-[90vh] text-white gap-4 sm:gap-6 lg:gap-8 rounded-2xl bg-cover"
+              style={{
+                backgroundImage: `url(${
+                  isMobile ? bannerMobile : bannerDesktop
+                })`,
+              }}
               onClick={(e) => e.stopPropagation()}
             >
-              <img
-                src={img}
-                alt="art image"
-                className="w-[30%] aspect-square object-cover"
-                // onClick={(e) => e.stopPropagation()} // biar klik gambar tidak menutup modal
-              />
-              <div className="flex flex-col h-full items-start w-[100%] justify-center text-ellipsis">
-                <h1 className="font-oddval md:mb-2 text-lg lg:text-2xl">
+              <div className="w-full lg:w-[40%] xl:w-[35%] flex-shrink-0">
+                <img
+                  src={img}
+                  alt="art image"
+                  className="w-full h-auto max-h-[300px] sm:max-h-[400px] lg:max-h-none lg:h-full object-cover rounded-lg aspect-square border-2"
+                />
+              </div>
+              <div className="flex flex-col h-full items-start w-full lg:w-[60%] xl:w-[65%] justify-start lg:justify-center text-ellipsis overflow-hidden">
+                <h1 className="font-oddval mb-2 sm:mb-3 lg:mb-4 text-lg sm:text-xl lg:text-2xl xl:text-3xl break-words">
                   {name}
                 </h1>
+                <h1 className="font-oddval mb-2 sm:mb-3 lg:mb-4 text-lg sm:text-xl lg:text-2xl xl:text-2xl break-words">
+                  - {title}
+                </h1>
 
-                <div className="max-h-[60%] overflow-y-auto mb-2 md:mb-8">
-                  <p className="text-gray-300 break-words whitespace-pre-wrap w-full max-w-full overflow-wrap break-word  text-sm md:text-lg">
+                <div className="flex-1 overflow-y-auto mb-4 sm:mb-6 lg:mb-8 pr-2 max-h-[50vh] ">
+                  <p className="text-gray-300 break-words whitespace-pre-wrap w-full text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed overflow-y-auto">
                     {desc}
                   </p>
                 </div>
-                <div>
+                <div className="w-full flex justify-start">
                   {!hasVoted ? (
                     <button
                       onClick={async () => {
@@ -203,27 +215,22 @@ const ArtListPage = () => {
                           await getVoteData(visitorId);
                         }, 500);
                       }}
-                      className="relative px-8 py-2 rounded-lg w-auto text-md font-semibold text-[#48368A] bg-white hover:bg-blue-300 active:bg-blue-400"
+                      className="relative px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-lg text-sm sm:text-base lg:text-lg font-semibold text-[#48368A] bg-white hover:bg-blue-300 active:bg-blue-400 transition-colors duration-200"
                     >
                       <span className="z-10">Vote</span>
                     </button>
                   ) : artVotedId == id ? (
                     <button
                       onClick={() => cancelVote(id)}
-                      className="relative px-8 py-2 rounded-lg w-auto text-md font-semibold text-white bg-green-400 hover:bg-green-500 active:bg-green-600"
+                      className="relative px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-lg text-sm sm:text-base lg:text-lg font-semibold text-white bg-green-400 hover:bg-green-500 active:bg-green-600 transition-colors duration-200"
                     >
                       <span className="z-10">Voted</span>
                     </button>
                   ) : (
-                    <button className="relative px-8 py-2 rounded-lg w-auto text-md font-semibold text-white bg-gray-400 ">
-                      <span className="z-10">udah vote yang lain</span>
+                    <button className="relative px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-lg text-sm sm:text-base lg:text-lg font-semibold text-white bg-gray-400 cursor-not-allowed">
+                      <span className="z-10">Suara vote telah digunakan</span>
                     </button>
                   )}
-
-                  {/* <p>{`total voting: ${art.voteCount}`}</p> */}
-                  {/* <p>{`total voting: ${getVoteCount(art.id)}`}</p> */}
-                  {/* <p>{`status: ${hasVoted.valueOf}`}</p> */}
-                  {/* <p>{isHover ? "hoverrr" : "keluarr"}</p> */}
                 </div>
               </div>
             </div>

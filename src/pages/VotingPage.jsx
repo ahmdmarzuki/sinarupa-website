@@ -278,9 +278,9 @@ const VotingPage = () => {
                       <h1 className="font-oddval md:mb-2 text-lg lg:text-2xl uppercase">
                         {art.name}
                       </h1>
-                      {/* <h1 className="font-oddval md:mb-2 text-lg lg:text-2xl text-gray-200 capitalize">
-                        {art.title}
-                      </h1> */}
+                      <h1 className="font-oddval md:mb-2 text-lg lg:text-2xl text-gray-200 capitalize">
+                        - {art.title}
+                      </h1>
                       <p
                         className="text-gray-300 break-words whitespace-pre-wrap md:max-h-[50%] w-full max-w-full mb-4 md:mb-8 text-sm md:text-lg overflow-y-auto"
                         onWheel={(e) => {
@@ -314,7 +314,9 @@ const VotingPage = () => {
                           </button>
                         ) : (
                           <button className="relative px-8 py-2 rounded-lg w-auto text-md font-semibold text-white bg-gray-400 ">
-                            <span className="z-10">Vote</span>
+                            <span className="z-10">
+                              Suara vote telah digunakan
+                            </span>
                           </button>
                         )}
 

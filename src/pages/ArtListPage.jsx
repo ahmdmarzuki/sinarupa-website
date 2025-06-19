@@ -177,7 +177,7 @@ const ArtListPage = () => {
         >
           <div className="w-full h-full flex items-center justify-center">
             <div
-              className="flex flex-col lg:flex-row justify-between p-4 sm:p-6 lg:p-8 items-start lg:items-center w-full max-w-sm sm:max-w-2xl lg:max-w-4xl xl:max-w-6xl h-auto max-h-[90vh] lg:max-h-[90vh] text-white gap-4 sm:gap-6 lg:gap-8 rounded-2xl bg-cover"
+              className="flex flex-col lg:flex-row justify-between p-4 sm:p-6 lg:p-8 items-start lg:items-center w-full max-w-sm sm:max-w-2xl lg:max-w-4xl xl:max-w-6xl h-auto max-h-[80vh] lg:max-h-[90vh] text-white gap-4 sm:gap-6 lg:gap-8 rounded-2xl bg-cover"
               style={{
                 backgroundImage: `url(${
                   isMobile ? bannerMobile : bannerDesktop
@@ -193,11 +193,11 @@ const ArtListPage = () => {
                 />
               </div>
               <div className="flex flex-col h-full items-start w-full lg:w-[60%] xl:w-[65%] justify-start lg:justify-center text-ellipsis overflow-hidden">
-                <h1 className="font-oddval mb-2 sm:mb-3 lg:mb-4 text-lg sm:text-xl lg:text-2xl xl:text-3xl break-words">
+                <h1 className="uppercase font-oddval mb-2 sm:mb-3 lg:mb-4 text-lg sm:text-xl lg:text-2xl xl:text-3xl break-words">
                   {name}
                 </h1>
                 <h1 className="font-oddval mb-2 sm:mb-3 lg:mb-4 text-lg sm:text-xl lg:text-2xl xl:text-2xl break-words">
-                  - {title}
+                  {title}
                 </h1>
 
                 <div className="flex-1 overflow-y-auto mb-4 sm:mb-6 lg:mb-8 pr-2 max-h-[50vh] ">
@@ -270,7 +270,7 @@ const ArtListPage = () => {
                   key={art.id}
                   src={art.url}
                   alt={art.name}
-                  className="object-cover h-[100%] w-[100%]"
+                  className="object-cover h-[100%] w-[100%] border-2 border-white"
                   onClick={() =>
                     handleImgClick(
                       art.id,
